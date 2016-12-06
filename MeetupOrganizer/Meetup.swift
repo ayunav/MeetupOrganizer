@@ -6,14 +6,22 @@
 //  Copyright © 2016 Ayuna NYC. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Meetup
 {
-    let name: String
+    let groupName: String
+    var user: String?
+    
+    
+    var photos: [UIImage]?
+    
+    
+    // let events: what type? struct ? var or let?
+//     var photos what type?
     
     init(name: String) {
-        self.name = name
+        self.groupName = name
     }
     
 }
