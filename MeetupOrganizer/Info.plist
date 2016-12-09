@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>&quot;Meetup Organizer&quot; requires access to your Photo Library. Click OK to add photos to your event.</string>
+	<string>Click OK to add photos to your event.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
