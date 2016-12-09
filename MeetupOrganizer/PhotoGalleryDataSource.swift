@@ -7,32 +7,35 @@
 //
 
 import UIKit
+import Photos
 
 class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource
 {
     // MARK: - Properties
     
-    private let CellIdentifier = "GalleryCollectionViewCellIdentifier"
+    private let CellIdentifier = "PhotoGalleryCollectionViewCellIdentifier"
+
+    let manager = PHImageManager.default()
+    let assets = PHAsset.fetchAssets(with: .image, options: nil)
     
-    let meetup = Meetup(name: "iOSoho")
-//    let photos = meetup.photos // what object?
     
     // MARK: - Data Source Methods
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-//        return photos.count
-        return 10
+        return assets.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier, for: indexPath) as! PhotoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier, for: indexPath) as! PhotoGalleryCollectionViewCell
         
-//        let photo = photos[indexPath.row]
-//        cell.updateWithImage(image: photo.image)
+        let asset = assets[indexPath.row]
         
+        cell.asset = asset
+
         return cell
     }
+    
 }

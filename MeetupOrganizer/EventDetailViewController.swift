@@ -13,38 +13,29 @@ import Photos
 class EventDetailViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var photoGalleryCollectionView: UICollectionView!
-    
-    // var photos - what type?
-    
-    private static let uploadPhotosRequestURL = "https://api.meetup.com/iOSoho/events/235269311/photos" // to Maria Perez at Prolific event
-
     let photoGalleryDataSource = PhotoGalleryDataSource()
 
-    
+    //var photos: [UIImage] = []
+    //let meetup = Meetup(name: "iOSoho")
+    private static let uploadPhotosRequestURL = "https://api.meetup.com/iOSoho/events/235269311/photos" // to Maria Perez at Prolific event
 
-    override func viewDidLoad() {
+    
+    // MARK: - View Lifecycle
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         photoGalleryCollectionView.dataSource = photoGalleryDataSource
         photoGalleryCollectionView.delegate = self
-        
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     // MARK: - Actions 
     
     @IBAction func addPhotosButtonTapped(_ sender: UIButton)
     {
         let imagePickerVC = BSImagePickerViewController()
-
-        // start uiimagepicker view controller
-        // pick photos to upload
 
         bs_presentImagePickerController(imagePickerVC,
                                         animated: true,
@@ -62,13 +53,15 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
         }, finish: { (assets: [PHAsset]) -> Void in
             // User finished with these assets
             
-            
-            
-            
-            
+            // 1. Display photos in the photoGalleryCollectionView
+            OperationQueue.main.addOperation
+            {
+                self.photoGalleryCollectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
+            }
+
         }, completion:
             
-            // display photos in the gallery colView w/spinners indicating success
+            // display spinners indicating progress/success in the gallery colView cells
             
             nil)
         
@@ -77,9 +70,6 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
     }
     
 
-    func populatePhotoGalleryCollectionView() {
-        // should collection view have a separate data source class? 
-    }
     
     
     /*
