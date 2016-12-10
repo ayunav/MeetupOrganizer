@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.2.0)
   - BSGridCollectionViewLayout (1.2.0)
   - BSImagePicker (2.5.1):
     - BSGridCollectionViewLayout (~> 1.2.0)
@@ -6,13 +7,15 @@ PODS:
   - UIImageViewModeScaleAspect (1.5)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.2)
   - BSImagePicker (~> 2.4)
 
 SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   BSGridCollectionViewLayout: 8f12c8e1e08c47057f5a39a6828f4395f043d78f
   BSImagePicker: 1f98e14efddf550494ef08c560422505456d4058
   UIImageViewModeScaleAspect: 11a790a0b9d248a13dc63e3a78991f1463b6d84e
 
-PODFILE CHECKSUM: ef017ed5989e2d2b75a8e4bb2743a5c9eab7287d
+PODFILE CHECKSUM: 372de6cf5a10403e6543d6bb1f0c063c7b861673
 
 COCOAPODS: 1.1.1
