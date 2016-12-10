@@ -18,7 +18,7 @@
 		D9C7DFFA1DEE105D00E9B310 /* Meetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFF91DEE105D00E9B310 /* Meetup.swift */; };
 		D9C7DFFC1DEE109A00E9B310 /* MeetupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFFB1DEE109A00E9B310 /* MeetupAPI.swift */; };
 		D9C7DFFE1DEE10A600E9B310 /* MeetupStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFFD1DEE10A600E9B310 /* MeetupStore.swift */; };
-		D9F5171E1DF7432100098B8D /* MOConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5171D1DF7432100098B8D /* MOConstants.swift */; };
+		D9F5171E1DF7432100098B8D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5171D1DF7432100098B8D /* Constants.swift */; };
 		D9F517201DF7476700098B8D /* PhotoGalleryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5171F1DF7476700098B8D /* PhotoGalleryDataSource.swift */; };
 		D9F517221DF7488900098B8D /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */; };
 		D9F517251DF9F36600098B8D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F517241DF9F36600098B8D /* User.swift */; };
@@ -42,7 +42,7 @@
 		D9C7DFF91DEE105D00E9B310 /* Meetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meetup.swift; sourceTree = "<group>"; };
 		D9C7DFFB1DEE109A00E9B310 /* MeetupAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetupAPI.swift; sourceTree = "<group>"; };
 		D9C7DFFD1DEE10A600E9B310 /* MeetupStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetupStore.swift; sourceTree = "<group>"; };
-		D9F5171D1DF7432100098B8D /* MOConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOConstants.swift; sourceTree = "<group>"; };
+		D9F5171D1DF7432100098B8D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D9F5171F1DF7476700098B8D /* PhotoGalleryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGalleryDataSource.swift; sourceTree = "<group>"; };
 		D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		D9F517241DF9F36600098B8D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -103,8 +103,7 @@
 				D9C7E00A1DEFEEC700E9B310 /* UI */,
 				D9C7DFE11DEE0EAD00E9B310 /* AppDelegate.swift */,
 				D9F517281DFA038800098B8D /* PHAssetToUIImageConverter.swift */,
-				D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */,
-				D9F5171F1DF7476700098B8D /* PhotoGalleryDataSource.swift */,
+				D9F5172A1DFB61C600098B8D /* PhotoGallery */,
 				D9C7DFFF1DEE10AE00E9B310 /* Models */,
 				D9C7E0091DEFEE8600E9B310 /* Networking */,
 				D9F517231DF748B300098B8D /* Views */,
@@ -120,7 +119,7 @@
 				D9F517241DF9F36600098B8D /* User.swift */,
 				D9C7DFF91DEE105D00E9B310 /* Meetup.swift */,
 				D9F517261DF9F3F100098B8D /* Event.swift */,
-				D9F5171D1DF7432100098B8D /* MOConstants.swift */,
+				D9F5171D1DF7432100098B8D /* Constants.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -167,6 +166,15 @@
 			children = (
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		D9F5172A1DFB61C600098B8D /* PhotoGallery */ = {
+			isa = PBXGroup;
+			children = (
+				D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */,
+				D9F5171F1DF7476700098B8D /* PhotoGalleryDataSource.swift */,
+			);
+			name = PhotoGallery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +309,7 @@
 				D9C7DFF41DEE0F9D00E9B310 /* MyMeetupsTableViewController.swift in Sources */,
 				D9C7DFF61DEE0FA700E9B310 /* EventsTableViewController.swift in Sources */,
 				D9F517291DFA038800098B8D /* PHAssetToUIImageConverter.swift in Sources */,
-				D9F5171E1DF7432100098B8D /* MOConstants.swift in Sources */,
+				D9F5171E1DF7432100098B8D /* Constants.swift in Sources */,
 				D9C7DFFA1DEE105D00E9B310 /* Meetup.swift in Sources */,
 				D9C7DFE21DEE0EAD00E9B310 /* AppDelegate.swift in Sources */,
 				D9F517201DF7476700098B8D /* PhotoGalleryDataSource.swift in Sources */,

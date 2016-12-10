@@ -9,16 +9,21 @@
 import UIKit
 import BSImagePicker
 import Photos
+import Alamofire
 
 class EventDetailViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var photoGalleryCollectionView: UICollectionView!
     let photoGalleryDataSource = PhotoGalleryDataSource()
+    
+    let manager = PHImageManager.default()
+    let deliveryOptions = PHImageRequestOptionsDeliveryMode.opportunistic
+    let requestOptions = PHImageRequestOptions()
 
+    
     //var photos: [UIImage] = []
     //let meetup = Meetup(name: "iOSoho")
-    private static let uploadPhotosRequestURL = "https://api.meetup.com/iOSoho/events/235269311/photos" // to Maria Perez at Prolific event
-
+    
     
     // MARK: - View Lifecycle
     
@@ -43,8 +48,13 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
                                             // User selected an asset.
                                             // Do something with it, start upload perhaps?
 
-                                            // get photo multi part data
-                                            // construct and start url request to post photos to meetup server, pass photo data to the request
+                                            self.requestOptions.isSynchronous = true
+                                            
+                                            self.manager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.default, options: self.requestOptions, resultHandler: { (image, properties) in
+                                       
+                                                guard let _image = image else { return }
+                                                self.uploadDataFor(image: _image)
+                                            })
         }, deselect: { (asset: PHAsset) -> Void in
             // User deselected an assets.
             // Do something, cancel upload?
@@ -52,26 +62,45 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
             // User cancelled. And this where the assets currently selected.
         }, finish: { (assets: [PHAsset]) -> Void in
             // User finished with these assets
-            
-            // 1. Display photos in the photoGalleryCollectionView
+            self.photoGalleryDataSource.assets = assets
+
+            // display spinners indicating progress/success in the gallery colView cells
+
             OperationQueue.main.addOperation
             {
                 self.photoGalleryCollectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
             }
 
-        }, completion:
-            
-            // display spinners indicating progress/success in the gallery colView cells
-            
-            nil)
-        
-        
-        
+        }, completion: nil)
     }
     
+    
+    
+    func uploadDataFor(image: UIImage)
+    {
+        let imageData = UIImageJPEGRepresentation(image, 80) // compression quality?
+        
+        let url = URL(string: "https://api.meetup.com/iOSoho/events/233132048/photos?key=4131436d16334b6c5f3c2b4630685a29") // gemma barlow event
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+                multipartFormData.append(imageData!, withName: "photo", fileName: "photo.jpeg", mimeType: "image/jpeg")
+        },
+            to: url!,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        debugPrint(response)
+                    }
+                case .failure(let encodingError):
+                    print(encodingError)
+                }
+        })
+    }
 
-    
-    
+
+
+
     /*
     // MARK: - Navigation
 

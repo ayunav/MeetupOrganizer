@@ -16,8 +16,8 @@ class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource
     private let CellIdentifier = "PhotoGalleryCollectionViewCellIdentifier"
 
     let manager = PHImageManager.default()
-    let assets = PHAsset.fetchAssets(with: .image, options: nil)
-    
+
+    var assets: [PHAsset] = []
     
     // MARK: - Data Source Methods
     
@@ -34,7 +34,7 @@ class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource
         let asset = assets[indexPath.row]
         
         cell.asset = asset
-
+        
         return cell
     }
     
