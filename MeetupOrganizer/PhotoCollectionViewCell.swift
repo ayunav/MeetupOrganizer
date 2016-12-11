@@ -14,11 +14,11 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var spinner: UIActivityIndicatorView!
     
-    let manager = PHImageManager.default()
-    let deliveryOptions = PHImageRequestOptionsDeliveryMode.opportunistic
-    let requestOptions = PHImageRequestOptions()
+    private let manager = PHImageManager.default()
+    private let deliveryOptions = PHImageRequestOptionsDeliveryMode.opportunistic
+    private let requestOptions = PHImageRequestOptions()
     
-    let thumbnailSize = CGSize(width: 100, height: 100)
+    private let thumbnailSize = CGSize(width: 100, height: 100)
     
     var asset: PHAsset?
     {
@@ -32,13 +32,13 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell
     }
     
     
-    func requestResultHandler(image: UIImage?, properties: [AnyHashable: Any]?) -> Void
+    private func requestResultHandler(image: UIImage?, properties: [AnyHashable: Any]?) -> Void
     {
         updateWithImage(image: image)
     }
 
     
-    func updateWithImage(image: UIImage?)
+    private func updateWithImage(image: UIImage?)
     {
         if let imageToDisplay = image
         {
