@@ -9,6 +9,12 @@
 import UIKit
 import Alamofire
 
+// construct URL to make API requests
+// validate JSON response
+// pass to the Store to convert into Meetup objects ?
+// OR convert into meetup projects , pass to the store the array of objects if validation is successful
+
+
 struct MeetupAPI
 {
     private static let APIKey = "4131436d16334b6c5f3c2b4630685a29"
@@ -30,7 +36,12 @@ struct MeetupAPI
         urlComponents.queryItems = [URLQueryItem(name: "key", value: MeetupAPI.APIKey)]
     }
     
-    mutating func createUploadPhotosURLWithComponents(groupName: String?, eventID: String?) -> URL! // bang?
+
+    // MARK: - Upload Photos
+    
+    // Meetup API - Upload Photos - Documentation: http://www.meetup.com/meetup_api/docs/:urlname/events/:event_id/photos/#upload
+
+    mutating func uploadPhotosURLWithComponents(groupName: String?, eventID: String?) -> URL! // bang?
     {
         guard let _groupName = groupName, let _eventID = eventID else { return nil } // return nil ?
         urlComponents.path = "/\(_groupName)/events/\(_eventID)/photos"
@@ -38,25 +49,16 @@ struct MeetupAPI
     }
 
     
-    
-    // MARK: - Upload Photos
-    
-    // Meetup API - Upload Photos - Documentation: http://www.meetup.com/meetup_api/docs/:urlname/events/:event_id/photos/#upload
-
-    
     mutating func uploadImageData(image: UIImage, groupName: String, eventID: String) // ?
     {
         let imageData = UIImageJPEGRepresentation(image, 1.0)
        
         // gemma barlow event
-        
-        let url = self.createUploadPhotosURLWithComponents(groupName: groupName, eventID: eventID)!
-        
-//        let url = URL(string: "\(MeetupAPI.baseURLString)/\(groupName)/events/\(eventID)/photos?key=\(MeetupAPI.APIKey)")!
-        
+        let url = self.uploadPhotosURLWithComponents(groupName: groupName, eventID: eventID)!
+                
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(imageData!, withName: "photo", fileName: "photo.jpeg", mimeType: "image/jpeg")
-//            multipartFormData.append("AWESOME photo".data(using: .utf8)!, withName: "caption")
+            multipartFormData.append("true".data(using: .utf8)!, withName: "await")
         },
             to: url,
             encodingCompletion: { encodingResult in
@@ -72,19 +74,9 @@ struct MeetupAPI
     }
  
     
-   
     
-    
-    
-    
-    
-    
-    
+    // MARK: - Events
 
-    
-    
-    
-    
     // get authenticated member id
     // pull events of an authenticated member -> events array
     // dispaly events
@@ -105,13 +97,4 @@ struct MeetupAPI
     //    type: "event",
     //    base_url: "http://photos1.meetupstatic.com",
     //    link: "https://www.meetup.com/iOSoho/photos/27444613/456316179/", and other params
-    
-    
-    
-    // construct URL to make API requests
-    
-    // validate JSON response
-    
-    // pass to the Store to convert into Meetup objects ?
-    // OR convert into meetup projects , pass to the store the array of objects if validation is successful
 }
