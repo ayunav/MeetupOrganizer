@@ -9,7 +9,9 @@
 import UIKit
 import BSImagePicker
 import Photos
-import Alamofire
+
+
+// display placeholder image in the gallery collection view? 
 
 class EventDetailViewController: UIViewController, UICollectionViewDelegate {
     
@@ -23,7 +25,7 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
     var meetupAPIManager = MeetupAPI()
     
     
-    //var photos: [UIImage] = []
+//    var photos: [UIImage] = []
     //let meetup = Meetup(name: "iOSoho")
     
     
@@ -56,12 +58,20 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
             // User cancelled. And this where the assets currently selected.
         }, finish: { (assets: [PHAsset]) -> Void in
             
+            // 1. the col view will display selected photos, 
+            // change cells' alpha to opaque,
+            // add spinning activity indicators indicating upload progress
+            
+            // 2. if there's a problem with upload, display a user facing error message
+            // 3. when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
+            
             self.requestOptions.isSynchronous = true
             for asset in assets {
                 self.imageManager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.default, options: self.requestOptions, resultHandler: { (image, properties) in
                     
                     guard let _image = image else { return }
-                    self.meetupAPIManager.uploadImageData(image: _image, groupName: "iOSoho", eventID: "233132048")
+                    self.meetupAPIManager.uploadImageData(image: _image, groupName: "iOSoho", eventID: "232809656")
+                    // 45 sec request duration, very long
                 })
             }
             
