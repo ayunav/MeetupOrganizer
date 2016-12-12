@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -143,21 +143,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ior-Bk-dzX">
-                                <rect key="frame" x="147.5" y="72" width="80" height="30"/>
-                                <state key="normal" title="Add Photos"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ior-Bk-dzX">
+                                <rect key="frame" x="246" y="72" width="113" height="34"/>
+                                <state key="normal" title="Add Photos">
+                                    <color key="titleColor" red="0.8784313725490196" green="0.22352941176470587" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="addPhotosButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Et0-hj-mvO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqV-BN-2iU">
-                                <rect key="frame" x="160.5" y="110" width="54" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3rn-32-SPW">
-                                <rect key="frame" x="16" y="139" width="343" height="528"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3rn-32-SPW">
+                                <rect key="frame" x="16" y="143" width="343" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="4wO-d1-Btg">
                                     <size key="itemSize" width="100" height="100"/>
@@ -173,7 +169,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ffS-YR-FrQ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MeetupLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ffS-YR-FrQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="quG-00-jPS">
@@ -196,17 +192,29 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqV-BN-2iU">
+                                <rect key="frame" x="16" y="72" width="60" height="34"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Gallery">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="3rn-32-SPW" firstAttribute="top" secondItem="gqV-BN-2iU" secondAttribute="bottom" constant="8" id="12g-8X-r3C"/>
                             <constraint firstItem="3rn-32-SPW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1U5-RW-YRm"/>
-                            <constraint firstItem="gqV-BN-2iU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ig2-2K-63m"/>
+                            <constraint firstItem="gqV-BN-2iU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Rz-hH-ZUW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3rn-32-SPW" secondAttribute="bottom" id="Ndq-N0-Q6g"/>
                             <constraint firstItem="Ior-Bk-dzX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="PSK-TK-VMe"/>
-                            <constraint firstItem="Ior-Bk-dzX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dkl-bd-QGZ"/>
+                            <constraint firstItem="Ior-Bk-dzX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dWA-bx-P91"/>
+                            <constraint firstItem="gqV-BN-2iU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="iqW-OC-N58"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3rn-32-SPW" secondAttribute="trailing" id="kUy-JH-iuD"/>
-                            <constraint firstItem="gqV-BN-2iU" firstAttribute="top" secondItem="Ior-Bk-dzX" secondAttribute="bottom" constant="8" id="qjA-sw-s5e"/>
+                            <constraint firstItem="Ior-Bk-dzX" firstAttribute="centerY" secondItem="gqV-BN-2iU" secondAttribute="centerY" id="lrI-Vi-aAq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -218,4 +226,7 @@
             <point key="canvasLocation" x="2212" y="-174.06296851574214"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MeetupLogo" width="250" height="250"/>
+    </resources>
 </document>
