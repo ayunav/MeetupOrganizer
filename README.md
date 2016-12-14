@@ -1,2 +1,2 @@
 # Meetup Organizer
-📲 An iOS app that extends native Meetup app's functionality. 
+📲 An iOS app for meetup goers that extends native Meetup app's functionality. 
