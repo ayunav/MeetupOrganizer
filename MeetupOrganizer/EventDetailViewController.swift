@@ -105,9 +105,9 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
                     let yCenter = Int(self.view.frame.height / 2)
                     let y = Int(yCenter - cellWidth / 2)
                     let frame = CGRect(x: x, y: y, width: cellWidth, height: cellWidth)
-                    //        let meetupRedColor = // add later TODO
+                    let meetupRedColor = UIColor(red:0.93, green:0.11, blue:0.25, alpha:1.0) // HEX# ed1c40 http://uicolor.xyz/ this is amazing! :)
                     
-                    self.activityIndicatorView = NVActivityIndicatorView(frame: frame, type: .ballGridPulse, color: UIColor.red, padding: 0)
+                    self.activityIndicatorView = NVActivityIndicatorView(frame: frame, type: .ballGridPulse, color: meetupRedColor, padding: 0)
                     self.view.addSubview(self.activityIndicatorView)
                     self.activityIndicatorView.startAnimating()
                 }
