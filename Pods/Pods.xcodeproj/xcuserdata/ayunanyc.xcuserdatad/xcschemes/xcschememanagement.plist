@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MeetupOrganizer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,6 +52,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3EDFE4052B5DE7D509935AC0774CB135</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6930D5D0C3440426432777093903702D</key>
 		<dict>
 			<key>primary</key>
@@ -62,7 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F35138A2DF182F60DBEE23733D2BF688</key>
+		<key>A8B1927B7EC4CAFBF70789E8664F7E82</key>
 		<dict>
 			<key>primary</key>
 			<true/>
