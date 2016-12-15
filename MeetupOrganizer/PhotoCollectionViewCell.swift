@@ -8,11 +8,13 @@
 
 import UIKit
 import Photos
+import NVActivityIndicatorView
 
 class PhotoGalleryCollectionViewCell: UICollectionViewCell
 {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var spinner: UIActivityIndicatorView!
+//    @IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
     
     private let manager = PHImageManager.default()
     private let deliveryOptions = PHImageRequestOptionsDeliveryMode.opportunistic
@@ -43,10 +45,10 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell
     {
         if let imageToDisplay = image
         {
-            spinner.stopAnimating()
+//            activityIndicatorView.stopAnimating()
             imageView.image = imageToDisplay
         } else {
-            spinner.startAnimating()
+//            activityIndicatorView.startAnimating()
             imageView.image = nil
         }
     }
