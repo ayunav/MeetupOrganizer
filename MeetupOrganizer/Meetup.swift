@@ -6,14 +6,18 @@
 //  Copyright © 2016 Ayuna NYC. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Meetup
 {
-    let name: String
+    let urlName: String
     
-    init(name: String) {
-        self.name = name
+    init(name: String)
+    {
+        self.urlName = name
     }
+        
+    var events: [Event]?
     
+    weak var user: User? 
 }

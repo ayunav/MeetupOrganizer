@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,12 +19,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyMeetupsTableViewCellIdentifier" id="xua-WG-WPb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyMeetupsTableViewCellIdentifier" textLabel="tGy-Q4-EmX" style="IBUITableViewCellStyleDefault" id="xua-WG-WPb">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xua-WG-WPb" id="aIL-eh-v62">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="iOSoho" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tGy-Q4-EmX">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="YSP-9Y-tDp" kind="show" id="3LN-2L-dX6"/>
@@ -50,12 +60,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventsTableViewCellIdentifier" id="alL-hD-g7x">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EventsTableViewCellIdentifier" textLabel="ofA-fR-0Pu" detailTextLabel="SQv-P2-TJo" style="IBUITableViewCellStyleValue1" id="alL-hD-g7x">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="alL-hD-g7x" id="qkk-BV-dyT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ofA-fR-0Pu">
+                                            <rect key="frame" x="15" y="12" width="43" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SQv-P2-TJo">
+                                            <rect key="frame" x="304" y="12" width="36" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="2JM-q8-PNf"/>
@@ -117,24 +143,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ior-Bk-dzX">
-                                <rect key="frame" x="137" y="318" width="101" height="30"/>
-                                <state key="normal" title="Upload Photos"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ior-Bk-dzX">
+                                <rect key="frame" x="265" y="72" width="94" height="34"/>
+                                <state key="normal" title="Add Photos">
+                                    <color key="titleColor" red="0.8784313725490196" green="0.22352941176470587" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="uploadPhotosButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fwG-p0-5GV"/>
+                                    <action selector="addPhotosButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Et0-hj-mvO"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3rn-32-SPW">
+                                <rect key="frame" x="16" y="114" width="343" height="553"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="4wO-d1-Btg">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoGalleryCollectionViewCellIdentifier" id="l26-UU-Bvb" customClass="PhotoGalleryCollectionViewCell" customModule="MeetupOrganizer" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="2" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MeetupLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ffS-YR-FrQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="quG-00-jPS">
+                                                    <rect key="frame" x="40" y="40" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="quG-00-jPS" firstAttribute="centerY" secondItem="l26-UU-Bvb" secondAttribute="centerY" id="3R1-Mi-QDk"/>
+                                            <constraint firstAttribute="bottom" secondItem="ffS-YR-FrQ" secondAttribute="bottom" id="HYH-th-VRA"/>
+                                            <constraint firstItem="ffS-YR-FrQ" firstAttribute="top" secondItem="l26-UU-Bvb" secondAttribute="top" id="TdZ-HN-y7L"/>
+                                            <constraint firstItem="quG-00-jPS" firstAttribute="centerX" secondItem="l26-UU-Bvb" secondAttribute="centerX" id="chH-pv-4V5"/>
+                                            <constraint firstAttribute="trailing" secondItem="ffS-YR-FrQ" secondAttribute="trailing" id="dRY-nH-uYz"/>
+                                            <constraint firstItem="ffS-YR-FrQ" firstAttribute="leading" secondItem="l26-UU-Bvb" secondAttribute="leading" id="fPS-Bh-t4z"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="ffS-YR-FrQ" id="v5m-01-WUN"/>
+                                            <outlet property="spinner" destination="quG-00-jPS" id="q45-oE-MWj"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqV-BN-2iU">
+                                <rect key="frame" x="16" y="72" width="60" height="34"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Gallery">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ior-Bk-dzX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Sb3-lD-TdS"/>
-                            <constraint firstItem="Ior-Bk-dzX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dkl-bd-QGZ"/>
+                            <constraint firstItem="3rn-32-SPW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1U5-RW-YRm"/>
+                            <constraint firstItem="3rn-32-SPW" firstAttribute="top" secondItem="gqV-BN-2iU" secondAttribute="bottom" constant="8" id="6A9-65-vO3"/>
+                            <constraint firstItem="gqV-BN-2iU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Rz-hH-ZUW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3rn-32-SPW" secondAttribute="bottom" id="Ndq-N0-Q6g"/>
+                            <constraint firstItem="Ior-Bk-dzX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="PSK-TK-VMe"/>
+                            <constraint firstItem="Ior-Bk-dzX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dWA-bx-P91"/>
+                            <constraint firstItem="gqV-BN-2iU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="iqW-OC-N58"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3rn-32-SPW" secondAttribute="trailing" id="kUy-JH-iuD"/>
+                            <constraint firstItem="Ior-Bk-dzX" firstAttribute="centerY" secondItem="gqV-BN-2iU" secondAttribute="centerY" id="lrI-Vi-aAq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addPhotosButton" destination="Ior-Bk-dzX" id="b97-f0-Imh"/>
+                        <outlet property="photoGalleryCollectionView" destination="3rn-32-SPW" id="wAx-Hb-2wy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2212" y="-174.06296851574214"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MeetupLogo" width="250" height="250"/>
+    </resources>
 </document>
