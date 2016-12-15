@@ -22,7 +22,7 @@
 		D9F517221DF7488900098B8D /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */; };
 		D9F517251DF9F36600098B8D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F517241DF9F36600098B8D /* User.swift */; };
 		D9F517271DF9F3F100098B8D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F517261DF9F3F100098B8D /* Event.swift */; };
-		D9FEB8F11E02604A00385A0B /* UIActivityIndicatorView+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEB8F01E02604A00385A0B /* UIActivityIndicatorView+Utilities.swift */; };
+		D9FEB8F11E02604A00385A0B /* UIActivityIndicatorViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEB8F01E02604A00385A0B /* UIActivityIndicatorViewUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		D9F517241DF9F36600098B8D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D9F517261DF9F3F100098B8D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		D9FEB8F01E02604A00385A0B /* UIActivityIndicatorView+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+Utilities.swift"; sourceTree = "<group>"; };
+		D9FEB8F01E02604A00385A0B /* UIActivityIndicatorViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorViewUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 				D9C7E00A1DEFEEC700E9B310 /* UI */,
 				D9C7DFE11DEE0EAD00E9B310 /* AppDelegate.swift */,
 				D9C7DFFF1DEE10AE00E9B310 /* Models */,
-				D9FEB8EF1E02601100385A0B /* Extensions */,
+				D9FEB8F01E02604A00385A0B /* UIActivityIndicatorViewUtils.swift */,
 				D9C7E0091DEFEE8600E9B310 /* Networking */,
 				D9F5172A1DFB61C600098B8D /* PhotoGallery */,
 				D9F517231DF748B300098B8D /* Views */,
@@ -172,14 +172,6 @@
 				D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */,
 			);
 			name = PhotoGallery;
-			sourceTree = "<group>";
-		};
-		D9FEB8EF1E02601100385A0B /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D9FEB8F01E02604A00385A0B /* UIActivityIndicatorView+Utilities.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9FEB8F11E02604A00385A0B /* UIActivityIndicatorView+Utilities.swift in Sources */,
+				D9FEB8F11E02604A00385A0B /* UIActivityIndicatorViewUtils.swift in Sources */,
 				D9C7DFFC1DEE109A00E9B310 /* MeetupAPI.swift in Sources */,
 				D9F517221DF7488900098B8D /* PhotoCollectionViewCell.swift in Sources */,
 				D9C7DFFE1DEE10A600E9B310 /* Client.swift in Sources */,
