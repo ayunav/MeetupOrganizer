@@ -13,9 +13,7 @@ import NVActivityIndicatorView
 class PhotoGalleryCollectionViewCell: UICollectionViewCell
 {
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var spinner: UIActivityIndicatorView!
-//    @IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
-    
+
     private let manager = PHImageManager.default()
     private let deliveryOptions = PHImageRequestOptionsDeliveryMode.opportunistic
     private let requestOptions = PHImageRequestOptions()
@@ -46,9 +44,13 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell
         if let imageToDisplay = image
         {
 //            activityIndicatorView.stopAnimating()
+            UIActivityIndicatorViewUtils.sharedInstance.hideActivityIndicatorView()
             imageView.image = imageToDisplay
         } else {
 //            activityIndicatorView.startAnimating()
+            
+            
+            UIActivityIndicatorViewUtils.sharedInstance.showActivityIndicatorInView(view: self.imageView)
             imageView.image = nil
         }
     }
