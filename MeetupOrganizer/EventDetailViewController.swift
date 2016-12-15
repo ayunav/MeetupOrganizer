@@ -70,12 +70,12 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
     }
 
     
-    // MARK: - Actions 
+    // MARK: - Actions
     
     @IBAction func addPhotosButtonTapped(_ sender: UIButton)
     {
         let imagePickerVC = BSImagePickerViewController()
-
+        
         bs_presentImagePickerController(imagePickerVC,
                                         animated: true,
                                         select: { (asset: PHAsset) -> Void in
@@ -87,63 +87,57 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
         }, cancel: { (assets: [PHAsset]) -> Void in
             // User cancelled. And this where the assets currently selected.
         }, finish:
-        { (assets: [PHAsset]) -> Void in
-
-            OperationQueue.main.addOperation {
-            let cols = 4
-            let cellWidth = Int(self.view.frame.width / CGFloat(cols))
-            let xCenter = Int(self.view.frame.width / 2)
-            let yCenter = Int(self.view.frame.height / 2)
-            let frame = CGRect(x: xCenter, y: yCenter, width: cellWidth, height: cellWidth)
-            //        let meetupRedColor = // add later TODO
-            
-            self.activityIndicatorView = NVActivityIndicatorView(frame: frame, type: .ballGridPulse, color: UIColor.red, padding: 0)
-            self.view.addSubview(self.activityIndicatorView)
-            self.activityIndicatorView.startAnimating()
-            }
-            //self.view.addActivityIndicatorToView(view: self.view)
-            
-//           self.view.addSubview(self.activityIndicatorView)
-//           self.activityIndicatorView.startAnimating()
-            
-            // 1. the col view will display selected photos,
-            // change cells' alpha to opaque,
-            // add spinning activity indicators indicating upload progress
-            
-            // 2. if there's a problem with upload, display a user facing error message
-            // 3. when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
-            
-            
-            self.requestOptions.isSynchronous = true
-   
-            for asset in assets {
-                self.imageManager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.default, options: self.requestOptions, resultHandler: { (image, properties) in
-                        
-                    guard let _image = image else { return }
+            { (assets: [PHAsset]) -> Void in
+                
+                // 1. the col view will display selected photos,
+                // change cells' alpha to opaque,
+                // add spinning activity indicators indicating upload progress
+                
+                // 2. if there's a problem with upload, display a user facing error message
+                // 3. when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
+                
+                
+                OperationQueue.main.addOperation {
+                    let cols = 4
+                    let cellWidth = Int(self.view.frame.width / CGFloat(cols))
+                    let xCenter = Int(self.view.frame.width / 2)
+                    let x = Int(xCenter - cellWidth / 2)
+                    let yCenter = Int(self.view.frame.height / 2)
+                    let y = Int(yCenter - cellWidth / 2)
+                    let frame = CGRect(x: x, y: y, width: cellWidth, height: cellWidth)
+                    let meetupRedColor = UIColor(red:0.93, green:0.11, blue:0.25, alpha:1.0) // HEX# ed1c40 http://uicolor.xyz/ this is amazing! :)
                     
-                    self.client.uploadImageData(image: _image, groupName: "iOSoho", eventID: "233132048", completion: { (photosResult) in
-                        OperationQueue.main.addOperation {
-                            
-                        switch photosResult {
-                        case .Success:
-                            self.activityIndicatorView.stopAnimating()
-                        case let .Failure(error):
-                            print("Error fetching recent photos: \(error)")
-                        }
-                        }
+                    self.activityIndicatorView = NVActivityIndicatorView(frame: frame, type: .ballGridPulse, color: meetupRedColor, padding: 0)
+                    self.view.addSubview(self.activityIndicatorView)
+                    self.activityIndicatorView.startAnimating()
+                }
+                
+                self.requestOptions.isSynchronous = true
+                
+                for asset in assets {
+                    self.imageManager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.default, options: self.requestOptions, resultHandler: { (image, properties) in
+                        
+                        guard let _image = image else { return }
+                        
+                        self.client.uploadImageData(image: _image, groupName: "iOSoho", eventID: "233132048", completion: { (photosResult) in
+                            OperationQueue.main.addOperation {
+                                
+                                switch photosResult {
+                                case .Success:
+                                    self.activityIndicatorView.stopAnimating()
+                                    self.photoGalleryDataSource.assets = assets
+                                    self.photoGalleryCollectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
+                                case let .Failure(error):
+                                    print("Error fetching recent photos: \(error)")
+                                }
+                            }
+                        })
                     })
-                })
-            }
-           
-            self.photoGalleryDataSource.assets = assets
-            
-            OperationQueue.main.addOperation {
-                    self.photoGalleryCollectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
-            }
+                }
         }, completion: nil)
     }
-
-
+    
+    
 }
 
 //protocol PreparedUploadDelegate {

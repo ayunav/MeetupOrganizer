@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -172,22 +172,16 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MeetupLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ffS-YR-FrQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="quG-00-jPS">
-                                                    <rect key="frame" x="40" y="40" width="20" height="20"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="quG-00-jPS" firstAttribute="centerY" secondItem="l26-UU-Bvb" secondAttribute="centerY" id="3R1-Mi-QDk"/>
                                             <constraint firstAttribute="bottom" secondItem="ffS-YR-FrQ" secondAttribute="bottom" id="HYH-th-VRA"/>
                                             <constraint firstItem="ffS-YR-FrQ" firstAttribute="top" secondItem="l26-UU-Bvb" secondAttribute="top" id="TdZ-HN-y7L"/>
-                                            <constraint firstItem="quG-00-jPS" firstAttribute="centerX" secondItem="l26-UU-Bvb" secondAttribute="centerX" id="chH-pv-4V5"/>
                                             <constraint firstAttribute="trailing" secondItem="ffS-YR-FrQ" secondAttribute="trailing" id="dRY-nH-uYz"/>
                                             <constraint firstItem="ffS-YR-FrQ" firstAttribute="leading" secondItem="l26-UU-Bvb" secondAttribute="leading" id="fPS-Bh-t4z"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="ffS-YR-FrQ" id="v5m-01-WUN"/>
-                                            <outlet property="spinner" destination="quG-00-jPS" id="q45-oE-MWj"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

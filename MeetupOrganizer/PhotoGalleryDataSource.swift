@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 
+
 class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource
 {
     // MARK: - Properties
