@@ -19,6 +19,8 @@ class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource
 
     var assets: [PHAsset] = []
     
+    
+    
     // MARK: - Data Source Methods
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
@@ -37,5 +39,7 @@ class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource
         
         return cell
     }
+    
+    
     
 }

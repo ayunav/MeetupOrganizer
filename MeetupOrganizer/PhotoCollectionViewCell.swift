@@ -20,6 +20,7 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell
     
     private let thumbnailSize = CGSize(width: 100, height: 100)
     
+   
     var asset: PHAsset?
     {
         didSet

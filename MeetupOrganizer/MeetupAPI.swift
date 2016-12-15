@@ -7,12 +7,18 @@
 //
 
 import UIKit
-import Alamofire
 
 // construct URL to make API requests
 // validate JSON response
 // pass to the Store to convert into Meetup objects ?
 // OR convert into meetup projects , pass to the store the array of objects if validation is successful
+
+enum PhotosResult
+{
+//    case Success([Photo]) // does it pass something ? 
+    case Success()
+    case Failure(Error)
+}
 
 
 struct MeetupAPI
@@ -39,7 +45,7 @@ struct MeetupAPI
 
     // MARK: - Upload Photos
     
-    // Meetup API - Upload Photos - Documentation: http://www.meetup.com/meetup_api/docs/:urlname/events/:event_id/photos/#upload
+    // Documentation: http://www.meetup.com/meetup_api/docs/:urlname/events/:event_id/photos/#upload
 
     mutating func uploadPhotosURLWithComponents(groupName: String?, eventID: String?) -> URL! // bang?
     {
@@ -49,34 +55,18 @@ struct MeetupAPI
     }
 
     
-    mutating func uploadImageData(image: UIImage, groupName: String, eventID: String) // ?
-    {
-        let imageData = UIImageJPEGRepresentation(image, 1.0)
-       
-        // gemma barlow event
-        let url = self.uploadPhotosURLWithComponents(groupName: groupName, eventID: eventID)!
-                
-        Alamofire.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(imageData!, withName: "photo", fileName: "photo.jpeg", mimeType: "image/jpeg")
-            multipartFormData.append("true".data(using: .utf8)!, withName: "await")
-        },
-            to: url,
-            encodingCompletion: { encodingResult in
-                switch encodingResult {
-                case .success(let upload, _, _):
-                    upload.responseJSON { response in
-                        debugPrint(response)
-                    }
-                case .failure(let encodingError):
-                    print(encodingError)
-            }
-        })
-    }
- 
-    
-    
     // MARK: - Events
-
+    
+    // Documentation: https://www.meetup.com/meetup_api/docs/self/events/
+    
+    // https://api.meetup.com/self/events?&sign=true&photo-host=public&page=20&status=upcoming
+    
+    mutating func getEventsURL() -> URL
+    {
+        urlComponents.path = "/self/events"
+        return urlComponents.url!
+    }
+    
     // get authenticated member id
     // pull events of an authenticated member -> events array
     // dispaly events

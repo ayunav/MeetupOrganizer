@@ -11,7 +11,7 @@ import UIKit
 class MyMeetupsTableViewController: UITableViewController {
     
     
-    var store: MeetupStore! // ? var and ! 
+    var store: Client! // ? var and ! 
 
     override func viewDidLoad() {
         super.viewDidLoad()
