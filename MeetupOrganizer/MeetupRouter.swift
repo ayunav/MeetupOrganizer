@@ -1,5 +1,5 @@
 //
-//  MeetupAPI.swift
+//  MeetupRouter.swift
 //  MeetupOrganizer
 //
 //  Created by Ayuna NYC on 11/29/16.
@@ -15,13 +15,12 @@ import UIKit
 
 enum PhotosResult
 {
-//    case Success([Photo]) // does it pass something ? 
     case Success()
     case Failure(Error)
 }
 
 
-struct MeetupAPI
+struct MeetupRouter
 {
     private static let APIKey = "4131436d16334b6c5f3c2b4630685a29"
     private static let baseURLString = "https://api.meetup.com"
@@ -39,7 +38,7 @@ struct MeetupAPI
     {
         urlComponents.scheme = "https"
         urlComponents.host = "api.meetup.com"
-        urlComponents.queryItems = [URLQueryItem(name: "key", value: MeetupAPI.APIKey)]
+        urlComponents.queryItems = [URLQueryItem(name: "key", value: MeetupRouter.APIKey)]
     }
     
 
@@ -67,15 +66,17 @@ struct MeetupAPI
         return urlComponents.url!
     }
     
+
+    
+    
     // get authenticated member id
     // pull events of an authenticated member -> events array
-    // dispaly events
+    // display events
     // event detail vc
     // upload photos
     
     
-    // to get events photos
-    
+    // GET Event's Photos URL 
     let getEventsPhotosURLRequest = "https://api.meetup.com/iOSoho/events/235269311/photos?&sign=true&photo-host=public&page=20&fields=self"
     
     // returns an array of dictionaries

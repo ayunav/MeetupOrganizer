@@ -11,7 +11,7 @@ import UIKit
 class MyMeetupsTableViewController: UITableViewController {
     
     
-    var store: Client! // ? var and ! 
+    var store: MeetupAPI! // ? var and ! 
 
     override func viewDidLoad() {
         super.viewDidLoad()
