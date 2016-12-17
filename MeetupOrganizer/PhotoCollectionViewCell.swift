@@ -10,6 +10,7 @@ import UIKit
 import Photos
 import NVActivityIndicatorView
 
+
 class PhotoGalleryCollectionViewCell: UICollectionViewCell
 {
     @IBOutlet var imageView: UIImageView!
@@ -44,7 +45,7 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell
         if let imageToDisplay = image
         {
 //            activityIndicatorView.stopAnimating()
-            UIActivityIndicatorViewUtils.sharedInstance.hideActivityIndicatorView()
+            UIActivityIndicatorViewUtils.sharedInstance.hideActivityIndicatorInView()
             imageView.image = imageToDisplay
         } else {
 //            activityIndicatorView.startAnimating()
