@@ -1,5 +1,5 @@
 //
-//  Client.swift
+//  MeetupAPI.swift
 //  MeetupOrganizer
 //
 //  Created by Ayuna NYC on 11/29/16.
@@ -9,22 +9,31 @@
 import UIKit
 import Alamofire
 
-class Client
+enum EventsResult
+{
+    case Success([Event])
+    case Failure(Error)
+}
+
+
+class MeetupAPI 
 {
     
     // make the API Call with the URL from API Manager class 
     // let api manager validate json repsonse, get array of objects from the API manager
     // pass to tvc to display in completion closure 
 
+    
+    static let sharedInstance = MeetupAPI()
 
-    var meetupAPI = MeetupAPI() // do i need a property here? struct vs class ?
+    var meetupRouter = MeetupRouter() // do i need a property here? struct vs class ?
     
     
-    func uploadImageData(image: UIImage, groupName: String, eventID: String, completion: @escaping (PhotosResult) -> Void) // ? // add a completion block parameter
+    func uploadImageData(image: UIImage, groupName: String, eventID: String, completion: @escaping (PhotosResult) -> Void)
     {
         let imageData = UIImageJPEGRepresentation(image, 1.0)
         
-        guard let url = meetupAPI.uploadPhotosURLWithComponents(groupName: groupName, eventID: eventID) else { return }
+        guard let url = meetupRouter.uploadPhotosURLWithComponents(groupName: groupName, eventID: eventID) else { return }
         
         Alamofire.upload(
             multipartFormData: { multipartFormData in
@@ -35,7 +44,7 @@ class Client
                 switch encodingResult {
                     case .success(let upload, _, _):
                         upload.responseJSON { response in
-                            // pass completion to eventdetailvc ,
+                            // passing completion to EventDetailVC
                             completion(.Success())
                             debugPrint(response)
                         }
@@ -47,21 +56,55 @@ class Client
     }
     
     
-    func getEvents()
+    
+    func getEvents(completion: @escaping (EventsResult) -> Void)
     {
-        let url = meetupAPI.getEventsURL()
+        let url = meetupRouter.getEventsURL()
         
         Alamofire.request(url).responseJSON(completionHandler: { response in
-            print(response.result)   // result of response serialization
             
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+            guard let validResponse = response.result.value as? [[String : AnyObject]] else { return }
+            print("JSON: \(validResponse)")
+            
+            
+            // pass EventsResult enum .Success
+            
+            //            let result = self.eventsFromJSON(eventsJSON: validResponse)
+            let events = validResponse.flatMap(Event.eventFromJsonDict)
+            //
+            //        var events = [Event]()
+            //
+            //        for eventDict in eventsJSON {
+            //            if let event = (json: eventDict) {
+            //                events.append(event)
+            //            }
+            //
+            //        }
+            //            return
+            if (events.count > 0) {
+                completion(EventsResult.Success(events))
+            } else {
+                //                completion(EventsResult.Failure(nil))
             }
         })
+        
     }
+
     
-    
-    
+    func eventsFromJSON(eventsJSON: [[String : AnyObject]]) -> EventsResult
+    {
+        let events = eventsJSON.flatMap(Event.eventFromJsonDict)
+        //
+        //        var events = [Event]()
+        //
+        //        for eventDict in eventsJSON {
+        //            if let event = (json: eventDict) {
+        //                events.append(event)
+        //            }
+        //
+        //        }
+        return EventsResult.Success(events)
+    }
 
 
 }
