@@ -45,7 +45,7 @@
                                 <connections>
                                     <outlet property="eventDateLabel" destination="SQv-P2-TJo" id="4IY-zG-wnL"/>
                                     <outlet property="eventTitleLabel" destination="ofA-fR-0Pu" id="8lY-Cj-S21"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="2JM-q8-PNf"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowEventDetailVCSegueIdentifier" id="2JM-q8-PNf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="-678" y="-174"/>
         </scene>
-        <!--Event Detail VC-->
+        <!--Event Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Event Detail VC" id="BYZ-38-t0r" customClass="EventDetailViewController" customModule="MeetupOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EventDetailViewController" customModule="MeetupOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
