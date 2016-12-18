@@ -46,11 +46,10 @@ struct MeetupRouter
     
     // Documentation: http://www.meetup.com/meetup_api/docs/:urlname/events/:event_id/photos/#upload
 
-    mutating func uploadPhotosURLWithComponents(groupName: String?, eventID: String?) -> URL! // bang?
+    mutating func uploadPhotosURLWithComponents(groupName: String, eventID: String) -> URL
     {
-        guard let _groupName = groupName, let _eventID = eventID else { return nil } // return nil ?
-        urlComponents.path = "/\(_groupName)/events/\(_eventID)/photos"
-        return urlComponents.url // ? !
+        urlComponents.path = "/\(groupName)/events/\(eventID)/photos"
+        return urlComponents.url!
     }
 
     

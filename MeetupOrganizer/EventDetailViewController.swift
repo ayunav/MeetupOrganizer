@@ -28,7 +28,7 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
 
     var meetupRouter = MeetupRouter()
     
-    let meetupAPI = MeetupAPI()
+    var meetupAPI = MeetupAPI()
 
     
     // MARK: - View Lifecycle

@@ -16,55 +16,51 @@ enum EventsResult
 }
 
 
-class MeetupAPI 
+struct MeetupAPI
 {
     
     // make the API Call with the URL from API Manager class 
     // let api manager validate json repsonse, get array of objects from the API manager
     // pass to tvc to display in completion closure 
 
-    
-    static let sharedInstance = MeetupAPI()
-
-    var meetupRouter = MeetupRouter() // do i need a property here? struct vs class ?
+    var meetupRouter = MeetupRouter()
     
     
-    func uploadImageData(image: UIImage, groupName: String, eventID: String, completion: @escaping (PhotosResult) -> Void)
+    mutating func uploadImageData(image: UIImage, groupName: String, eventID: String, completion: @escaping (PhotosResult) -> Void)
     {
         let imageData = UIImageJPEGRepresentation(image, 1.0)
         
-        guard let url = meetupRouter.uploadPhotosURLWithComponents(groupName: groupName, eventID: eventID) else { return }
+        let url = meetupRouter.uploadPhotosURLWithComponents(groupName: groupName, eventID: eventID)
         
         Alamofire.upload(
             multipartFormData: { multipartFormData in
                 multipartFormData.append(imageData!, withName: "photo", fileName: "photo.jpeg", mimeType: "image/jpeg")
-            },
+        },
             to: url,
             encodingCompletion: { encodingResult in
                 switch encodingResult {
-                    case .success(let upload, _, _):
-                        upload.responseJSON { response in
-                            // passing completion to EventDetailVC
-                            completion(.Success())
-                            debugPrint(response)
-                        }
-                    case .failure(let encodingError):
-                        print(encodingError)
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        // passing completion to EventDetailVC
+                        completion(.Success())
+                        debugPrint(response)
                     }
-            }
-        )
+                case .failure(let encodingError):
+                    print(encodingError)
+                }
+        })
     }
     
     
     
-    func getEvents(completion: @escaping (EventsResult) -> Void)
+    mutating func getEvents(completion: @escaping (EventsResult) -> Void)
     {
         let url = meetupRouter.getEventsURL()
         
         Alamofire.request(url).responseJSON(completionHandler: { response in
             
             guard let validResponse = response.result.value as? [[String : AnyObject]] else { return }
-            print("JSON: \(validResponse)")
+//            print("JSON: \(validResponse)")
             
             
             // pass EventsResult enum .Success
