@@ -30,6 +30,7 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
     
     var meetupAPI = MeetupAPI()
 
+    var event: Event? // how to initialize properties on VC?
     
     // MARK: - View Lifecycle
     
@@ -38,6 +39,10 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
 
         photoGalleryCollectionView.dataSource = photoGalleryDataSource
         photoGalleryCollectionView.delegate = self
+        
+        if let event = event {
+            navigationItem.title = event.title
+        }
     }
 
     
@@ -76,9 +81,11 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
                 for asset in assets {
                     self.imageManager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.default, options: self.requestOptions, resultHandler: { (image, properties) in
                         
-                        guard let _image = image else { return }
-                        
-                        self.meetupAPI.uploadImageData(image: _image, groupName: "iOSoho", eventID: "235624872", completion: { (photosResult) in
+                        guard let _image = image, let groupName = self.event?.group, let _eventId = self.event?.eventId else {
+                            return
+                        }
+                    
+                        self.meetupAPI.uploadImageData(image: _image, groupName: groupName, eventID: _eventId, completion: { (photosResult) in
                             OperationQueue.main.addOperation {
                                 
                                 switch photosResult {

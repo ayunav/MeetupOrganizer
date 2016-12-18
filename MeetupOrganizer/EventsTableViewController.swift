@@ -76,11 +76,17 @@ class EventsTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "ShowEventDetailVCSegueIdentifier" {
+        
+            let eventDetailVC = segue.destination as! EventDetailViewController
             
+            if let selectedIndexPath = tableView.indexPathForSelectedRow?.row {
+            
+                let event = self.events[selectedIndexPath]
+                eventDetailVC.event = event
+            }
         }
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     
 }
