@@ -55,7 +55,7 @@ struct MeetupAPI
     
     mutating func getEvents(completion: @escaping (EventsResult) -> Void)
     {
-        let url = meetupRouter.getEventsURL()
+        let url = meetupRouter.getMyEventsURL()
         
         Alamofire.request(url).responseJSON(completionHandler: { response in
             

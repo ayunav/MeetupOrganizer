@@ -116,8 +116,8 @@
 		D9C7DFFF1DEE10AE00E9B310 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D9F517261DF9F3F100098B8D /* Event.swift */,
 				D9F517241DF9F36600098B8D /* User.swift */,
+				D9F517261DF9F3F100098B8D /* Event.swift */,
 				D9C7DFF91DEE105D00E9B310 /* Meetup.swift */,
 			);
 			name = Models;

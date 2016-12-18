@@ -19,17 +19,20 @@ enum PhotosResult
     case Failure(Error)
 }
 
+enum QueryItem: String
+{
+    case APIKey = "4131436d16334b6c5f3c2b4630685a29"
+    case MemberId = "136388792"  // member_id
+    case RSVP = "yes"  // rsvp
+    case Page = "20"  // results per page
+    case StatusUpcoming = "upcoming"
+    case StatusPast = "past"
+    case Scroll = "recent_past"
+    
+}
 
 struct MeetupRouter
 {
-    private static let APIKey = "4131436d16334b6c5f3c2b4630685a29"
-    private static let baseURLString = "https://api.meetup.com"
-    
-    private static let member_id = "136388792"  // member_id
-    private static let rsvp = "yes"  // rsvp
-    private static let page = "15"  // results per page
-    private static let status = "upcoming"  // past also? comma delimited?
-    
     // MARK: - URL
     
     var urlComponents = URLComponents()
@@ -38,11 +41,12 @@ struct MeetupRouter
     {
         urlComponents.scheme = "https"
         urlComponents.host = "api.meetup.com"
-        urlComponents.queryItems = [URLQueryItem(name: "key", value: MeetupRouter.APIKey)]
+        let apiKey = URLQueryItem(name: "key", value: QueryItem.APIKey.rawValue)
+        urlComponents.queryItems = [apiKey]
     }
     
 
-    // MARK: - Upload Photos
+    // MARK: - Upload Photos URL
     
     // Documentation: http://www.meetup.com/meetup_api/docs/:urlname/events/:event_id/photos/#upload
 
@@ -53,15 +57,28 @@ struct MeetupRouter
     }
 
     
-    // MARK: - Events
+    // MARK: - My Events URL
     
     // Documentation: https://www.meetup.com/meetup_api/docs/self/events/
     
     // https://api.meetup.com/self/events?&sign=true&photo-host=public&page=20&status=upcoming
     
-    mutating func getEventsURL() -> URL
+    mutating func getMyEventsURL() -> URL
     {
         urlComponents.path = "/self/events"
+        
+        let params = [
+            "scroll" : QueryItem.Scroll.rawValue,
+            "page" : QueryItem.Page.rawValue,
+            "rsvp" : QueryItem.RSVP.rawValue,
+            "status" : QueryItem.StatusUpcoming.rawValue
+        ]
+        
+        for (key, value) in params {
+            let queryItem = URLQueryItem(name: key, value: value)
+            urlComponents.queryItems?.append(queryItem)
+        }
+
         return urlComponents.url!
     }
     
