@@ -13,7 +13,6 @@
 		D9C7DFE71DEE0EAD00E9B310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C7DFE51DEE0EAD00E9B310 /* Main.storyboard */; };
 		D9C7DFE91DEE0EAD00E9B310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C7DFE81DEE0EAD00E9B310 /* Assets.xcassets */; };
 		D9C7DFEC1DEE0EAD00E9B310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C7DFEA1DEE0EAD00E9B310 /* LaunchScreen.storyboard */; };
-		D9C7DFF41DEE0F9D00E9B310 /* MyMeetupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFF31DEE0F9D00E9B310 /* MyMeetupsTableViewController.swift */; };
 		D9C7DFF61DEE0FA700E9B310 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFF51DEE0FA700E9B310 /* EventsTableViewController.swift */; };
 		D9C7DFF81DEE0FBA00E9B310 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFF71DEE0FBA00E9B310 /* EventDetailViewController.swift */; };
 		D9C7DFFA1DEE105D00E9B310 /* Meetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFF91DEE105D00E9B310 /* Meetup.swift */; };
@@ -37,7 +36,6 @@
 		D9C7DFE81DEE0EAD00E9B310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9C7DFEB1DEE0EAD00E9B310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9C7DFED1DEE0EAD00E9B310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9C7DFF31DEE0F9D00E9B310 /* MyMeetupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMeetupsTableViewController.swift; sourceTree = "<group>"; };
 		D9C7DFF51DEE0FA700E9B310 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		D9C7DFF71DEE0FBA00E9B310 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		D9C7DFF91DEE105D00E9B310 /* Meetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meetup.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 		D9C7E0001DEE10B500E9B310 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D9C7DFF31DEE0F9D00E9B310 /* MyMeetupsTableViewController.swift */,
 				D9C7DFF51DEE0FA700E9B310 /* EventsTableViewController.swift */,
 				D9C7DFF71DEE0FBA00E9B310 /* EventDetailViewController.swift */,
 			);
@@ -308,7 +305,6 @@
 				D97416371E04E99800586D59 /* EventsTableViewCell.swift in Sources */,
 				D9C7DFF81DEE0FBA00E9B310 /* EventDetailViewController.swift in Sources */,
 				D9F517271DF9F3F100098B8D /* Event.swift in Sources */,
-				D9C7DFF41DEE0F9D00E9B310 /* MyMeetupsTableViewController.swift in Sources */,
 				D9C7DFF61DEE0FA700E9B310 /* EventsTableViewController.swift in Sources */,
 				D9C7DFFA1DEE105D00E9B310 /* Meetup.swift in Sources */,
 				D9C7DFE21DEE0EAD00E9B310 /* AppDelegate.swift in Sources */,
