@@ -13,5 +13,6 @@
 - [iOS Programming: The Big Nerd Ranch Guide by Keur & Hillegass](https://www.bignerdranch.com/we-write/)
 - [Building URLs with NSURLComponents and NSURLQueryItems](https://grokswift.com/building-urls/)
 - [Meetup API](https://www.meetup.com/meetup_api/)
+- [PHImageManager](https://github.com/FlexMonkey/PHImageManagerTwitterDemo)
 - OAuth
 - How to hide your API keys
