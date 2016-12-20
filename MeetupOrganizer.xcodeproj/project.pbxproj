@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		66EE2640373303A06E35173A /* Pods_MeetupOrganizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381890ACB8A1520C3032B146 /* Pods_MeetupOrganizer.framework */; };
 		D97416371E04E99800586D59 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97416361E04E99800586D59 /* EventsTableViewCell.swift */; };
+		D98EFD701E08ECEA00602612 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EFD6F1E08ECEA00602612 /* LoginViewController.swift */; };
+		D98EFD721E09BE9800602612 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EFD711E09BE9800602612 /* Constants.swift */; };
 		D9C7DFE21DEE0EAD00E9B310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFE11DEE0EAD00E9B310 /* AppDelegate.swift */; };
 		D9C7DFE71DEE0EAD00E9B310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C7DFE51DEE0EAD00E9B310 /* Main.storyboard */; };
 		D9C7DFE91DEE0EAD00E9B310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C7DFE81DEE0EAD00E9B310 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		774723EC043831D83128192F /* Pods-MeetupOrganizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupOrganizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupOrganizer/Pods-MeetupOrganizer.debug.xcconfig"; sourceTree = "<group>"; };
 		8DEC5F795204547299471B9B /* Pods-MeetupOrganizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupOrganizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupOrganizer/Pods-MeetupOrganizer.release.xcconfig"; sourceTree = "<group>"; };
 		D97416361E04E99800586D59 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		D98EFD6F1E08ECEA00602612 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D98EFD711E09BE9800602612 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D9C7DFDE1DEE0EAD00E9B310 /* MeetupOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetupOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9C7DFE11DEE0EAD00E9B310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9C7DFE61DEE0EAD00E9B310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 			children = (
 				D9C7E00A1DEFEEC700E9B310 /* UI */,
 				D9C7DFE11DEE0EAD00E9B310 /* AppDelegate.swift */,
+				D98EFD711E09BE9800602612 /* Constants.swift */,
 				D9C7DFFF1DEE10AE00E9B310 /* Models */,
 				D9FEB8F01E02604A00385A0B /* UIActivityIndicatorViewUtils.swift */,
 				D9C7E0091DEFEE8600E9B310 /* Networking */,
@@ -124,6 +129,7 @@
 		D9C7E0001DEE10B500E9B310 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D98EFD6F1E08ECEA00602612 /* LoginViewController.swift */,
 				D9C7DFF51DEE0FA700E9B310 /* EventsTableViewController.swift */,
 				D9C7DFF71DEE0FBA00E9B310 /* EventDetailViewController.swift */,
 			);
@@ -307,8 +313,10 @@
 				D9F517271DF9F3F100098B8D /* Event.swift in Sources */,
 				D9C7DFF61DEE0FA700E9B310 /* EventsTableViewController.swift in Sources */,
 				D9C7DFFA1DEE105D00E9B310 /* Meetup.swift in Sources */,
+				D98EFD721E09BE9800602612 /* Constants.swift in Sources */,
 				D9C7DFE21DEE0EAD00E9B310 /* AppDelegate.swift in Sources */,
 				D9F517201DF7476700098B8D /* PhotoGalleryDataSource.swift in Sources */,
+				D98EFD701E08ECEA00602612 /* LoginViewController.swift in Sources */,
 				D9F517251DF9F36600098B8D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
