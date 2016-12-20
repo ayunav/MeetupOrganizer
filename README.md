@@ -3,8 +3,8 @@
 
 **Acknowledgements**: 
 
-- [Alamofire](https://github.com/Alamofire/Alamofire) HTTP networking library 
-- [CocoaPods NYC Meetup](https://www.meetup.com/CocoaPods-NYC/)
+- [Alamofire](https://github.com/Alamofire/Alamofire) - HTTP networking library 
+- [CocoaPods NYC Meetup](https://www.meetup.com/CocoaPods-NYC/) - peer lab
 - [BSImagePicker](https://github.com/mikaoj/BSImagePicker) - replacement for UIImagePickerController for multiple image selection 
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView) - collection of awesome loading animations
 
