@@ -14,5 +14,5 @@
 - [Building URLs with NSURLComponents and NSURLQueryItems](https://grokswift.com/building-urls/)
 - [Meetup API](https://www.meetup.com/meetup_api/)
 - [PHImageManager](https://github.com/FlexMonkey/PHImageManagerTwitterDemo)
+- [How to hide your API keys](https://gist.github.com/derzorngottes/3b57edc1f996dddcab25)
 - OAuth
-- How to hide your API keys
