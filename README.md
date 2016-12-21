@@ -15,4 +15,5 @@
 - [Meetup API](https://www.meetup.com/meetup_api/)
 - [PHImageManager](https://github.com/FlexMonkey/PHImageManagerTwitterDemo)
 - [How to hide your API keys](https://gist.github.com/derzorngottes/3b57edc1f996dddcab25)
+- [Best Practices for Opening a Web Page Within an App](http://developer.outbrain.com/ios-best-practices-for-opening-a-web-page-within-an-app/)
 - OAuth
