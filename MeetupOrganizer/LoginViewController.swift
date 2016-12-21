@@ -14,19 +14,19 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
         startAuthorization()
     
     }
+
     
     func startAuthorization() {
         
@@ -38,14 +38,10 @@ class LoginViewController: UIViewController {
         authorizationURL += "scope=\(Scope)"
         
         print(authorizationURL)
-        
-//        let request = URLRequest(url: URL(string: authorizationURL)!)
-        
+
         let safariVC = SFSafariViewController(url: URL(string: authorizationURL)!)
         self.present(safariVC, animated: true, completion: nil)
-//        safariVC.delegate = self
-        
-        
+
     }
     
 
