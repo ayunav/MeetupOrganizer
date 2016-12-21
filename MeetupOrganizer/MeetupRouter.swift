@@ -21,7 +21,6 @@ enum PhotosResult
 
 enum QueryItem: String
 {
-    case APIKey = "4131436d16334b6c5f3c2b4630685a29"
     case MemberId = "136388792"  // member_id
     case RSVP = "yes"  // rsvp
     case Page = "20"  // results per page
@@ -41,7 +40,7 @@ struct MeetupRouter
     {
         urlComponents.scheme = "https"
         urlComponents.host = "api.meetup.com"
-        let apiKey = URLQueryItem(name: "key", value: QueryItem.APIKey.rawValue)
+        let apiKey = URLQueryItem(name: "key", value: MeetupAPIKey)
         urlComponents.queryItems = [apiKey]
     }
     

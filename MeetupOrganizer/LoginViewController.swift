@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class LoginViewController: UIViewController {
 
@@ -22,7 +23,29 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        
+        startAuthorization()
     
+    }
+    
+    func startAuthorization() {
+        
+        var authorizationURL = "\(AuthorizationEndpoint)?"
+        authorizationURL += "response_type=\(ResponseType)&"
+        authorizationURL += "client_id=\(OAuthKey)&"
+        authorizationURL += "redirect_uri=\(RedirectURI)&"
+        authorizationURL += "state=\(State)&"
+        authorizationURL += "scope=\(Scope)"
+        
+        print(authorizationURL)
+        
+//        let request = URLRequest(url: URL(string: authorizationURL)!)
+        
+        let safariVC = SFSafariViewController(url: URL(string: authorizationURL)!)
+        self.present(safariVC, animated: true, completion: nil)
+//        safariVC.delegate = self
+        
+        
     }
     
 
