@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YSP-9Y-tDp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zex-Xh-0yu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -59,6 +59,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgO-Oj-Gi3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1510" y="-174"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="QgZ-4V-emc">
+            <objects>
+                <viewController id="Zex-Xh-0yu" customClass="LoginViewController" customModule="MeetupOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Soi-xE-45Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="X7m-qc-0lO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lZb-xW-avd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU3-Rr-l5f">
+                                <rect key="frame" x="124" y="319" width="127" height="30"/>
+                                <state key="normal" title="Login with Meetup"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="Zex-Xh-0yu" eventType="touchUpInside" id="cL4-EY-L1F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DU3-Rr-l5f" firstAttribute="centerX" secondItem="lZb-xW-avd" secondAttribute="centerX" id="Rar-hV-m9f"/>
+                            <constraint firstItem="DU3-Rr-l5f" firstAttribute="centerY" secondItem="lZb-xW-avd" secondAttribute="centerY" id="sHG-cK-Xgc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VoQ-dv-3cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44" y="-174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="drD-Wz-84v">
