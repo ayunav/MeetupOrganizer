@@ -11,16 +11,9 @@ import SafariServices
 import OAuthSwift
 
 
-let kCloseSafariViewControllerNotification = "kCloseSafariViewControllerNotification"
-
-
-class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
+class LoginViewController: UIViewController {
     
-    var safariVC: SFSafariViewController?
-    
-    var meetupRouter = MeetupRouter()
-
-
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,26 +23,7 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
     }
     
     
-    // prepare the request for getting the authorization code, and to load it through a safariVC
-    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-    
-//        var authorizationURL = "\(AuthorizationEndpoint)?"
-//        authorizationURL += "response_type=\(ResponseType)&"
-//        authorizationURL += "client_id=\(OAuthKey)&"
-//        authorizationURL += "redirect_uri=\(RedirectUri)&"
-//        authorizationURL += "state=\(State)&"
-//        authorizationURL += "scope=\(Scope)"
-        
-        
-        
-//        let request = URLRequest(url: URL(string: authorizationURL)!)
-//
-//        let view = UIWebView(frame: self.view.bounds)
-//        self.view.addSubview(view)
-//        
-//        view.loadRequest(request)
-
         
         let oauthswift = OAuth2Swift(
             consumerKey:    OAuthKey,
@@ -60,32 +34,22 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
         )
         
         oauthswift.authorizeURLHandler = SafariURLHandler(viewController: self, oauthSwift: oauthswift)
-
         
-        // callback url: http://oauthswift.herokuapp.com/callback/linkedin2
-
         let _ = oauthswift.authorize(
             withCallbackURL: URL(string: RedirectUri)!,
             scope: Scope, state: State,
             success: { credential, response, parameters in
                 
                 print("\n credential.oauthToken is : \(credential.oauthToken)")
-         
+                
         },
             failure: { error in
                 print(error.localizedDescription)
         }
         )
         
- 
-        
-//        safariVC = SFSafariViewController(url: URL(string: authorizationURL)!)
-//        safariVC!.delegate = self
-//        self.present(safariVC!, animated: false, completion: nil)
     }
     
-    
-
     
     func getEvents() {
         
@@ -152,19 +116,6 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
          */
 
     
-    
-    
-    // MARK: - SFSafariViewControllerDelegate
-    
-    // DO I NEED THIS METHOD? DONE BUTTON AUTOMATICALLY DISMISSES. DO I SEND ANY NOTIFICATIONS ?
-    
-    // Tells the delegate that the user dismmised the view. Called on "Done" button.
-    
-//    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-//        controller.dismiss(animated: true, completion: nil)
-//    }
-    
-
     /*
     // MARK: - Navigation
 
