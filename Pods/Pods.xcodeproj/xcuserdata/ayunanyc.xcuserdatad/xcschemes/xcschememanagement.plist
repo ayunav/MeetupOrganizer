@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>OAuthSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MeetupOrganizer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,6 +62,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4E9CB5FA53E7C59108A3E80AA40371DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6930D5D0C3440426432777093903702D</key>
 		<dict>
 			<key>primary</key>
@@ -72,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A8B1927B7EC4CAFBF70789E8664F7E82</key>
+		<key>B0098DB6389458F0F4BBB8A48DC48FCD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
