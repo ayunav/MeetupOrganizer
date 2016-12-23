@@ -22,9 +22,9 @@
   - [OAuth 2.0 with Swift (Google Drive example)](https://www.raywenderlich.com/99431/oauth-2-with-swift-tutorial) 
   - [SFSafariViewController and OAuth – the Instagram example](http://strawberrycode.com/blog/sfsafariviewcontroller-and-oauth-the-instagram-example/)
   - [OAuth2 iOS Example (Reddit)](https://github.com/reddit/reddit/wiki/OAuth2-iOS-Example)
+  - [Implicit Flow](https://www.oauth.com/oauth2-servers/oauth2-clients/mobile-and-native-apps/)
   - https://github.com/OAuthSwift/OAuthSwift/
   - https://github.com/p2/OAuth2
-  - https://www.oauth.com/oauth2-servers/oauth2-clients/mobile-and-native-apps/
 - SFSafariViewController 
   - https://code.tutsplus.com/tutorials/ios-9-getting-started-with-sfsafariviewcontroller--cms-24260
 - Safari Auth Login
