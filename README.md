@@ -17,15 +17,15 @@
 - [How to hide your API keys](https://gist.github.com/derzorngottes/3b57edc1f996dddcab25)
 - [Best Practices for Opening a Web Page Within an App](http://developer.outbrain.com/ios-best-practices-for-opening-a-web-page-within-an-app/)
 - [Meetup oAuth2](https://www.meetup.com/meetup_api/auth/#oauth2) Documentation 
-- OAuth2
-  - [Integrating LinkedIn Sign In Using OAuth 2.0](https://www.appcoda.com/linkedin-sign-in/) - AppCoda tutorial  
-  - [OAuth 2.0 with Swift](https://www.raywenderlich.com/99431/oauth-2-with-swift-tutorial) - raywenderlich.com tutorial
+- OAuth 2
+  - [Integrating LinkedIn Sign In Using OAuth 2.0](https://www.appcoda.com/linkedin-sign-in/)   
+  - [OAuth 2.0 with Swift (Google Drive example)](https://www.raywenderlich.com/99431/oauth-2-with-swift-tutorial) 
   - [SFSafariViewController and OAuth – the Instagram example](http://strawberrycode.com/blog/sfsafariviewcontroller-and-oauth-the-instagram-example/)
+  - [OAuth2 iOS Example (Reddit)](https://github.com/reddit/reddit/wiki/OAuth2-iOS-Example)
   - https://github.com/OAuthSwift/OAuthSwift/
   - https://github.com/p2/OAuth2
   - https://www.oauth.com/oauth2-servers/oauth2-clients/mobile-and-native-apps/
-  - https://github.com/reddit/reddit/wiki/OAuth2-iOS-Example
-- SFSafariViewController 
+  - SFSafariViewController 
   - https://code.tutsplus.com/tutorials/ios-9-getting-started-with-sfsafariviewcontroller--cms-24260
 - Safari Auth Login
   - http://stackoverflow.com/questions/38252438/using-auth2-0-sfsafariviewcontroller-on-rootviewcontroller
