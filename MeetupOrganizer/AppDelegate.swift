@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OAuthSwift 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,6 +42,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        print("app: \(app)")
+        print("url: \(url)")
+        print("options: \(options)")
+        
+        
+
+        if let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] { // called 3rd
+            
+            if (String(describing: sourceApplication) == "com.apple.mobilesafari") { // called 4th
+                
+                // the url that I get here is: meetuporganizer://oauth-callback/meetup?code=3e9b09ff43b9794df210295b634c3594&state=meetup1482513145
+                
+                //if (url.host == "oauth-callback") { // this doesn't get called
+//                NotificationCenter.default.post(name: Notification.Name(rawValue: kCloseSafariViewControllerNotification), object: url)
+                
+                applicationHandle(url: url)
+                
+//                    OAuthSwift.handle(url: url)
+                //}
+            }
+        }
+        
+        return true
+        
+        
+//        // if (options["UIApplicationOpenURLOptionsSourceApplicationKey"] as? String == "com.apple.SafariViewService") {
+//
+//        
+//        if let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] {
+//            
+//            if (String(describing: sourceApplication) == "com.apple.SafariViewService") {
+//                NotificationCenter.default.post(name: Notification.Name(rawValue: kCloseSafariViewControllerNotification), object: url)
+//                return true
+//            }
+//        }
+//        
+//        return true
+    }
+    
+    
+    func applicationHandle(url: URL) {
+        if (url.host == "oauth-callback") {
+            OAuthSwift.handle(url: url)
+        } else {
+            // Google provider is the only one wuth your.bundle.id url schema.
+            OAuthSwift.handle(url: url)
+        }
+    }
 
 }
 

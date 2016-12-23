@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import OAuthSwift
 
 
 let kCloseSafariViewControllerNotification = "kCloseSafariViewControllerNotification"
@@ -16,6 +17,9 @@ let kCloseSafariViewControllerNotification = "kCloseSafariViewControllerNotifica
 class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
     
     var safariVC: SFSafariViewController?
+    
+    var meetupRouter = MeetupRouter()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,20 +34,89 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
     
-        var authorizationURL = "\(AuthorizationEndpoint)?"
-        authorizationURL += "response_type=\(ResponseType)&"
-        authorizationURL += "client_id=\(OAuthKey)&"
-        authorizationURL += "redirect_uri=\(RedirectUri)&"
-        authorizationURL += "state=\(State)&"
-        authorizationURL += "scope=\(Scope)"
+//        var authorizationURL = "\(AuthorizationEndpoint)?"
+//        authorizationURL += "response_type=\(ResponseType)&"
+//        authorizationURL += "client_id=\(OAuthKey)&"
+//        authorizationURL += "redirect_uri=\(RedirectUri)&"
+//        authorizationURL += "state=\(State)&"
+//        authorizationURL += "scope=\(Scope)"
         
-        safariVC = SFSafariViewController(url: URL(string: authorizationURL)!)
-        safariVC!.delegate = self
-        self.present(safariVC!, animated: false, completion: nil)
+        
+        
+//        let request = URLRequest(url: URL(string: authorizationURL)!)
+//
+//        let view = UIWebView(frame: self.view.bounds)
+//        self.view.addSubview(view)
+//        
+//        view.loadRequest(request)
+
+        
+        let oauthswift = OAuth2Swift(
+            consumerKey:    OAuthKey,
+            consumerSecret: OAuthSecret,
+            authorizeUrl:   AuthorizationEndpoint,
+            accessTokenUrl:  AccessTokenEndpoint,
+            responseType:   ResponseType
+        )
+        
+        //http://oauthswift.herokuapp.com/callback/linkedin2
+
+        let _ = oauthswift.authorize(
+            withCallbackURL: URL(string: "MeetupOrganizer://oauth-callback/meetup")!, // gets called 1st 
+            scope: Scope, state: State,
+            success: { credential, response, parameters in
+                
+                print("\n credential.oauthToken is : \(credential.oauthToken)")
+         
+        },
+            failure: { error in
+                print(error.localizedDescription)
+        }
+        )
+        
+        oauthswift.authorizeURLHandler = SafariURLHandler(viewController: self, oauthSwift: oauthswift) // gets called 2nd
+
+        
+//        safariVC = SFSafariViewController(url: URL(string: authorizationURL)!)
+//        safariVC!.delegate = self
+//        self.present(safariVC!, animated: false, completion: nil)
     }
     
+    
+//    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+//        let url = request.url!
+//        print(url)
+//        
+////        if url.host == "com.meetuporganizer.meetup.oauth" {
+////            if url.absoluteString.rangeOfString("code") != nil {
+////                // Extract the authorization code.
+////                let urlParts = url.absoluteString.componentsSeparatedByString("?")
+////                let code = urlParts[1].componentsSeparatedByString("=")[1]
+////                
+////               // requestForAccessToken(code)
+////            }
+////        }
+//        
+//        return true
+//    }
+    
+
+    
+    func getEvents() {
+        
+//        oauthswift.client.get("https://api.meetup.com/self/events?&sign=true&photo-host=public&page=20",
+//                              success: { response in
+//                                let dataString = response.string
+//                                print(dataString)
+//        },
+//                              failure: { error in
+//                                print(error)
+//        }
+//        )
+       
+    }
         /*
-         
+     
         1.  GET AUTHORIZATION CODE
         // make the request ^^^^ 
         // when user logs in to grant access to their Meetup account to your app, the response should come back in a form of 
