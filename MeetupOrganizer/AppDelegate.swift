@@ -45,15 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        print("app: \(app)")
         print("url: \(url)")
         print("options: \(options)")
+ 
         
-        
-
-        if let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] { // called 3rd
+        if let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] {
             
-            if (String(describing: sourceApplication) == "com.apple.mobilesafari") { // called 4th
+            if (String(describing: sourceApplication) == "com.apple.mobilesafari") {
                 
                 // the url that I get here is: meetuporganizer://oauth-callback/meetup?code=3e9b09ff43b9794df210295b634c3594&state=meetup1482513145
                 
@@ -89,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (url.host == "oauth-callback") {
             OAuthSwift.handle(url: url)
         } else {
-            // Google provider is the only one wuth your.bundle.id url schema.
+            // Google provider is the only one with your.bundle.id url schema.
             OAuthSwift.handle(url: url)
         }
     }

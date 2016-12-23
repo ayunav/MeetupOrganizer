@@ -59,10 +59,13 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
             responseType:   ResponseType
         )
         
-        //http://oauthswift.herokuapp.com/callback/linkedin2
+        oauthswift.authorizeURLHandler = SafariURLHandler(viewController: self, oauthSwift: oauthswift)
+
+        
+        // callback url: http://oauthswift.herokuapp.com/callback/linkedin2
 
         let _ = oauthswift.authorize(
-            withCallbackURL: URL(string: "MeetupOrganizer://oauth-callback/meetup")!, // gets called 1st 
+            withCallbackURL: URL(string: RedirectUri)!,
             scope: Scope, state: State,
             success: { credential, response, parameters in
                 
@@ -74,31 +77,13 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
         }
         )
         
-        oauthswift.authorizeURLHandler = SafariURLHandler(viewController: self, oauthSwift: oauthswift) // gets called 2nd
-
+ 
         
 //        safariVC = SFSafariViewController(url: URL(string: authorizationURL)!)
 //        safariVC!.delegate = self
 //        self.present(safariVC!, animated: false, completion: nil)
     }
     
-    
-//    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-//        let url = request.url!
-//        print(url)
-//        
-////        if url.host == "com.meetuporganizer.meetup.oauth" {
-////            if url.absoluteString.rangeOfString("code") != nil {
-////                // Extract the authorization code.
-////                let urlParts = url.absoluteString.componentsSeparatedByString("?")
-////                let code = urlParts[1].componentsSeparatedByString("=")[1]
-////                
-////               // requestForAccessToken(code)
-////            }
-////        }
-//        
-//        return true
-//    }
     
 
     
@@ -118,11 +103,11 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate {
         /*
      
         1.  GET AUTHORIZATION CODE
-        // make the request ^^^^ 
+        // on the loginButtonTapped make the request to the meetup server to request authorization code,
         // when user logs in to grant access to their Meetup account to your app, the response should come back in a form of 
-        // redirectUri+authorization code + state // linkedin example 
-        
-        // extract the authorization code from the response ^^^ - how?
+        // redirectUri+authorization code + state // example:  meetuporganizer://oauth-callback/meetup?code=3e9b09ff43b9794df210295b634c3594&state=meetup1482513145
+     
+        // extract the authorization code from the response - oauthswift
         
          
         2.  GET THE ACCESS TOKEN
