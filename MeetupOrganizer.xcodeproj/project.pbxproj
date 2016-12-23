@@ -102,11 +102,11 @@
 		D9C7DFE01DEE0EAD00E9B310 /* MeetupOrganizer */ = {
 			isa = PBXGroup;
 			children = (
-				D9C7E00A1DEFEEC700E9B310 /* UI */,
 				D9C7DFE11DEE0EAD00E9B310 /* AppDelegate.swift */,
 				D98EFD711E09BE9800602612 /* Constants.swift */,
-				D9C7DFFF1DEE10AE00E9B310 /* Models */,
 				D9FEB8F01E02604A00385A0B /* UIActivityIndicatorViewUtils.swift */,
+				D9C7E00A1DEFEEC700E9B310 /* UI */,
+				D9C7DFFF1DEE10AE00E9B310 /* Models */,
 				D9C7E0091DEFEE8600E9B310 /* Networking */,
 				D9F5172A1DFB61C600098B8D /* PhotoGallery */,
 				D9F517231DF748B300098B8D /* Views */,
