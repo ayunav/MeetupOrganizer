@@ -20,7 +20,7 @@
 - OAuth2
   - [Integrating LinkedIn Sign In Using OAuth 2.0](https://www.appcoda.com/linkedin-sign-in/) - AppCoda tutorial  
   - [OAuth 2.0 with Swift](https://www.raywenderlich.com/99431/oauth-2-with-swift-tutorial) - raywenderlich.com tutorial
-  - http://strawberrycode.com/blog/sfsafariviewcontroller-and-oauth-the-instagram-example/
+  - [SFSafariViewController and OAuth – the Instagram example](http://strawberrycode.com/blog/sfsafariviewcontroller-and-oauth-the-instagram-example/)
   - https://github.com/OAuthSwift/OAuthSwift/
   - https://github.com/p2/OAuth2
   - https://www.oauth.com/oauth2-servers/oauth2-clients/mobile-and-native-apps/
