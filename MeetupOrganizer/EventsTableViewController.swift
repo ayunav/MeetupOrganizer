@@ -9,11 +9,7 @@
 
 // make request for user's meetups' current and upcoming events that a user has rsvp'ed YES to.
 // Sort by date. Current is displayed first.
-// parse json response into events objects
-// display event name & date
 // wnen a cell is tapped, group name from event and event_id are passed to make a request for event's photos to display varthe Gallery collection view
-
-
 
 // v2: button for past events
 
@@ -50,6 +46,7 @@ class EventsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

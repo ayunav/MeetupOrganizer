@@ -14,9 +14,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+
+        if UserDefaults.standard.object(forKey: MeetupAccessToken) != nil {
+            
+            let eventsTableVC = storyboard.instantiateViewController(withIdentifier: "EventsNavigationViewController")
+            
+            self.window?.rootViewController = eventsTableVC
+            
+        } else {
+            
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            
+            self.window?.rootViewController = loginVC
+        }
+        
         return true
     }
 
@@ -47,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] {
             
-            if (String(describing: sourceApplication) == "com.apple.mobilesafari") {
+            if (String(describing: sourceApplication) == "com.apple.mobilesafari") || (String(describing: sourceApplication) == "com.apple.SafariViewService") {
                 
                 if (url.host == "oauth-callback") {
                  

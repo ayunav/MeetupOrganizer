@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User
+class User // I don't think I need this class 
 {
     var id: String
     
@@ -17,5 +17,4 @@ class User
         self.id = id
     }
     
-    var meetup: Meetup?
 }

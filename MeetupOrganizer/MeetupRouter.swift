@@ -34,8 +34,8 @@ struct MeetupRouter
     
     var urlComponents = URLComponents()
     
-    init()
-    {
+    init() {
+        
         urlComponents.scheme = "https"
         urlComponents.host = "api.meetup.com"
         let apiKey = URLQueryItem(name: "key", value: MeetupApiKey)
@@ -47,8 +47,8 @@ struct MeetupRouter
     
     // Documentation: http://www.meetup.com/meetup_api/docs/:urlname/events/:event_id/photos/#upload
 
-    mutating func uploadPhotosURLWithComponents(groupName: String, eventID: String) -> URL
-    {
+    mutating func uploadPhotosURLWithComponents(groupName: String, eventID: String) -> URL {
+        
         urlComponents.path = "/\(groupName)/events/\(eventID)/photos"
         return urlComponents.url!
     }
@@ -58,13 +58,16 @@ struct MeetupRouter
     
     // Documentation: https://www.meetup.com/meetup_api/docs/self/events/
     
-    // https://api.meetup.com/self/events?&sign=true&photo-host=public&page=20&status=upcoming
+    // https://api.meetup.com/self/events?access_token=2cda10581aa8515ff6395cebcb01572b&photo-host=public&scroll=recent_past&page=20&rsvp=yes&status=upcoming // the right link upcoming events for myself
     
-    mutating func getMyEventsURL() -> URL
-    {
+    mutating func getMyEventsURL() -> URL {
+        
         urlComponents.path = "/self/events"
         
+        let accessToken = UserDefaults.standard.object(forKey: MeetupAccessToken) as! String
+        
         let params = [
+            "access_token" : accessToken,
             "scroll" : QueryItem.Scroll.rawValue,
             "page" : QueryItem.Page.rawValue,
             "rsvp" : QueryItem.RSVP.rawValue,
@@ -80,14 +83,6 @@ struct MeetupRouter
     }
     
 
-    
-    
-    // get authenticated member id
-    // pull events of an authenticated member -> events array
-    // display events
-    // event detail vc
-    // upload photos
-    
     
     // GET Event's Photos URL 
     let getEventsPhotosURLRequest = "https://api.meetup.com/iOSoho/events/235269311/photos?&sign=true&photo-host=public&page=20&fields=self"

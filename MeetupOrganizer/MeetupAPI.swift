@@ -9,15 +9,13 @@
 import UIKit
 import Alamofire
 
-enum EventsResult
-{
+enum EventsResult {
     case Success([Event])
     case Failure(Error)
 }
 
 
-struct MeetupAPI
-{
+struct MeetupAPI {
     
     // make the API Call with the URL from API Manager class 
     // let api manager validate json repsonse, get array of objects from the API manager
@@ -53,8 +51,8 @@ struct MeetupAPI
     
     
     
-    mutating func getEvents(completion: @escaping (EventsResult) -> Void)
-    {
+    mutating func getEvents(completion: @escaping (EventsResult) -> Void) {
+
         let url = meetupRouter.getMyEventsURL()
         
         Alamofire.request(url).responseJSON(completionHandler: { response in
@@ -87,8 +85,8 @@ struct MeetupAPI
     }
 
     
-    func eventsFromJSON(eventsJSON: [[String : AnyObject]]) -> EventsResult
-    {
+    func eventsFromJSON(eventsJSON: [[String : AnyObject]]) -> EventsResult {
+        
         let events = eventsJSON.flatMap(Event.eventFromJsonDict)
         //
         //        var events = [Event]()
