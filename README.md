@@ -25,7 +25,7 @@
   - https://github.com/OAuthSwift/OAuthSwift/
   - https://github.com/p2/OAuth2
   - https://www.oauth.com/oauth2-servers/oauth2-clients/mobile-and-native-apps/
-  - SFSafariViewController 
+- SFSafariViewController 
   - https://code.tutsplus.com/tutorials/ios-9-getting-started-with-sfsafariviewcontroller--cms-24260
 - Safari Auth Login
   - http://stackoverflow.com/questions/38252438/using-auth2-0-sfsafariviewcontroller-on-rootviewcontroller
