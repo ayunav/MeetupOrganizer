@@ -25,6 +25,7 @@
   - [Implicit Flow Example](https://www.oauth.com/oauth2-servers/oauth2-clients/mobile-and-native-apps/) 
   - [OAuthSwift](https://github.com/OAuthSwift/OAuthSwift/) - Swift based OAuth library for iOS and OSX
   - [OAuth2](https://github.com/p2/OAuth2) - OAuth2 frameworks for macOS, iOS and tvOS written in Swift 3.0
+  - [Anatomy of an http URL](http://www.webreference.com/html/tutorial2/2.html)
 - Safari Auth Login
   - http://stackoverflow.com/questions/38252438/using-auth2-0-sfsafariviewcontroller-on-rootviewcontroller
 - SFSafariViewController 
