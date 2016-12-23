@@ -27,7 +27,6 @@
   - [OAuth2](https://github.com/p2/OAuth2) - OAuth2 frameworks for macOS, iOS and tvOS written in Swift 3.0
 - Safari Auth Login
   - http://stackoverflow.com/questions/38252438/using-auth2-0-sfsafariviewcontroller-on-rootviewcontroller
-  - http://stackoverflow.com/questions/38818786/safariviewcontroller-how-to-grab-oauth-token-from-url
 - SFSafariViewController 
   - https://code.tutsplus.com/tutorials/ios-9-getting-started-with-sfsafariviewcontroller--cms-24260
 - WebViews (just in case) 
