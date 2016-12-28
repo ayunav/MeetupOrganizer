@@ -26,7 +26,7 @@ struct MeetupAPI {
     
     mutating func uploadImageData(image: UIImage, groupName: String, eventID: String, completion: @escaping (PhotosResult) -> Void)
     {
-        let imageData = UIImageJPEGRepresentation(image, 1.0)
+        let imageData = UIImageJPEGRepresentation(image, 0.9)
         
         let url = meetupRouter.uploadPhotosURLWithComponents(groupName: groupName, eventID: eventID)
         

@@ -45,6 +45,13 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         
+        
+        // TODO: performsegue for eventstablevc
+        // kick off auth dance on eventstableVC
+        // when accessToken is received, make request for events, 
+        // when events response is received, add segm control and tableview programmatically, and populate the tableview with data 
+        
+        
         // kick off authorization request, open in SFSafariVC, get authorization code with the redirectUri, extract code, and request for the access token
         
         let oauthswift = OAuth2Swift(
@@ -55,10 +62,14 @@ class LoginViewController: UIViewController {
             responseType:   ResponseType
         )
         
+        // auth config
         self.oauthswift = oauthswift
         
+        // opens SFSafariVC to request redirectUri
         oauthswift.authorizeURLHandler = SafariURLHandler(viewController: self, oauthSwift: oauthswift)
         
+        
+        // callBackURL sends a notification from the app delegate when the redirectUri is received, dismisses, safariVC to open back in the app by handling the url (redirectUri) in the loginVC
         // get access token from the redirectUri 
         let _ = oauthswift.authorize(
             withCallbackURL: URL(string: RedirectUri)!,
@@ -67,6 +78,17 @@ class LoginViewController: UIViewController {
 
                 UserDefaults.standard.set(credential.oauthToken, forKey: MeetupAccessToken)
                 UserDefaults.standard.synchronize()
+                
+                OperationQueue.main.addOperation {
+                    self.performSegue(withIdentifier: "ShowEventsTableVCSegueIdentifier", sender: nil)
+                }
+               
+//                let eventsTableVC = EventsTableViewController()
+                
+//                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+//                let eventsTableVC = storyboard.instantiateViewController(withIdentifier: "EventsNavigationViewController")
+//                self.window?.rootViewController = eventsTableVC
+
                 
         },
             failure: { error in

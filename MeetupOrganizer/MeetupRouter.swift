@@ -57,9 +57,7 @@ struct MeetupRouter
     // MARK: - My Events URL
     
     // Documentation: https://www.meetup.com/meetup_api/docs/self/events/
-    
-    // https://api.meetup.com/self/events?access_token=2cda10581aa8515ff6395cebcb01572b&photo-host=public&scroll=recent_past&page=20&rsvp=yes&status=upcoming // the right link upcoming events for myself
-    
+        
     mutating func getMyEventsURL() -> URL {
         
         urlComponents.path = "/self/events"

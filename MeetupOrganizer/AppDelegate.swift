@@ -66,6 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if (url.host == "oauth-callback") {
                  
                     OAuthSwift.handle(url: url)
+                    // dismisses safariVC
+                    // loginVC viewdidLoad method is called 
+                    // handle url method sends the redirect uri + authorization code to the callback in authorize method in oathswift.authorize -> extracts access token
+                    
                 }
             }
         }
