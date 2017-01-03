@@ -13,7 +13,7 @@
         <!--Events-->
         <scene sceneID="cie-MR-gIc">
             <objects>
-                <tableViewController storyboardIdentifier="EventsTableViewController" title="Events" id="84z-PG-dXc" customClass="EventsTableViewController" customModule="MeetupOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Events" id="84z-PG-dXc" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5bK-KO-tb1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,17 +113,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="84z-PG-dXc" kind="relationship" relationship="rootViewController" id="fJF-Fs-mlo"/>
+                        <segue destination="hce-a8-rRz" kind="relationship" relationship="rootViewController" id="zRv-O2-i6a"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvg-h9-Wmm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="766" y="-174"/>
         </scene>
-        <!--Event Detail View Controller-->
+        <!--Add Photos View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="EventDetailViewController" customModule="MeetupOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPhotosViewController" id="BYZ-38-t0r" customClass="AddPhotosViewController" customModule="MeetupOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -133,7 +133,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ior-Bk-dzX">
-                                <rect key="frame" x="265" y="72" width="94" height="34"/>
+                                <rect key="frame" x="265" y="28" width="94" height="34"/>
                                 <state key="normal" title="Add Photos">
                                     <color key="titleColor" red="0.8784313725490196" green="0.22352941176470587" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -142,7 +142,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3rn-32-SPW">
-                                <rect key="frame" x="16" y="114" width="343" height="553"/>
+                                <rect key="frame" x="16" y="70" width="343" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="4wO-d1-Btg">
                                     <size key="itemSize" width="100" height="100"/>
@@ -176,7 +176,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqV-BN-2iU">
-                                <rect key="frame" x="16" y="72" width="60" height="34"/>
+                                <rect key="frame" x="16" y="28" width="60" height="34"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Gallery">
                                         <attributes>
@@ -209,6 +209,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2212" y="-174.06296851574214"/>
+        </scene>
+        <!--Events Table View Controller-->
+        <scene sceneID="W0B-yE-muC">
+            <objects>
+                <viewController storyboardIdentifier="EventsTableViewController" id="hce-a8-rRz" customClass="EventsTableViewController" customModule="MeetupOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UMr-La-o5p"/>
+                        <viewControllerLayoutGuide type="bottom" id="BkW-af-WhY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KPI-Cp-pjY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q2M-dd-TJM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="poF-Cl-392" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1510" y="624"/>
         </scene>
     </scenes>
     <resources>
