@@ -1,5 +1,5 @@
 //
-//  EventDetailViewController.swift
+//  AddPhotosViewController.swift
 //  MeetupOrganizer
 //
 //  Created by Ayuna NYC on 11/29/16.
@@ -15,7 +15,7 @@ import NVActivityIndicatorView
 
 // display placeholder image in the gallery collection view? 
 
-class EventDetailViewController: UIViewController, UICollectionViewDelegate {
+class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var addPhotosButton: UIButton!
     
