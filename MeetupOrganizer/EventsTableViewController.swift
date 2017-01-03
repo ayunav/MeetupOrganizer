@@ -23,22 +23,37 @@ class EventsTableViewController: UITableViewController {
     var events: [Event] = []
     
     var meetupAPI = MeetupAPI()
+    
+    
+    
+    override func loadView() {
+        super.loadView()
+        
+        // initialize segmented control
+        let items = ["Upcoming", "Past"]
+        let segmentedControl = UISegmentedControl(items: items)
+        segmentedControl.selectedSegmentIndex = 0
+        
+        // set the frame 
+        let frame = UIScreen.main.bounds
+        // 10% of the height of the screen
+        segmentedControl.frame = CGRect(x: frame.minX + 10, y: frame.minY + 50, width: frame.width - 50, height: frame.height * 0.1)
+        
+        // style segmented control (optional)
+            // add later
+        
+        
+        // add target action method 
+        segmentedControl.addTarget(self, action: Selector(("fetchEvents:")), for: .valueChanged)
+        
+        self.view.addSubview(segmentedControl)
+    }
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        meetupAPI.getEvents() { (eventsResult) -> Void in
-            OperationQueue.main.addOperation {
-                switch eventsResult {
-                case let .Success(_events):
-                    self.events = _events
-                    self.tableView.reloadData()
-                case let .Failure(error):
-                    print("Error fetching meetup events: \(error)")
-                }
-            }
-        }
     }
 
     
@@ -52,6 +67,39 @@ class EventsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
+    
+    func fetchEvents(sender: UISegmentedControl)
+    {
+        switch sender.selectedSegmentIndex {
+        case 1:
+            getPastEvents()
+        default:
+            getUpcomingEvents()
+        }
+    }
+    
+    
+    // for now
+    func getUpcomingEvents()
+    {
+        meetupAPI.getEvents() { (eventsResult) -> Void in
+            OperationQueue.main.addOperation {
+                switch eventsResult {
+                case let .Success(_events):
+                    self.events = _events
+                    self.tableView.reloadData()
+                case let .Failure(error):
+                    print("Error fetching meetup events: \(error)")
+                }
+            }
+        }
+    }
+    
+    
+    func getPastEvents()
+    {
+        
+    }
     
     // MARK: - Table view data source
 
