@@ -9,7 +9,6 @@
 
 // make request for user's meetups' current and upcoming events that a user has rsvp'ed YES to.
 // Sort by date. Current is displayed first.
-// wnen a cell is tapped, group name from event and event_id are passed to make a request for event's photos to display varthe Gallery collection view
 
 // v2: button for past events
 
@@ -42,6 +41,13 @@ class EventsTableViewController: UITableViewController {
         }
     }
 
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
