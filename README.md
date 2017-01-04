@@ -30,13 +30,13 @@
 
 **TO-DO:** 
 
-- oAuth glitch fix 
 - table view custom cell 
 - date formatter 
-- improve response time on fetching upcoming and past events
 - beautify collection view photo gallery  
 - on navigation to addPhotosVC display photos that are already on the server (fetch photos, display in the col view)
 - when uploading new photos, add new photos to the col view 
+- improve response time on fetching upcoming and past events
+- oAuth glitch fix 
 - handle errors, create user facing alerts
 - nit: request access to photos on add photos button tapped, not on vc navigation 
 
