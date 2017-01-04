@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A8B1927B7EC4CAFBF70789E8664F7E82"
+               BlueprintIdentifier = "B0098DB6389458F0F4BBB8A48DC48FCD"
                BuildableName = "Pods_MeetupOrganizer.framework"
                BlueprintName = "Pods-MeetupOrganizer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A8B1927B7EC4CAFBF70789E8664F7E82"
+            BlueprintIdentifier = "B0098DB6389458F0F4BBB8A48DC48FCD"
             BuildableName = "Pods_MeetupOrganizer.framework"
             BlueprintName = "Pods-MeetupOrganizer"
             ReferencedContainer = "container:Pods.xcodeproj">

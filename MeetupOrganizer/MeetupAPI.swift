@@ -9,15 +9,14 @@
 import UIKit
 import Alamofire
 
-enum EventsResult
-{
+
+enum EventsResult {
     case Success([Event])
     case Failure(Error)
 }
 
 
-struct MeetupAPI
-{
+struct MeetupAPI {
     
     // make the API Call with the URL from API Manager class 
     // let api manager validate json repsonse, get array of objects from the API manager
@@ -28,7 +27,7 @@ struct MeetupAPI
     
     mutating func uploadImageData(image: UIImage, groupName: String, eventID: String, completion: @escaping (PhotosResult) -> Void)
     {
-        let imageData = UIImageJPEGRepresentation(image, 1.0)
+        let imageData = UIImageJPEGRepresentation(image, 0.9)
         
         let url = meetupRouter.uploadPhotosURLWithComponents(groupName: groupName, eventID: eventID)
         
@@ -53,15 +52,14 @@ struct MeetupAPI
     
     
     
-    mutating func getEvents(completion: @escaping (EventsResult) -> Void)
-    {
-        let url = meetupRouter.getMyEventsURL()
+    mutating func getUpcomingEvents(completion: @escaping (EventsResult) -> Void) {
+
+        let url = meetupRouter.myUpcomingEventsURL()
         
         Alamofire.request(url).responseJSON(completionHandler: { response in
             
             guard let validResponse = response.result.value as? [[String : AnyObject]] else { return }
-//            print("JSON: \(validResponse)")
-            
+
             
             // pass EventsResult enum .Success
             
@@ -87,8 +85,28 @@ struct MeetupAPI
     }
 
     
-    func eventsFromJSON(eventsJSON: [[String : AnyObject]]) -> EventsResult
-    {
+    mutating func getPastEvents(completion: @escaping (EventsResult) -> Void) {
+        
+        let url = meetupRouter.myPastEventsURL()
+          
+        Alamofire.request(url).responseJSON(completionHandler: { response in
+            
+            guard let validResponse = response.result.value as? [[String : AnyObject]] else { return }
+
+            let events = validResponse.flatMap(Event.eventFromJsonDict)
+            
+            if (events.count > 0) {
+                completion(EventsResult.Success(events))
+            } else {
+                //                completion(EventsResult.Failure(nil))
+            }
+        })
+        
+    }
+
+    
+    func eventsFromJSON(eventsJSON: [[String : AnyObject]]) -> EventsResult {
+        
         let events = eventsJSON.flatMap(Event.eventFromJsonDict)
         //
         //        var events = [Event]()

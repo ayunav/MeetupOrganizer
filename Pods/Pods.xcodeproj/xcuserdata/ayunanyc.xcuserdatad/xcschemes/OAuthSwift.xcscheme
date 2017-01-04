@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6930D5D0C3440426432777093903702D'
-               BlueprintName = 'BSGridCollectionViewLayout'
+               BlueprintIdentifier = '4E9CB5FA53E7C59108A3E80AA40371DE'
+               BlueprintName = 'OAuthSwift'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'BSGridCollectionViewLayout.framework'>
+               BuildableName = 'OAuthSwift.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

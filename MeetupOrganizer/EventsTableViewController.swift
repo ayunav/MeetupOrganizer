@@ -6,62 +6,100 @@
 //  Copyright © 2016 Ayuna NYC. All rights reserved.
 //
 
-
-// make request for user's meetups' current and upcoming events that a user has rsvp'ed YES to.
-// Sort by date. Current is displayed first.
-// parse json response into events objects
-// display event name & date
-// wnen a cell is tapped, group name from event and event_id are passed to make a request for event's photos to display varthe Gallery collection view
-
-
-
-// v2: button for past events
-
-
-
 import UIKit
 
-class EventsTableViewController: UITableViewController {
+class EventsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let CellIdentifier = "EventsTableViewCellIdentifier"
 
     var events: [Event] = []
     
     var meetupAPI = MeetupAPI()
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var eventsTableView: UITableView!
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        meetupAPI.getEvents() { (eventsResult) -> Void in
+        self.navigationItem.title = "My Events"
+        
+        eventsTableView.delegate = self
+        eventsTableView.dataSource = self
+        
+        fetchEvents(sender: segmentedControl)
+    }
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    
+    @IBAction func fetchEvents(sender: UISegmentedControl)
+    {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            getUpcomingEvents()
+        case 1:
+            getPastEvents()
+        default:
+            break;
+        }
+    }
+    
+    
+    func getUpcomingEvents()
+    {
+        meetupAPI.getUpcomingEvents() { (eventsResult) -> Void in
             OperationQueue.main.addOperation {
                 switch eventsResult {
                 case let .Success(_events):
                     self.events = _events
-                    self.tableView.reloadData()
+                    self.eventsTableView.reloadData()
                 case let .Failure(error):
                     print("Error fetching meetup events: \(error)")
                 }
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    
+    func getPastEvents()
+    {
+        meetupAPI.getPastEvents() { (eventsResult) -> Void in
+            OperationQueue.main.addOperation {
+                switch eventsResult {
+                case let .Success(_events):
+                    self.events = _events
+                    self.eventsTableView.reloadData()
+                case let .Failure(error):
+                    print("Error fetching meetup events: \(error)")
+                }
+            }
+        }
     }
-
+    
+    
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier, for: indexPath) as! EventsTableViewCell
 
         let event = events[indexPath.row]
@@ -74,19 +112,35 @@ class EventsTableViewController: UITableViewController {
 
     
     // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "ShowEventDetailVCSegueIdentifier" {
-        
-            let eventDetailVC = segue.destination as! EventDetailViewController
-            
-            if let selectedIndexPath = tableView.indexPathForSelectedRow?.row {
-            
-                let event = self.events[selectedIndexPath]
-                eventDetailVC.event = event
-            }
-        }
-    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let eventDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "AddPhotosViewController")
+            as? AddPhotosViewController
+        
+        if let selectedIndexPath = eventsTableView.indexPathForSelectedRow?.row {
+            
+            let event = self.events[selectedIndexPath]
+            eventDetailVC?.event = event
+        }
+        
+        self.navigationController?.pushViewController(eventDetailVC!, animated: true)
+    }
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        if segue.identifier == "ShowEventDetailVCSegueIdentifier" {
+//        
+//            let eventDetailVC = segue.destination as! AddPhotosViewController
+//            
+//            if let selectedIndexPath = eventsTableView.indexPathForSelectedRow?.row {
+//            
+//                let event = self.events[selectedIndexPath]
+//                eventDetailVC.event = event
+//            }
+//        }
+//    }
+    
+    
+   
 }
