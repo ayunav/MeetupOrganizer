@@ -112,6 +112,20 @@ class EventsTableViewController: UIViewController, UITableViewDelegate, UITableV
 
     
     // MARK: - Navigation
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let eventDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "AddPhotosViewController")
+            as? AddPhotosViewController
+        
+        if let selectedIndexPath = eventsTableView.indexPathForSelectedRow?.row {
+            
+            let event = self.events[selectedIndexPath]
+            eventDetailVC?.event = event
+        }
+        
+        self.navigationController?.pushViewController(eventDetailVC!, animated: true)
+    }
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        
@@ -128,17 +142,5 @@ class EventsTableViewController: UIViewController, UITableViewDelegate, UITableV
 //    }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        let eventDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "AddPhotosViewController")
-            as? AddPhotosViewController
-        
-        if let selectedIndexPath = eventsTableView.indexPathForSelectedRow?.row {
-            
-            let event = self.events[selectedIndexPath]
-            eventDetailVC?.event = event
-        }
-       
-        self.navigationController?.pushViewController(eventDetailVC!, animated: true)
-    }
+   
 }

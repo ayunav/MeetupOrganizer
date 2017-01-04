@@ -8,16 +8,13 @@
 
 import UIKit
 
-// construct URL to make API requests
-// validate JSON response
-// pass to the Store to convert into Meetup objects ?
-// OR convert into meetup projects , pass to the store the array of objects if validation is successful
 
 enum PhotosResult
 {
     case Success()
     case Failure(Error)
 }
+
 
 enum QueryItem: String
 {
@@ -27,6 +24,7 @@ enum QueryItem: String
     case StatusPast = "past"
     case Scroll = "recent_past"    
 }
+
 
 struct MeetupRouter
 {
@@ -38,8 +36,6 @@ struct MeetupRouter
         
         urlComponents.scheme = "https"
         urlComponents.host = "api.meetup.com"
-        let apiKey = URLQueryItem(name: "key", value: MeetupApiKey)
-        urlComponents.queryItems = [apiKey]
     }
     
 
@@ -50,6 +46,9 @@ struct MeetupRouter
     mutating func uploadPhotosURLWithComponents(groupName: String, eventID: String) -> URL {
         
         urlComponents.path = "/\(groupName)/events/\(eventID)/photos"
+        let apiKey = URLQueryItem(name: "key", value: MeetupApiKey)
+        urlComponents.queryItems = [apiKey]
+
         return urlComponents.url!
     }
 
@@ -57,48 +56,48 @@ struct MeetupRouter
     // MARK: - My Events URL
     
     // Documentation: https://www.meetup.com/meetup_api/docs/self/events/
-        
-    mutating func getUpcomingEventsURL() -> URL {
-        
+    
+    private mutating func myEventsURL(parameters: [String: String]?) -> URL {
+       
         urlComponents.path = "/self/events"
         
         let accessToken = UserDefaults.standard.object(forKey: MeetupAccessToken) as! String
         
-        let params = [
+        var queryItems = [URLQueryItem]()
+        
+        let baseParams = [
             "access_token" : accessToken,
             "scroll" : QueryItem.Scroll.rawValue,
             "page" : QueryItem.Page.rawValue,
-            "rsvp" : QueryItem.RSVP.rawValue,
-            "status" : QueryItem.StatusUpcoming.rawValue
+            "rsvp" : QueryItem.RSVP.rawValue
         ]
         
-        for (key, value) in params {
+        for (key, value) in baseParams {
             let queryItem = URLQueryItem(name: key, value: value)
-            urlComponents.queryItems?.append(queryItem)
+            queryItems.append(queryItem)
         }
-
+        
+        if let extraParams = parameters {
+            for (key, value) in extraParams {
+                let queryItem = URLQueryItem(name: key, value: value)
+                queryItems.append(queryItem)
+            }
+        }
+        
+        urlComponents.queryItems = queryItems
+        
         return urlComponents.url!
     }
     
-    mutating func getPastEventsURL() -> URL {
-        
-        urlComponents.path = "/self/events"
-        
-        let accessToken = UserDefaults.standard.object(forKey: MeetupAccessToken) as! String
-        
-        let params = [
-            "access_token" : accessToken,
-            "scroll" : QueryItem.Scroll.rawValue,
-            "page" : QueryItem.Page.rawValue,
-            "rsvp" : QueryItem.RSVP.rawValue,
-            "status" : QueryItem.StatusPast.rawValue
-        ]
-        
-        for (key, value) in params {
-            let queryItem = URLQueryItem(name: key, value: value)
-            urlComponents.queryItems?.append(queryItem)
-        }
-        
-        return urlComponents.url!
+    
+    mutating func myUpcomingEventsURL() -> URL
+    {
+        return myEventsURL(parameters: ["status": QueryItem.StatusUpcoming.rawValue])
+    }
+    
+    
+    mutating func myPastEventsURL() -> URL
+    {
+        return myEventsURL(parameters: ["status": QueryItem.StatusPast.rawValue])
     }
 }

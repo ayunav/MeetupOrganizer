@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+
 enum EventsResult {
     case Success([Event])
     case Failure(Error)
@@ -53,13 +54,12 @@ struct MeetupAPI {
     
     mutating func getUpcomingEvents(completion: @escaping (EventsResult) -> Void) {
 
-        let url = meetupRouter.getUpcomingEventsURL()
+        let url = meetupRouter.myUpcomingEventsURL()
         
         Alamofire.request(url).responseJSON(completionHandler: { response in
             
             guard let validResponse = response.result.value as? [[String : AnyObject]] else { return }
-//            print("JSON: \(validResponse)")
-            
+
             
             // pass EventsResult enum .Success
             
@@ -87,8 +87,8 @@ struct MeetupAPI {
     
     mutating func getPastEvents(completion: @escaping (EventsResult) -> Void) {
         
-        let url = meetupRouter.getPastEventsURL()
-        
+        let url = meetupRouter.myPastEventsURL()
+          
         Alamofire.request(url).responseJSON(completionHandler: { response in
             
             guard let validResponse = response.result.value as? [[String : AnyObject]] else { return }
