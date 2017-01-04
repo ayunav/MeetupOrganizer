@@ -58,9 +58,7 @@ class EventsTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     func getUpcomingEvents()
     {
-        print("\n UPCOMING Events segmented control was tapped!!!!!!")
-
-        meetupAPI.getEvents() { (eventsResult) -> Void in
+        meetupAPI.getUpcomingEvents() { (eventsResult) -> Void in
             OperationQueue.main.addOperation {
                 switch eventsResult {
                 case let .Success(_events):
@@ -76,8 +74,7 @@ class EventsTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     func getPastEvents()
     {
-        print("\nPast Events segmented control was tapped!!!!!!")
-        meetupAPI.getEvents() { (eventsResult) -> Void in
+        meetupAPI.getPastEvents() { (eventsResult) -> Void in
             OperationQueue.main.addOperation {
                 switch eventsResult {
                 case let .Success(_events):
