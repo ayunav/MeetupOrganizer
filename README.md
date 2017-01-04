@@ -26,6 +26,23 @@
   - [Implicit Flow Example](https://www.oauth.com/oauth2-servers/oauth2-clients/mobile-and-native-apps/)
   - [OAuth2](https://github.com/p2/OAuth2) - OAuth2 frameworks for macOS, iOS and tvOS written in Swift 3.0
   - [Anatomy of an http URL](http://www.webreference.com/html/tutorial2/2.html)
+  
+
+**TO-DO:** 
+
+- oAuth glitch fix 
+- table view custom cell 
+- date formatter 
+- improve response time on fetching upcoming and past events 
+- customize segmented control 
+- beautify collection view photo gallery  
+- on navigation to addPhotosVC display photos that are already on the server (fetch photos, display in the col view)
+- when uploading new photos, add new photos to the col view 
+- handle errors, create user facing alerts
+- nit: request access to photos on add photos button tapped, not on vc navigation 
+
+**Unused resources:**
+
 - [Adding a segmented control programmatically](http://www.richardhsu.me/posts/2015/01/26/segmented-control.html)
 - https://www.raywenderlich.com/92667/securing-ios-data-keychain-touch-id-1password
 - https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
