@@ -33,8 +33,7 @@
 - oAuth glitch fix 
 - table view custom cell 
 - date formatter 
-- improve response time on fetching upcoming and past events 
-- customize segmented control 
+- improve response time on fetching upcoming and past events
 - beautify collection view photo gallery  
 - on navigation to addPhotosVC display photos that are already on the server (fetch photos, display in the col view)
 - when uploading new photos, add new photos to the col view 
