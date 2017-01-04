@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import OAuthSwift 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+
+        if UserDefaults.standard.object(forKey: MeetupAccessToken) != nil {
+            
+            let eventsTableVC = storyboard.instantiateViewController(withIdentifier: "EventsNavigationViewController")
+            
+            self.window?.rootViewController = eventsTableVC
+            
+        } else {
+            
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            
+            self.window?.rootViewController = loginVC
+        }
+        
         return true
     }
 
@@ -41,6 +56,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] {
+            
+            if (String(describing: sourceApplication) == "com.apple.mobilesafari") || (String(describing: sourceApplication) == "com.apple.SafariViewService") {
+                
+                if (url.host == "oauth-callback") {
+                 
+                    OAuthSwift.handle(url: url)
+                    // dismisses safariVC
+                    // loginVC viewdidLoad method is called 
+                    // handle url method sends the redirect uri + authorization code to the callback in authorize method in oathswift.authorize -> extracts access token
+                    
+                }
+            }
+        }
+        
+        return true
+    }
 
+    
 }
 

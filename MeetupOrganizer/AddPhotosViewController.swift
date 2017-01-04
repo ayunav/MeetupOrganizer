@@ -1,5 +1,5 @@
 //
-//  EventDetailViewController.swift
+//  AddPhotosViewController.swift
 //  MeetupOrganizer
 //
 //  Created by Ayuna NYC on 11/29/16.
@@ -15,7 +15,7 @@ import NVActivityIndicatorView
 
 // display placeholder image in the gallery collection view? 
 
-class EventDetailViewController: UIViewController, UICollectionViewDelegate {
+class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var addPhotosButton: UIButton!
     
@@ -40,6 +40,8 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
         photoGalleryCollectionView.dataSource = photoGalleryDataSource
         photoGalleryCollectionView.delegate = self
         
+        // need to figure out how to kick off request access to photos on addPhotosButtonTapped, not on the view did load. Moving this ^^^ (datasource and delegate to addPhotosButtonTapped) doesn't affect it
+        
         if let event = event {
             navigationItem.title = event.title
         }
@@ -48,8 +50,10 @@ class EventDetailViewController: UIViewController, UICollectionViewDelegate {
     
     // MARK: - Actions
     
-    @IBAction func addPhotosButtonTapped(_ sender: UIButton)
-    {
+    @IBAction func addPhotosButtonTapped(_ sender: UIButton) {
+        
+        // how to prompt request access to photos on specific action not when this screen opens
+        
         let imagePickerVC = BSImagePickerViewController()
         
         bs_presentImagePickerController(imagePickerVC,
