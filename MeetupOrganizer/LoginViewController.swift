@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
         // when events response is received, add segm control and tableview programmatically, and populate the tableview with data
          */
 
-        performSegue(withIdentifier: "ShowEventsTableVCSegueIdentifier", sender: nil)
+        //performSegue(withIdentifier: "ShowEventsTableVCSegueIdentifier", sender: nil)
 
         /* kick off authorization request, open in SFSafariVC, get authorization code with the redirectUri, extract code, and request for the access token */
         
