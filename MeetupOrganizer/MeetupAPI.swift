@@ -51,9 +51,9 @@ struct MeetupAPI {
     
     
     
-    mutating func getEvents(completion: @escaping (EventsResult) -> Void) {
+    mutating func getUpcomingEvents(completion: @escaping (EventsResult) -> Void) {
 
-        let url = meetupRouter.getMyEventsURL()
+        let url = meetupRouter.getUpcomingEventsURL()
         
         Alamofire.request(url).responseJSON(completionHandler: { response in
             
@@ -75,6 +75,26 @@ struct MeetupAPI {
             //
             //        }
             //            return
+            if (events.count > 0) {
+                completion(EventsResult.Success(events))
+            } else {
+                //                completion(EventsResult.Failure(nil))
+            }
+        })
+        
+    }
+
+    
+    mutating func getPastEvents(completion: @escaping (EventsResult) -> Void) {
+        
+        let url = meetupRouter.getPastEventsURL()
+        
+        Alamofire.request(url).responseJSON(completionHandler: { response in
+            
+            guard let validResponse = response.result.value as? [[String : AnyObject]] else { return }
+
+            let events = validResponse.flatMap(Event.eventFromJsonDict)
+            
             if (events.count > 0) {
                 completion(EventsResult.Success(events))
             } else {
