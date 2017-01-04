@@ -27,3 +27,4 @@
   - [OAuth2](https://github.com/p2/OAuth2) - OAuth2 frameworks for macOS, iOS and tvOS written in Swift 3.0
   - [Anatomy of an http URL](http://www.webreference.com/html/tutorial2/2.html)
 - [Adding a segmented control programmatically](http://www.richardhsu.me/posts/2015/01/26/segmented-control.html)
+https://www.raywenderlich.com/92667/securing-ios-data-keychain-touch-id-1password
