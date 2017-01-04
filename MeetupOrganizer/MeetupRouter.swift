@@ -58,7 +58,7 @@ struct MeetupRouter
     
     // Documentation: https://www.meetup.com/meetup_api/docs/self/events/
         
-    mutating func getMyEventsURL() -> URL {
+    mutating func getUpcomingEventsURL() -> URL {
         
         urlComponents.path = "/self/events"
         
@@ -80,18 +80,25 @@ struct MeetupRouter
         return urlComponents.url!
     }
     
-
-    
-    // GET Event's Photos URL 
-    let getEventsPhotosURLRequest = "https://api.meetup.com/iOSoho/events/235269311/photos?&sign=true&photo-host=public&page=20&fields=self"
-    
-    // returns an array of dictionaries
-    // each dictionary contains: https://api.meetup.com/iOSoho/events/235269311/photos?photo-host=public&page=20&sig_id=136388792&fields=self&sig=cab57496b1a0feac30138e37029d9f5e8ea3a3e2
-    //        / id: 456316179,
-    //    highres_link: "http://photos1.meetupstatic.com/photos/event/3/f/3/3/highres_456316179.jpeg",
-    //    photo_link: "http://photos1.meetupstatic.com/photos/event/3/f/3/3/600_456316179.jpeg",
-    //    thumb_link: "http://photos1.meetupstatic.com/photos/event/3/f/3/3/thumb_456316179.jpeg",
-    //    type: "event",
-    //    base_url: "http://photos1.meetupstatic.com",
-    //    link: "https://www.meetup.com/iOSoho/photos/27444613/456316179/", and other params
+    mutating func getPastEventsURL() -> URL {
+        
+        urlComponents.path = "/self/events"
+        
+        let accessToken = UserDefaults.standard.object(forKey: MeetupAccessToken) as! String
+        
+        let params = [
+            "access_token" : accessToken,
+            "scroll" : QueryItem.Scroll.rawValue,
+            "page" : QueryItem.Page.rawValue,
+            "rsvp" : QueryItem.RSVP.rawValue,
+            "status" : QueryItem.StatusPast.rawValue
+        ]
+        
+        for (key, value) in params {
+            let queryItem = URLQueryItem(name: key, value: value)
+            urlComponents.queryItems?.append(queryItem)
+        }
+        
+        return urlComponents.url!
+    }
 }
