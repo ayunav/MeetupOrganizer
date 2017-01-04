@@ -56,6 +56,7 @@ class LoginViewController: UIViewController {
             responseType:   ResponseType
         )
         
+        
         /* auth config */
         self.oauthswift = oauthswift
         
