@@ -11,14 +11,6 @@ import SafariServices
 import OAuthSwift
 
 
-// new token: b58a094511515170696ee12c52dace1d
-// refresh token: oauthRefreshToken	String	"58bdb28d72dee574a351a638687ed806"
-// oauthTokenExpiresAt	Date?	2019-04-12 19:14:51 UTC	some
-
-
-// new 1a2195767c17165d1d5125cb3fe13829
-
-
 let MeetupAccessToken = "meetupAccessToken"
 
 class LoginViewController: UIViewController {
