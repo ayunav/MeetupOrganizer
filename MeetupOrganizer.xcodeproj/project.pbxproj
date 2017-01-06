@@ -121,6 +121,22 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		D9764A3C1E200FA200362E48 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9FEB8F01E02604A00385A0B /* UIActivityIndicatorViewUtils.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D9764A3D1E200FD200362E48 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D9C7DFE11DEE0EAD00E9B310 /* AppDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
 		D9C7DFD51DEE0EAD00E9B310 = {
 			isa = PBXGroup;
 			children = (
@@ -142,14 +158,14 @@
 		D9C7DFE01DEE0EAD00E9B310 /* MeetupOrganizer */ = {
 			isa = PBXGroup;
 			children = (
-				D9C7DFE11DEE0EAD00E9B310 /* AppDelegate.swift */,
-				D9FEB8F01E02604A00385A0B /* UIActivityIndicatorViewUtils.swift */,
-				D9C7E00A1DEFEEC700E9B310 /* Storyboards */,
+				D9764A3D1E200FD200362E48 /* Application */,
 				D93EABD01E1C7980003C5FC8 /* Constants */,
+				D93EABCC1E1C5A7E003C5FC8 /* Interface */,
 				D9C7DFFF1DEE10AE00E9B310 /* Models */,
 				D9C7E0091DEFEE8600E9B310 /* Networking */,
-				D93EABCC1E1C5A7E003C5FC8 /* Interface */,
 				D9C7E00B1DEFEED000E9B310 /* Resources */,
+				D9C7E00A1DEFEEC700E9B310 /* Storyboards */,
+				D9764A3C1E200FA200362E48 /* Views */,
 			);
 			path = MeetupOrganizer;
 			sourceTree = "<group>";
