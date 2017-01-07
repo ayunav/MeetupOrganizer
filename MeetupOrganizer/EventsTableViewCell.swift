@@ -17,8 +17,6 @@ class EventsTableViewCell: UITableViewCell
     @IBOutlet weak var venueLabel: UILabel!
     
     
-    
-
     override func awakeFromNib()
     {
         super.awakeFromNib()

@@ -26,12 +26,20 @@ class EventsTableViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.navigationItem.title = "My Events"
         
-        eventsTableView.delegate = self
-        eventsTableView.dataSource = self
-        
+        setupTableView()
         fetchEvents(sender: segmentedControl)
     }
 
+    
+    func setupTableView() {
+        eventsTableView.delegate = self
+        eventsTableView.dataSource = self
+        eventsTableView.register(UINib(nibName: "EventsTableViewCell", bundle: nil), forCellReuseIdentifier: CellIdentifier)
+     
+        eventsTableView.rowHeight = UITableViewAutomaticDimension
+        eventsTableView.estimatedRowHeight = 140
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -104,8 +112,11 @@ class EventsTableViewController: UIViewController, UITableViewDelegate, UITableV
 
         let event = events[indexPath.row]
         
-        cell.eventTitleLabel.text = event.title
         cell.eventDateLabel.text = String(event.date)
+        cell.groupNameLabel.text = event.group
+        cell.eventTitleLabel.text = event.title
+        cell.eventTimeLabel.text = String(event.date)
+        cell.venueLabel.text = event.venue
 
         return cell
     }
