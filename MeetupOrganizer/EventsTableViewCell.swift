@@ -10,8 +10,14 @@ import UIKit
 
 class EventsTableViewCell: UITableViewCell
 {
-    @IBOutlet var eventTitleLabel: UILabel!
-    @IBOutlet var eventDateLabel: UILabel!
+    @IBOutlet weak var eventDateLabel: UILabel!
+    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var eventTitleLabel: UILabel!
+    @IBOutlet weak var eventTimeLabel: UILabel!
+    @IBOutlet weak var venueLabel: UILabel!
+    
+    
+    
 
     override func awakeFromNib()
     {

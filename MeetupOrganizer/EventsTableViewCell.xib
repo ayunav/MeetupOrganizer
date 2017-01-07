@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventsTableViewCellIdentifier" rowHeight="137" id="eqc-HS-3yi" customClass="EventsTableViewCell" customModule="MeetupOrganizer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eqc-HS-3yi" id="Xii-31-tiz">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="136.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7o-U1-IfH" userLabel="Event Date Label">
+                        <rect key="frame" x="0.0" y="8" width="42" height="120.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="4jn-d8-837"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Group Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ov1-lG-1ep" userLabel="Group Name Label">
+                        <rect key="frame" x="50" y="8" width="317" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="Event Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufn-lm-XRc" userLabel="Event Title Label">
+                        <rect key="frame" x="50" y="37" width="317" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Time Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaN-dG-Rvx" userLabel="Event Time Label">
+                        <rect key="frame" x="50" y="66" width="317" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Venue Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-5G-7yR" userLabel="Venue Label">
+                        <rect key="frame" x="50" y="99.5" width="317" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ov1-lG-1ep" firstAttribute="leading" secondItem="D7o-U1-IfH" secondAttribute="trailing" constant="8" id="0dv-PK-MC0"/>
+                    <constraint firstAttribute="bottom" secondItem="D7o-U1-IfH" secondAttribute="bottom" constant="8" id="1ef-UC-l47"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xnq-5G-7yR" secondAttribute="bottom" constant="8" id="60H-25-mdm"/>
+                    <constraint firstItem="D7o-U1-IfH" firstAttribute="top" secondItem="Xii-31-tiz" secondAttribute="top" constant="8" id="6cl-Uz-2ez"/>
+                    <constraint firstItem="Ufn-lm-XRc" firstAttribute="top" secondItem="Ov1-lG-1ep" secondAttribute="bottom" constant="8" id="AaT-q7-ypx"/>
+                    <constraint firstItem="xnq-5G-7yR" firstAttribute="trailing" secondItem="Xii-31-tiz" secondAttribute="trailingMargin" id="GZG-aI-hWb"/>
+                    <constraint firstItem="xnq-5G-7yR" firstAttribute="leading" secondItem="Ov1-lG-1ep" secondAttribute="leading" id="HfC-Y4-l9C"/>
+                    <constraint firstItem="Ufn-lm-XRc" firstAttribute="leading" secondItem="D7o-U1-IfH" secondAttribute="trailing" constant="8" id="K7A-hp-Olj"/>
+                    <constraint firstItem="xnq-5G-7yR" firstAttribute="leading" secondItem="D7o-U1-IfH" secondAttribute="trailing" constant="8" id="KMQ-py-6kc"/>
+                    <constraint firstItem="Ufn-lm-XRc" firstAttribute="leading" secondItem="Ov1-lG-1ep" secondAttribute="leading" id="LiC-AU-CHU"/>
+                    <constraint firstItem="xnq-5G-7yR" firstAttribute="top" secondItem="IaN-dG-Rvx" secondAttribute="bottom" constant="8" id="Ns0-5K-aCv"/>
+                    <constraint firstItem="IaN-dG-Rvx" firstAttribute="leading" secondItem="D7o-U1-IfH" secondAttribute="trailing" constant="8" id="Qss-07-az9"/>
+                    <constraint firstItem="IaN-dG-Rvx" firstAttribute="leading" secondItem="Ov1-lG-1ep" secondAttribute="leading" id="R3b-lf-cx1"/>
+                    <constraint firstItem="IaN-dG-Rvx" firstAttribute="top" secondItem="Ufn-lm-XRc" secondAttribute="bottom" constant="8" id="akd-vf-mXS"/>
+                    <constraint firstItem="Ov1-lG-1ep" firstAttribute="top" secondItem="Xii-31-tiz" secondAttribute="topMargin" id="b93-QC-peV"/>
+                    <constraint firstItem="IaN-dG-Rvx" firstAttribute="trailing" secondItem="Xii-31-tiz" secondAttribute="trailingMargin" id="bbx-Q6-FJR"/>
+                    <constraint firstItem="D7o-U1-IfH" firstAttribute="leading" secondItem="Xii-31-tiz" secondAttribute="leading" id="sIW-2W-pCq"/>
+                    <constraint firstItem="Ov1-lG-1ep" firstAttribute="trailing" secondItem="Xii-31-tiz" secondAttribute="trailingMargin" id="t9i-1q-h6c"/>
+                    <constraint firstItem="Ufn-lm-XRc" firstAttribute="trailing" secondItem="Xii-31-tiz" secondAttribute="trailingMargin" id="vVV-0Y-kC2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="eventDateLabel" destination="D7o-U1-IfH" id="NDg-cZ-wuB"/>
+                <outlet property="eventTimeLabel" destination="IaN-dG-Rvx" id="0bQ-C0-3CG"/>
+                <outlet property="eventTitleLabel" destination="Ufn-lm-XRc" id="T33-W3-gG2"/>
+                <outlet property="groupNameLabel" destination="Ov1-lG-1ep" id="UGP-RC-wHk"/>
+                <outlet property="venueLabel" destination="xnq-5G-7yR" id="dRR-8Z-SJd"/>
+            </connections>
+            <point key="canvasLocation" x="-35.5" y="64.5"/>
+        </tableViewCell>
+    </objects>
+</document>
