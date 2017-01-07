@@ -30,7 +30,6 @@
 
 **TO-DO:** 
 
-- table view custom cell 
 - date formatter 
 - beautify collection view photo gallery  
 - on navigation to addPhotosVC display photos that are already on the server (fetch photos, display in the col view)
@@ -39,9 +38,20 @@
 - oAuth glitch fix 
 - handle errors, create user facing alerts
 - nit: request access to photos on add photos button tapped, not on vc navigation 
+- nit: change back nav button to red meetup color arrow, no string
+
+
+### avmeetup: 
+
+- fav button state persistent across searches 
+- display favorite events 
+- search/ text/ location / combination  
+- dateformatter + tableviewcell
+- networking requests 
 
 **Unused resources:**
 
+- https://www.raywenderlich.com/129059/self-sizing-table-view-cells
 - https://developer.apple.com/reference/uikit/uidatasourcemodelassociation
 - https://iosclass.blogspot.com/2013/08/introduction-to-uitableview.html
 - http://useyourloaf.com/blog/state-preservation-and-restoration/
