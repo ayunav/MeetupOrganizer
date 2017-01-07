@@ -79,41 +79,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D93EABCC1E1C5A7E003C5FC8 /* Interface */ = {
+		D93AC8C51E208FF100FA0BAF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				D93EABCF1E1C5C74003C5FC8 /* Login */,
-				D93EABCD1E1C5AB9003C5FC8 /* My Events */,
-				D93EABCE1E1C5AEA003C5FC8 /* Add Photos to Event */,
+				D93AC8C61E20901600FA0BAF /* Events Table View Cell */,
+				D9F5172A1DFB61C600098B8D /* Photo Gallery Collection View */,
 			);
-			name = Interface;
+			name = Cells;
 			sourceTree = "<group>";
 		};
-		D93EABCD1E1C5AB9003C5FC8 /* My Events */ = {
+		D93AC8C61E20901600FA0BAF /* Events Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D9C7DFF51DEE0FA700E9B310 /* EventsTableViewController.swift */,
 				D97416361E04E99800586D59 /* EventsTableViewCell.swift */,
 				D93AC8C31E20622300FA0BAF /* EventsTableViewCell.xib */,
 			);
-			name = "My Events";
+			name = "Events Table View Cell";
 			sourceTree = "<group>";
 		};
-		D93EABCE1E1C5AEA003C5FC8 /* Add Photos to Event */ = {
-			isa = PBXGroup;
-			children = (
-				D9C7DFF71DEE0FBA00E9B310 /* AddPhotosViewController.swift */,
-				D9F5172A1DFB61C600098B8D /* Photo Gallery Collection View */,
-			);
-			name = "Add Photos to Event";
-			sourceTree = "<group>";
-		};
-		D93EABCF1E1C5C74003C5FC8 /* Login */ = {
+		D93EABCC1E1C5A7E003C5FC8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D98EFD6F1E08ECEA00602612 /* LoginViewController.swift */,
+				D9C7DFF51DEE0FA700E9B310 /* EventsTableViewController.swift */,
+				D9C7DFF71DEE0FBA00E9B310 /* AddPhotosViewController.swift */,
 			);
-			name = Login;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		D93EABD01E1C7980003C5FC8 /* Constants */ = {
@@ -128,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				D9FEB8F01E02604A00385A0B /* UIActivityIndicatorViewUtils.swift */,
+				D93AC8C51E208FF100FA0BAF /* Cells */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -163,7 +155,7 @@
 			children = (
 				D9764A3D1E200FD200362E48 /* Application */,
 				D93EABD01E1C7980003C5FC8 /* Constants */,
-				D93EABCC1E1C5A7E003C5FC8 /* Interface */,
+				D93EABCC1E1C5A7E003C5FC8 /* Controllers */,
 				D9C7DFFF1DEE10AE00E9B310 /* Models */,
 				D9C7E0091DEFEE8600E9B310 /* Networking */,
 				D9C7E00B1DEFEED000E9B310 /* Resources */,
@@ -480,7 +472,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N48NM3R37Q;
 				INFOPLIST_FILE = MeetupOrganizer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayunavogel.MeetupOrganizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,7 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N48NM3R37Q;
 				INFOPLIST_FILE = MeetupOrganizer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayunavogel.MeetupOrganizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
