@@ -15,23 +15,26 @@ enum EventFields: String
     case Date = "time"
     case Group = "group"
     case GroupUrlName = "urlname"
+    case Venue = "venue"
 }
 
 
 class Event
 {
-    let title: String
     let date: Int
-    let group: String
     let eventId: String
+    let group: String
+//    let time: String
+    let title: String
+    let venue: String
     
-    
-    init(title: String, date: Int, group: String, eventId: String)
+    init(title: String, date: Int, group: String, eventId: String, venue: String)
     {
         self.title = title
         self.date = date
         self.group = group
         self.eventId = eventId
+        self.venue = venue
     }
     
     
@@ -42,9 +45,10 @@ class Event
             let date = json[EventFields.Date.rawValue] as? Int,
             let eventId = json[EventFields.EventId.rawValue] as? String,
             let group = json[EventFields.Group.rawValue] as? [String: AnyObject],
-            let groupName = group[EventFields.GroupUrlName.rawValue] as? String else { return nil }
+            let groupName = group[EventFields.GroupUrlName.rawValue] as? String,
+            let venue = json[EventFields.Venue.rawValue]?[EventFields.Title.rawValue] as? String else { return nil }
         
-        return Event(title: title, date: date, group: groupName, eventId: eventId)
+        return Event(title: title, date: date, group: groupName, eventId: eventId, venue: venue)
     }
 
     
