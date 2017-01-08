@@ -17,7 +17,7 @@
 		D9C7DFE71DEE0EAD00E9B310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C7DFE51DEE0EAD00E9B310 /* Main.storyboard */; };
 		D9C7DFE91DEE0EAD00E9B310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9C7DFE81DEE0EAD00E9B310 /* Assets.xcassets */; };
 		D9C7DFEC1DEE0EAD00E9B310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C7DFEA1DEE0EAD00E9B310 /* LaunchScreen.storyboard */; };
-		D9C7DFF61DEE0FA700E9B310 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFF51DEE0FA700E9B310 /* EventsTableViewController.swift */; };
+		D9C7DFF61DEE0FA700E9B310 /* MyEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFF51DEE0FA700E9B310 /* MyEventsViewController.swift */; };
 		D9C7DFF81DEE0FBA00E9B310 /* AddPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFF71DEE0FBA00E9B310 /* AddPhotosViewController.swift */; };
 		D9C7DFFC1DEE109A00E9B310 /* MeetupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFFB1DEE109A00E9B310 /* MeetupRouter.swift */; };
 		D9C7DFFE1DEE10A600E9B310 /* MeetupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFFD1DEE10A600E9B310 /* MeetupAPI.swift */; };
@@ -42,7 +42,7 @@
 		D9C7DFE81DEE0EAD00E9B310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9C7DFEB1DEE0EAD00E9B310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9C7DFED1DEE0EAD00E9B310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9C7DFF51DEE0FA700E9B310 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		D9C7DFF51DEE0FA700E9B310 /* MyEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsViewController.swift; sourceTree = "<group>"; };
 		D9C7DFF71DEE0FBA00E9B310 /* AddPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotosViewController.swift; sourceTree = "<group>"; };
 		D9C7DFFB1DEE109A00E9B310 /* MeetupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetupRouter.swift; sourceTree = "<group>"; };
 		D9C7DFFD1DEE10A600E9B310 /* MeetupAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetupAPI.swift; sourceTree = "<group>"; };
@@ -81,15 +81,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D93AC8C51E208FF100FA0BAF /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				D93AC8C61E20901600FA0BAF /* Events Table View Cell */,
-				D9F5172A1DFB61C600098B8D /* Photo Gallery Collection View */,
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
 		D93AC8C61E20901600FA0BAF /* Events Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				D98EFD6F1E08ECEA00602612 /* LoginViewController.swift */,
-				D9C7DFF51DEE0FA700E9B310 /* EventsTableViewController.swift */,
+				D9C7DFF51DEE0FA700E9B310 /* MyEventsViewController.swift */,
 				D9C7DFF71DEE0FBA00E9B310 /* AddPhotosViewController.swift */,
 			);
 			name = Controllers;
@@ -122,7 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				D9FEB8F01E02604A00385A0B /* ActivityIndicatorView.swift */,
-				D93AC8C51E208FF100FA0BAF /* Cells */,
+				D93AC8C61E20901600FA0BAF /* Events Table View Cell */,
+				D9F5172A1DFB61C600098B8D /* Photo Gallery Collection View */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -345,7 +337,7 @@
 				D97416371E04E99800586D59 /* EventsTableViewCell.swift in Sources */,
 				D9C7DFF81DEE0FBA00E9B310 /* AddPhotosViewController.swift in Sources */,
 				D9F517271DF9F3F100098B8D /* Event.swift in Sources */,
-				D9C7DFF61DEE0FA700E9B310 /* EventsTableViewController.swift in Sources */,
+				D9C7DFF61DEE0FA700E9B310 /* MyEventsViewController.swift in Sources */,
 				D98EFD721E09BE9800602612 /* Constants.swift in Sources */,
 				D9C7DFE21DEE0EAD00E9B310 /* AppDelegate.swift in Sources */,
 				D9F517201DF7476700098B8D /* PhotoGalleryDataSource.swift in Sources */,
