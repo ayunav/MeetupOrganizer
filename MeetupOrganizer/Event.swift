@@ -44,8 +44,8 @@ class Event
     
     static func eventFromJsonDict(json: [String: AnyObject]) -> Event?
     {
-        guard let name      = json[EventFields.name.rawValue]    as? String,
-              let time      = json[EventFields.time.rawValue]    as? Int,
+        guard let time      = json[EventFields.time.rawValue]    as? Int,
+              let name      = json[EventFields.name.rawValue]    as? String,
               let eventId   = json[EventFields.eventId.rawValue] as? String,
               let groupName = json[EventFields.group.rawValue]?[EventFields.groupUrlName.rawValue] as? String,
               let venue     = json[EventFields.venue.rawValue]?[EventFields.name.rawValue]         as? String
