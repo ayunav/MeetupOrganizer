@@ -26,6 +26,7 @@
   - [Implicit Flow Example](https://www.oauth.com/oauth2-servers/oauth2-clients/mobile-and-native-apps/)
   - [OAuth2](https://github.com/p2/OAuth2) - OAuth2 frameworks for macOS, iOS and tvOS written in Swift 3.0
   - [Anatomy of an http URL](http://www.webreference.com/html/tutorial2/2.html)
+- [DateFormatter all formats](http://nsdateformatter.com/)
   
 
 **TO-DO:** 
