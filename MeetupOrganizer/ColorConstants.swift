@@ -8,7 +8,7 @@
 
 import UIKit
 
-// HEX# ed1c40 - https://brandcolors.net/
-// To get RGB from HEX, amazing - http://uicolor.xyz/
+// HEX# ed1c40 - http://eye-dropper.kepi.cz/ tool
+// Get RGB from HEX - http://uicolor.xyz/ - amazing
 
 let MeetupRedColor = UIColor(red:0.93, green:0.11, blue:0.25, alpha:1.0)
