@@ -9,26 +9,19 @@
 import UIKit
 
 
-enum PhotosResult
-{
-    case Success()
-    case Failure(Error)
-}
-
-
 enum QueryItem: String
 {
-    case RSVP = "yes"  // rsvp
-    case Page = "20"  // results per page
-    case StatusUpcoming = "upcoming"
-    case StatusPast = "past"
-    case Scroll = "recent_past"    
+    case rsvp = "yes"
+    case page = "20" // number of results to return
+    case statusUpcoming = "upcoming"
+    case statusPast = "past"
+    case scroll = "recent_past"
 }
 
 
 struct MeetupRouter
 {
-    // MARK: - URL
+    // MARK: - URL Components
     
     var urlComponents = URLComponents()
     
@@ -67,9 +60,9 @@ struct MeetupRouter
         
         let baseParams = [
             "access_token" : accessToken,
-            "scroll" : QueryItem.Scroll.rawValue,
-            "page" : QueryItem.Page.rawValue,
-            "rsvp" : QueryItem.RSVP.rawValue
+            "scroll" : QueryItem.scroll.rawValue,
+            "page" : QueryItem.page.rawValue,
+            "rsvp" : QueryItem.rsvp.rawValue
         ]
         
         for (key, value) in baseParams {
@@ -92,12 +85,12 @@ struct MeetupRouter
     
     mutating func myUpcomingEventsURL() -> URL
     {
-        return myEventsURL(parameters: ["status": QueryItem.StatusUpcoming.rawValue])
+        return myEventsURL(parameters: ["status": QueryItem.statusUpcoming.rawValue])
     }
     
     
     mutating func myPastEventsURL() -> URL
     {
-        return myEventsURL(parameters: ["status": QueryItem.StatusPast.rawValue])
+        return myEventsURL(parameters: ["status": QueryItem.statusPast.rawValue])
     }
 }

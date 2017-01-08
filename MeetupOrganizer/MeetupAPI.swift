@@ -11,8 +11,15 @@ import Alamofire
 
 
 enum EventsResult {
-    case Success([Event])
-    case Failure(Error)
+    case success([Event])
+    case failure(Error)
+}
+
+
+enum PhotosResult
+{
+    case success()
+    case failure(Error)
 }
 
 
@@ -41,7 +48,7 @@ struct MeetupAPI {
                 case .success(let upload, _, _):
                     upload.responseJSON { response in
                         // passing completion to EventDetailVC
-                        completion(.Success())
+                        completion(.success())
                         debugPrint(response)
                     }
                 case .failure(let encodingError):
@@ -76,7 +83,7 @@ struct MeetupAPI {
             //        }
             //            return
             if (events.count > 0) {
-                completion(EventsResult.Success(events))
+                completion(EventsResult.success(events))
             } else {
                 //                completion(EventsResult.Failure(nil))
             }
@@ -96,7 +103,7 @@ struct MeetupAPI {
             let events = validResponse.flatMap(Event.eventFromJsonDict)
             
             if (events.count > 0) {
-                completion(EventsResult.Success(events))
+                completion(EventsResult.success(events))
             } else {
                 //                completion(EventsResult.Failure(nil))
             }
@@ -117,7 +124,7 @@ struct MeetupAPI {
         //            }
         //
         //        }
-        return EventsResult.Success(events)
+        return EventsResult.success(events)
     }
 
 
