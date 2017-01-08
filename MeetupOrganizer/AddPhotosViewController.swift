@@ -89,7 +89,7 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
                             return
                         }
                     
-                        self.meetupAPI.uploadImageData(image: _image, groupName: groupName, eventID: _eventId, completion: { (photosResult) in
+                        self.meetupAPI.uploadImageData(image: _image, groupName: groupName, eventId: _eventId, completion: { (photosResult) in
                             OperationQueue.main.addOperation {
                                 
                                 switch photosResult {
@@ -137,7 +137,7 @@ struct PreparedUpload {
 //            self.imageManager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.default, options: self.requestOptions, resultHandler: { (image, properties) in
 //                
 //                guard let _image = image else { return }
-//                self.meetupRouter.uploadImageData(image: _image, groupName: "iOSoho", eventID: "232809656") { (photosResult) -> Void in // need a closure here, move collection view code in here, based on the result of the closure
+//                self.meetupRouter.uploadImageData(image: _image, groupName: "iOSoho", eventId: "232809656") { (photosResult) -> Void in // need a closure here, move collection view code in here, based on the result of the closure
 //                    
 //                    
 //                    OperationQueue.main.addOperation {
