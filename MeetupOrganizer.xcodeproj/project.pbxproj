@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		66EE2640373303A06E35173A /* Pods_MeetupOrganizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381890ACB8A1520C3032B146 /* Pods_MeetupOrganizer.framework */; };
 		D93AC8C41E20622300FA0BAF /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D93AC8C31E20622300FA0BAF /* EventsTableViewCell.xib */; };
+		D95489F41E21C32100C2AFFF /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95489F31E21C32100C2AFFF /* ColorConstants.swift */; };
 		D97416371E04E99800586D59 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97416361E04E99800586D59 /* EventsTableViewCell.swift */; };
 		D98EFD701E08ECEA00602612 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EFD6F1E08ECEA00602612 /* LoginViewController.swift */; };
 		D98EFD721E09BE9800602612 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98EFD711E09BE9800602612 /* Constants.swift */; };
@@ -31,6 +32,7 @@
 		774723EC043831D83128192F /* Pods-MeetupOrganizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupOrganizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupOrganizer/Pods-MeetupOrganizer.debug.xcconfig"; sourceTree = "<group>"; };
 		8DEC5F795204547299471B9B /* Pods-MeetupOrganizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupOrganizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupOrganizer/Pods-MeetupOrganizer.release.xcconfig"; sourceTree = "<group>"; };
 		D93AC8C31E20622300FA0BAF /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
+		D95489F31E21C32100C2AFFF /* ColorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		D97416361E04E99800586D59 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		D98EFD6F1E08ECEA00602612 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D98EFD711E09BE9800602612 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				D98EFD711E09BE9800602612 /* Constants.swift */,
+				D95489F31E21C32100C2AFFF /* ColorConstants.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				D9C7DFFC1DEE109A00E9B310 /* MeetupRouter.swift in Sources */,
 				D9F517221DF7488900098B8D /* PhotoCollectionViewCell.swift in Sources */,
 				D9C7DFFE1DEE10A600E9B310 /* MeetupAPI.swift in Sources */,
+				D95489F41E21C32100C2AFFF /* ColorConstants.swift in Sources */,
 				D97416371E04E99800586D59 /* EventsTableViewCell.swift in Sources */,
 				D9C7DFF81DEE0FBA00E9B310 /* AddPhotosViewController.swift in Sources */,
 				D9F517271DF9F3F100098B8D /* Event.swift in Sources */,
