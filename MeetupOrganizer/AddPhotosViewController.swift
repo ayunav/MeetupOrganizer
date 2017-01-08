@@ -43,7 +43,7 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
         // need to figure out how to kick off request access to photos on addPhotosButtonTapped, not on the view did load. Moving this ^^^ (datasource and delegate to addPhotosButtonTapped) doesn't affect it
         
         if let event = event {
-            navigationItem.title = event.title
+            navigationItem.title = event.name
         }
     }
 

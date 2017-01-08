@@ -19,7 +19,7 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var eventsTableView: UITableView!
     
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -112,10 +112,10 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
 
         let event = events[indexPath.row]
         
-        cell.eventDateLabel.text = String(event.date)
+        cell.eventDateLabel.text = event.date
         cell.groupNameLabel.text = event.group
-        cell.eventTitleLabel.text = event.title
-        cell.eventTimeLabel.text = String(event.date)
+        cell.eventTitleLabel.text = event.name
+        cell.eventTimeLabel.text = event.time
         cell.venueLabel.text = event.venue
 
         return cell
