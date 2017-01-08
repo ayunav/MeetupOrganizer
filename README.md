@@ -53,16 +53,10 @@
 
 **Unused resources:**
 
-- https://www.raywenderlich.com/129059/self-sizing-table-view-cells
-- https://developer.apple.com/reference/uikit/uidatasourcemodelassociation
-- https://iosclass.blogspot.com/2013/08/introduction-to-uitableview.html
-- http://useyourloaf.com/blog/state-preservation-and-restoration/
-- https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/StrategiesforImplementingYourApp/StrategiesforImplementingYourApp.html
-- https://www.raywenderlich.com/117471/state-restoration-tutorial
+- https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
+- https://www.raywenderlich.com/147162/iglistkit-tutorial-better-uicollectionviews
 - https://www.raywenderlich.com/130197/magical-error-handling-swift
 - https://medium.com/@MedvedevTheDev/why-encoding-matters-a-primer-on-bits-bytes-and-history-4ec9dc441355#.6bxpln7wz
 - https://medium.com/@joannathhuang/variadic-and-in-out-parameters-9b757c44228e#.vsv6ax6xo
 - [Adding a segmented control programmatically](http://www.richardhsu.me/posts/2015/01/26/segmented-control.html)
 - https://www.raywenderlich.com/92667/securing-ios-data-keychain-touch-id-1password
-- https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
-- https://www.raywenderlich.com/147162/iglistkit-tutorial-better-uicollectionviews
