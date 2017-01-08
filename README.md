@@ -39,6 +39,7 @@
 - handle errors, create user facing alerts
 - nit: request access to photos on add photos button tapped, not on vc navigation 
 - nit: change back nav button to red meetup color arrow, no string
+- deep link to photos at the event, or to the event, or to the meetup group. Play with it. 
 
 
 ### avmeetup: 
