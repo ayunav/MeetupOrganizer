@@ -77,7 +77,7 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
                 
                 
                 OperationQueue.main.addOperation {
-                    UIActivityIndicatorViewUtils.sharedInstance.showActivityIndicatorInView(view: self.view)
+                    ActivityIndicatorView.sharedInstance.showActivityIndicatorInView(view: self.view)
                 }
                 
                 self.requestOptions.isSynchronous = true
@@ -94,7 +94,7 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
                                 
                                 switch photosResult {
                                 case .Success:
-                                    UIActivityIndicatorViewUtils.sharedInstance.hideActivityIndicatorInView()
+                                    ActivityIndicatorView.sharedInstance.hideActivityIndicatorInView()
                                     self.photoGalleryDataSource.assets = assets
                                     self.photoGalleryCollectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
                                 case let .Failure(error):

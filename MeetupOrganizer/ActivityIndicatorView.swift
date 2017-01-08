@@ -1,5 +1,5 @@
 //
-//  UIActivityIndicatorViewUtils.swift
+//  ActivityIndicatorView.swift
 //  MeetupOrganizer
 //
 //  Created by Ayuna NYC on 12/15/16.
@@ -18,12 +18,12 @@
 import UIKit
 import NVActivityIndicatorView
 
-class UIActivityIndicatorViewUtils
+class ActivityIndicatorView
 {
     
     var activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
     
-    static let sharedInstance = UIActivityIndicatorViewUtils()
+    static let sharedInstance = ActivityIndicatorView()
  
     func showActivityIndicatorInView(view: UIView)
     {

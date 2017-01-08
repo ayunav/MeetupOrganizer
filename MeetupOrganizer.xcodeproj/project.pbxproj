@@ -23,7 +23,7 @@
 		D9F517201DF7476700098B8D /* PhotoGalleryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5171F1DF7476700098B8D /* PhotoGalleryDataSource.swift */; };
 		D9F517221DF7488900098B8D /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */; };
 		D9F517271DF9F3F100098B8D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F517261DF9F3F100098B8D /* Event.swift */; };
-		D9FEB8F11E02604A00385A0B /* UIActivityIndicatorViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEB8F01E02604A00385A0B /* UIActivityIndicatorViewUtils.swift */; };
+		D9FEB8F11E02604A00385A0B /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEB8F01E02604A00385A0B /* ActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +47,7 @@
 		D9F5171F1DF7476700098B8D /* PhotoGalleryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGalleryDataSource.swift; sourceTree = "<group>"; };
 		D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		D9F517261DF9F3F100098B8D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		D9FEB8F01E02604A00385A0B /* UIActivityIndicatorViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorViewUtils.swift; sourceTree = "<group>"; };
+		D9FEB8F01E02604A00385A0B /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +118,7 @@
 		D9764A3C1E200FA200362E48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D9FEB8F01E02604A00385A0B /* UIActivityIndicatorViewUtils.swift */,
+				D9FEB8F01E02604A00385A0B /* ActivityIndicatorView.swift */,
 				D93AC8C51E208FF100FA0BAF /* Cells */,
 			);
 			name = Views;
@@ -176,8 +176,8 @@
 		D9C7E0091DEFEE8600E9B310 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				D9C7DFFB1DEE109A00E9B310 /* MeetupRouter.swift */,
 				D9C7DFFD1DEE10A600E9B310 /* MeetupAPI.swift */,
+				D9C7DFFB1DEE109A00E9B310 /* MeetupRouter.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -334,7 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9FEB8F11E02604A00385A0B /* UIActivityIndicatorViewUtils.swift in Sources */,
+				D9FEB8F11E02604A00385A0B /* ActivityIndicatorView.swift in Sources */,
 				D9C7DFFC1DEE109A00E9B310 /* MeetupRouter.swift in Sources */,
 				D9F517221DF7488900098B8D /* PhotoCollectionViewCell.swift in Sources */,
 				D9C7DFFE1DEE10A600E9B310 /* MeetupAPI.swift in Sources */,
