@@ -160,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="2212" y="-174.06296851574214"/>
         </scene>
-        <!--Events Table View Controller-->
+        <!--My Events View Controller-->
         <scene sceneID="W0B-yE-muC">
             <objects>
-                <viewController storyboardIdentifier="EventsTableViewController" id="hce-a8-rRz" customClass="EventsTableViewController" customModule="MeetupOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyEventsViewController" id="hce-a8-rRz" customClass="MyEventsViewController" customModule="MeetupOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UMr-La-o5p"/>
                         <viewControllerLayoutGuide type="bottom" id="BkW-af-WhY"/>
