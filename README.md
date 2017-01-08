@@ -30,12 +30,12 @@
 
 **TO-DO:** 
 
-- date formatter 
-- improve response time on fetching upcoming and past events: cache response, add pull to refresh
-- oAuth glitch fix 
 - on navigation to addPhotosVC display photos that are already on the server (fetch photos, display in the col view)
 - when uploading new photos, add new photos to the col view 
 - beautify collection view photo gallery  
+
+- improve response time on fetching upcoming and past events: cache response, add pull to refresh
+- oAuth glitch fix 
 - handle errors, create user facing alerts
 - nit: request access to photos on add photos button tapped, not on vc navigation 
 - nit: change back nav button to red meetup color arrow, no string
@@ -44,11 +44,11 @@
 
 ### avmeetup: 
 
+- networking requests 
+- dateformatter + tableviewcell
 - fav button state persistent across searches 
 - display favorite events 
 - search/ text/ location / combination  
-- dateformatter + tableviewcell
-- networking requests 
 
 **Unused resources:**
 
