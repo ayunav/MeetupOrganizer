@@ -27,10 +27,6 @@ class ActivityIndicatorView
  
     func showActivityIndicatorInView(view: UIView)
     {
-        // HEX# ed1c40 http://uicolor.xyz/ this is amazing! 
-        
-        //let meetupRedColor = UIColor(red:0.93, green:0.11, blue:0.25, alpha:1.0)
-        
         activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0), type: .ballGridPulse, color: MeetupRedColor, padding: 0)
         
         activityIndicatorView.center = view.center
