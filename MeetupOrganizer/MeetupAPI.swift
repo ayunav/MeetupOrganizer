@@ -54,8 +54,7 @@ struct MeetupAPI {
                             }
         })
     }
-    
-    
+   
     
     mutating func getUpcomingEvents(completion: @escaping (EventsResult) -> Void) {
 

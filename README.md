@@ -59,6 +59,8 @@
 
 **Unused resources:**
 
+- https://grokswift.com/swift-tableview-search-bar/
+- https://www.raywenderlich.com/129059/self-sizing-table-view-cells
 - https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
 - https://www.raywenderlich.com/147162/iglistkit-tutorial-better-uicollectionviews
 - testing https://github.com/meetup/testing-on-board/blob/master/CLASS.md
