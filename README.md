@@ -15,7 +15,7 @@
 - [Building URLs with NSURLComponents and NSURLQueryItems](https://grokswift.com/building-urls/)
 - [Meetup API](https://www.meetup.com/meetup_api/) Documentation
 - [PHImageManager](https://github.com/FlexMonkey/PHImageManagerTwitterDemo)
-- [How to hide your API keys](https://gist.github.com/derzorngottes/3b57edc1f996dddcab25) add my own link on Monday
+- [How to hide your API keys](https://gist.github.com/derzorngottes/3b57edc1f996dddcab25) add my own link on Monday make cookbooks public
 - [Best Practices for Opening a Web Page Within an App](http://developer.outbrain.com/ios-best-practices-for-opening-a-web-page-within-an-app/)
 - [Meetup oAuth2](https://www.meetup.com/meetup_api/auth/#oauth2) Documentation 
 - OAuth 2
@@ -37,7 +37,8 @@
 
 - improve response time on fetching upcoming and past events: cache response, add pull to refresh
 - oAuth glitch fix 
-- handle errors, create user facing alerts
+- add log out/switch account button
+- handle errors, create user facing alerts (MeetupAPI completion blocks results)
 - nit: request access to photos on add photos button tapped, not on vc navigation 
 - nit: change back nav button to red meetup color arrow, no string
 - ? add waitlist events, too. (to upcoming events)
@@ -46,16 +47,21 @@
 
 ### avmeetup: 
 
-- networking requests 
-- dateformatter + tableviewcell
-- fav button state persistent across searches 
-- display favorite events 
-- search/ text/ location / combination  
+- get rid of the space between segm control and the table view 
+- add search bar to nav bar 
+- networking requests for search - text/ location / combination  
+- favorites button animation 
+- sort favorites by date on display
+- error handling 
+- next steps: 
+    - add pagination 
+    - add location request 
 
 **Unused resources:**
 
 - https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
 - https://www.raywenderlich.com/147162/iglistkit-tutorial-better-uicollectionviews
+- testing https://github.com/meetup/testing-on-board/blob/master/CLASS.md
 - https://www.raywenderlich.com/130197/magical-error-handling-swift
 - https://medium.com/@MedvedevTheDev/why-encoding-matters-a-primer-on-bits-bytes-and-history-4ec9dc441355#.6bxpln7wz
 - https://medium.com/@joannathhuang/variadic-and-in-out-parameters-9b757c44228e#.vsv6ax6xo
