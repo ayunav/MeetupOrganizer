@@ -69,10 +69,10 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
         meetupAPI.getUpcomingEvents() { (eventsResult) -> Void in
             OperationQueue.main.addOperation {
                 switch eventsResult {
-                case let .Success(_events):
+                case let .success(_events):
                     self.events = _events
                     self.eventsTableView.reloadData()
-                case let .Failure(error):
+                case let .failure(error):
                     print("Error fetching meetup events: \(error)")
                 }
             }
@@ -85,10 +85,10 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
         meetupAPI.getPastEvents() { (eventsResult) -> Void in
             OperationQueue.main.addOperation {
                 switch eventsResult {
-                case let .Success(_events):
+                case let .success(_events):
                     self.events = _events
                     self.eventsTableView.reloadData()
-                case let .Failure(error):
+                case let .failure(error):
                     print("Error fetching meetup events: \(error)")
                 }
             }

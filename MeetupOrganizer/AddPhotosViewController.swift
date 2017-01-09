@@ -93,11 +93,11 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
                             OperationQueue.main.addOperation {
                                 
                                 switch photosResult {
-                                case .Success:
+                                case .success:
                                     ActivityIndicatorView.sharedInstance.hideActivityIndicatorInView()
                                     self.photoGalleryDataSource.assets = assets
                                     self.photoGalleryCollectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
-                                case let .Failure(error):
+                                case let .failure(error):
                                     print("Error uploading photos to the meetup event: \(error)")
                                 }
                             }

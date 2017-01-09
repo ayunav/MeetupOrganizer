@@ -61,6 +61,7 @@ struct MeetupAPI {
 
         let url = meetupRouter.myUpcomingEventsURL()
         
+        
         Alamofire.request(url).responseJSON(completionHandler: { response in
             
             guard let validResponse = response.result.value as? [[String : AnyObject]] else { return }
