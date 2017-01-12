@@ -60,6 +60,7 @@
 
 **Unused resources:**
 
+- http://swiftdeveloperblog.com/display-large-collection-of-images-in-uitableview-with-sdwebimage/
 - https://grokswift.com/swift-tableview-search-bar/
 - https://www.raywenderlich.com/129059/self-sizing-table-view-cells
 - https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
