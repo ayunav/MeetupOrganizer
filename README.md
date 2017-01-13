@@ -15,7 +15,7 @@
 - [Building URLs with NSURLComponents and NSURLQueryItems](https://grokswift.com/building-urls/)
 - [Meetup API](https://www.meetup.com/meetup_api/) Documentation
 - [PHImageManager](https://github.com/FlexMonkey/PHImageManagerTwitterDemo)
-- [How to hide your API keys](https://gist.github.com/derzorngottes/3b57edc1f996dddcab25) add my own link on Monday make cookbooks public
+- [How to hide your API keys](https://medium.com/@AyunasCode/how-to-hide-your-api-keys-367ef6589949#.deo9jtsae)
 - [Best Practices for Opening a Web Page Within an App](http://developer.outbrain.com/ios-best-practices-for-opening-a-web-page-within-an-app/)
 - [Meetup oAuth2](https://www.meetup.com/meetup_api/auth/#oauth2) Documentation 
 - OAuth 2
