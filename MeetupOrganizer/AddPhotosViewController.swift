@@ -94,7 +94,7 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
                                 
                                 switch photosResult {
                                 case .success:
-                                    ActivityIndicatorView.sharedInstance.hideActivityIndicatorInView()
+                                    ActivityIndicatorView.sharedInstance.hideActivityIndicatorInView() // rename to hideActivityIndicator 
                                     self.photoGalleryDataSource.assets = assets
                                     self.photoGalleryCollectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
                                 case let .failure(error):

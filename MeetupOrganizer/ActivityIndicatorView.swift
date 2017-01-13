@@ -21,10 +21,11 @@ import NVActivityIndicatorView
 class ActivityIndicatorView
 {
     
-    var activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
-    
     static let sharedInstance = ActivityIndicatorView()
- 
+
+    var activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)) // should be private let
+    
+    
     func showActivityIndicatorInView(view: UIView)
     {
         activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0), type: .ballGridPulse, color: MeetupRedColor, padding: 0)
@@ -35,7 +36,7 @@ class ActivityIndicatorView
     }
     
     
-    func hideActivityIndicatorInView()
+    func hideActivityIndicatorInView() // rename to hideActivityIndicator()
     {
         activityIndicatorView.stopAnimating()
         activityIndicatorView.removeFromSuperview()
