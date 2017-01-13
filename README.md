@@ -49,10 +49,12 @@
 ### avmeetup: 
 
 - get rid of the space between segm control and the table view 
-- add search bar to nav bar 
-- networking requests for search - text/ location / combination  
+
 - favorites button animation 
 - sort favorites by date on display
+
+- add search bar to nav bar 
+- networking requests for search - text/ location / combination  
 - error handling 
 - next steps: 
     - add pagination 
