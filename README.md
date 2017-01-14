@@ -44,6 +44,7 @@
 - ? add waitlist events, too. (to upcoming events)
 - ? deep link to photos at the event, or to the event, or to the meetup group. Play with it. 
 - links to icons8: <a href="https://icons8.com/web-app/87/Like">Like icon credits</a>
+- add caption to uploaded photos: Uploaded by <member name> via Meetup Organizer iOS app by Ayuna Vogel (include link?)
 
 
 ### avmeetup: 
