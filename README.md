@@ -32,37 +32,40 @@
 **TO-DO:** 
 
 - on navigation to addPhotosVC display photos that are already on the server (fetch photos, display in the col view)
-- when uploading new photos, add new photos to the col view 
 - beautify collection view photo gallery  
+- when uploading new photos, add new photos to the col view 
+- oAuth glitch fix 
+
+
 
 - improve response time on fetching upcoming and past events: cache response, add pull to refresh
-- oAuth glitch fix 
 - add log out/switch account button
 - handle errors, create user facing alerts (MeetupAPI completion blocks results)
 - nit: request access to photos on add photos button tapped, not on vc navigation 
 - nit: change back nav button to red meetup color arrow, no string
-- ? add waitlist events, too. (to upcoming events)
+
+- ? add waitlist events
 - ? deep link to photos at the event, or to the event, or to the meetup group. Play with it. 
-- links to icons8: <a href="https://icons8.com/web-app/87/Like">Like icon credits</a>
 - add caption to uploaded photos: Uploaded by <member name> via Meetup Organizer iOS app by Ayuna Vogel (include link?)
 
 
 ### avmeetup: 
 
-- get rid of the space between segm control and the table view 
-
-- favorites button animation 
-- sort favorites by date on display
+- write a readme for the project 
+- links to icons8: <a href="https://icons8.com/web-app/87/Like">Like icon credits</a>
 
 - add search bar to nav bar 
 - networking requests for search - text/ location / combination  
+
 - error handling 
+- add pull to refresh ? 
 - next steps: 
     - add pagination 
     - add location request 
 
 **Unused resources:**
 
+- add search bar to nav item https://www.youtube.com/watch?v=yx-ImzbNx8E
 - http://swiftdeveloperblog.com/display-large-collection-of-images-in-uitableview-with-sdwebimage/
 - https://grokswift.com/swift-tableview-search-bar/
 - https://www.raywenderlich.com/129059/self-sizing-table-view-cells
