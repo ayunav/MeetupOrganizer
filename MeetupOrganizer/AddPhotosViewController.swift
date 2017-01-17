@@ -12,14 +12,13 @@ import Photos
 import NVActivityIndicatorView
 
 
-
-// display placeholder image in the gallery collection view? 
-
 class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
     
-    @IBOutlet weak var addPhotosButton: UIButton!
+    // MARK: - Properties
     
-    @IBOutlet weak var photoGalleryCollectionView: UICollectionView!
+    @IBOutlet weak private var addPhotosButton: UIButton!
+    @IBOutlet weak private var photoGalleryCollectionView: UICollectionView!
+    
     let photoGalleryDataSource = PhotoGalleryDataSource()
     
     let imageManager = PHImageManager.default()
@@ -27,10 +26,10 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
     let requestOptions = PHImageRequestOptions()
 
     var meetupRouter = MeetupRouter()
-    
     var meetupAPI = MeetupAPI()
 
-    var event: Event? // how to initialize properties on VC?
+    var event: Event?
+    
     
     // MARK: - View Lifecycle
     
@@ -39,8 +38,6 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
 
         photoGalleryCollectionView.dataSource = photoGalleryDataSource
         photoGalleryCollectionView.delegate = self
-        
-        // need to figure out how to kick off request access to photos on addPhotosButtonTapped, not on the view did load. Moving this ^^^ (datasource and delegate to addPhotosButtonTapped) doesn't affect it
         
         if let event = event {
             navigationItem.title = event.name
@@ -52,20 +49,13 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
     
     @IBAction func addPhotosButtonTapped(_ sender: UIButton) {
         
-        // how to prompt request access to photos on specific action not when this screen opens
-        
         let imagePickerVC = BSImagePickerViewController()
         
         bs_presentImagePickerController(imagePickerVC,
                                         animated: true,
                                         select: { (asset: PHAsset) -> Void in
-                                            // User selected an asset.
-                                            // Do something with it, start upload perhaps?
         }, deselect: { (asset: PHAsset) -> Void in
-            // User deselected an assets.
-            // Do something, cancel upload?
         }, cancel: { (assets: [PHAsset]) -> Void in
-            // User cancelled. And this where the assets currently selected.
         }, finish:
             { (assets: [PHAsset]) -> Void in
                 
@@ -74,9 +64,8 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
                 // add spinning activity indicators indicating upload progress
                 // 2. if there's a problem with upload, display a user facing error message
                 // 3. when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
-                
-                
-                OperationQueue.main.addOperation {
+
+                DispatchQueue.main.async {
                     ActivityIndicatorView.sharedInstance.showActivityIndicatorInView(view: self.view)
                 }
                 

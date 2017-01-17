@@ -40,10 +40,12 @@
 
 - improve response time on fetching upcoming and past events: cache response, add pull to refresh
 - add log out/switch account button
+- upload activity indicator per cell
 - handle errors, create user facing alerts (MeetupAPI completion blocks results)
 - nit: request access to photos on add photos button tapped, not on vc navigation 
 - nit: change back nav button to red meetup color arrow, no string
 
+- ? display placeholder image in the gallery collection view
 - ? add waitlist events
 - ? deep link to photos at the event, or to the event, or to the meetup group. Play with it. 
 - add caption to uploaded photos: Uploaded by <member name> via Meetup Organizer iOS app by Ayuna Vogel (include link?)
@@ -62,6 +64,8 @@
 - next steps: 
     - add pagination 
     - add location request 
+
+https://www.natashatherobot.com/swift-iboutlets-private/
 
 **Unused resources:**
 
