@@ -44,12 +44,9 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
         }
     }
 
+
     
-    
-    
-    
-    
-    // TODO: - This method is a monstrosity. Need to rewrite it for clarity, separate into single methods.
+    // TODO: - This method is a monstrosity. Need to rewrite it for clarity, separate into single responsibility methods.
     
     // MARK: - Upload Photos
     
