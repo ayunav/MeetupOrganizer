@@ -31,16 +31,19 @@
 
 **TO-DO:** 
 
-- oAuth glitch fix 
 - beautify collection view photo gallery  
 
+- add and display placeholder image in the gallery collection view
 - on navigation to AddPhotosVC, display photos that are already on the server (fetch photos, display in the collection view)
 - when uploading new photos, add new photos to the col view 
 
 - improve response time on fetching upcoming and past events: cache response, add pull to refresh
 - add log out/switch account button
 
+- refactor auth code, separate into a different manager class
 - handle errors, create user facing alerts 
+- add "Logging in..." progress indicator and "Successful login" UI/UX
+
 - nit: request access to photos on add photos button tapped, not on vc navigation 
 - nit: change back nav button to red meetup color arrow, no string
 
@@ -51,7 +54,6 @@
     - 4. if there's a problem with upload, display a user facing error message
     - 5. when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
 
-- ? display placeholder image in the gallery collection view
 - ? add waitlist events
 - ? deep link to photos at the event, or to the event, or to the meetup group. Play with it. 
 - ? add caption to uploaded photos: Uploaded by <member name> via Meetup Organizer iOS app by Ayuna Vogel (include link?)

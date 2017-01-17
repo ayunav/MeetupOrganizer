@@ -6,8 +6,8 @@
 //  Copyright © 2016 Ayuna NYC. All rights reserved.
 //
 
+import OAuthSwift
 import UIKit
-import OAuthSwift 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -65,11 +65,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 if (url.host == "oauth-callback") {
                  
-                    OAuthSwift.handle(url: url)
-                    // dismisses safariVC
-                    // loginVC viewdidLoad method is called 
-                    // handle url method sends the redirect uri + authorization code to the callback in authorize method in oathswift.authorize -> extracts access token
+                    // posts notification to notification center, opens the app back from SFSafariVC
+                    // SFSafariVC is dismissed, and LoginVC viewWillAppear is called
+                    // handle url method sends the redirect uri + authorization code to the callback in authorize method in oathswift.authorize, which then extracts and stores the access token
                     
+                    OAuthSwift.handle(url: url)
                 }
             }
         }
