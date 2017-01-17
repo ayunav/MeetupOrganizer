@@ -40,7 +40,18 @@
 
 - improve response time on fetching upcoming and past events: cache response, add pull to refresh
 - add log out/switch account button
+
 - upload activity indicator per cell
+// 1. the col view will display selected photos,
+// change cells' alpha to opaque,
+// add spinning activity indicators indicating upload progress
+// 2. if there's a problem with upload, display a user facing error message
+// 3. when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
+
+
+
+
+
 - handle errors, create user facing alerts (MeetupAPI completion blocks results)
 - nit: request access to photos on add photos button tapped, not on vc navigation 
 - nit: change back nav button to red meetup color arrow, no string
