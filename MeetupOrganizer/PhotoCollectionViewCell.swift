@@ -45,7 +45,7 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell
         if let imageToDisplay = image
         {
 //            activityIndicatorView.stopAnimating()
-            ActivityIndicatorView.sharedInstance.hideActivityIndicatorInView()
+            ActivityIndicatorView.sharedInstance.hideActivityIndicator()
             imageView.image = imageToDisplay
         } else {
 //            activityIndicatorView.startAnimating()
