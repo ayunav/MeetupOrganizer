@@ -31,64 +31,43 @@
 
 **TO-DO:** 
 
-- on navigation to addPhotosVC display photos that are already on the server (fetch photos, display in the col view)
-- beautify collection view photo gallery  
-- when uploading new photos, add new photos to the col view 
 - oAuth glitch fix 
+- beautify collection view photo gallery  
 
-
+- on navigation to AddPhotosVC, display photos that are already on the server (fetch photos, display in the collection view)
+- when uploading new photos, add new photos to the col view 
 
 - improve response time on fetching upcoming and past events: cache response, add pull to refresh
 - add log out/switch account button
 
-- upload activity indicator per cell
-// 1. the col view will display selected photos,
-// change cells' alpha to opaque,
-// add spinning activity indicators indicating upload progress
-// 2. if there's a problem with upload, display a user facing error message
-// 3. when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
-
-
-
-
-
-- handle errors, create user facing alerts (MeetupAPI completion blocks results)
+- handle errors, create user facing alerts 
 - nit: request access to photos on add photos button tapped, not on vc navigation 
 - nit: change back nav button to red meetup color arrow, no string
+
+- upload activity indicator per cell
+    - 1. the col view will display selected photos
+    - 2. change cells' alpha to opaque
+    - 3. add spinning activity indicators indicating upload progress per photo/per cell
+    - 4. if there's a problem with upload, display a user facing error message
+    - 5. when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
 
 - ? display placeholder image in the gallery collection view
 - ? add waitlist events
 - ? deep link to photos at the event, or to the event, or to the meetup group. Play with it. 
-- add caption to uploaded photos: Uploaded by <member name> via Meetup Organizer iOS app by Ayuna Vogel (include link?)
+- ? add caption to uploaded photos: Uploaded by <member name> via Meetup Organizer iOS app by Ayuna Vogel (include link?)
+
+- single collection view cell selection to bring up a detail view
+- 2 sections for the images that are already on the server, and for the newly uploaded, with different section background images 
 
 
-### avmeetup: 
-
-- write a readme for the project 
-- links to icons8: <a href="https://icons8.com/web-app/87/Like">Like icon credits</a>
-
-- add search bar to nav bar 
-- networking requests for search - text/ location / combination  
-
-- error handling 
-- add pull to refresh ? 
-- next steps: 
-    - add pagination 
-    - add location request 
-
-https://www.natashatherobot.com/swift-iboutlets-private/
 
 **Unused resources:**
 
-- add search bar to nav item https://www.youtube.com/watch?v=yx-ImzbNx8E
-- http://swiftdeveloperblog.com/display-large-collection-of-images-in-uitableview-with-sdwebimage/
-- https://grokswift.com/swift-tableview-search-bar/
-- https://www.raywenderlich.com/129059/self-sizing-table-view-cells
-- https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
 - https://www.raywenderlich.com/147162/iglistkit-tutorial-better-uicollectionviews
+- https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
+- http://strawberrycode.com/blog/how-to-create-a-section-background-in-a-uicollectionview-in-ios-swift/
+- http://swiftdeveloperblog.com/display-large-collection-of-images-in-uitableview-with-sdwebimage/
 - testing https://github.com/meetup/testing-on-board/blob/master/CLASS.md
 - https://www.raywenderlich.com/130197/magical-error-handling-swift
 - https://medium.com/@MedvedevTheDev/why-encoding-matters-a-primer-on-bits-bytes-and-history-4ec9dc441355#.6bxpln7wz
-- https://medium.com/@joannathhuang/variadic-and-in-out-parameters-9b757c44228e#.vsv6ax6xo
-- [Adding a segmented control programmatically](http://www.richardhsu.me/posts/2015/01/26/segmented-control.html)
 - https://www.raywenderlich.com/92667/securing-ios-data-keychain-touch-id-1password
