@@ -10,16 +10,15 @@ import UIKit
 import NVActivityIndicatorView
 
 
-class ActivityIndicatorView
-{
+class ActivityIndicatorView {
     
     static let sharedInstance = ActivityIndicatorView()
 
     private var activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
     
     
-    func showActivityIndicatorInView(view: UIView)
-    {
+    func showActivityIndicatorInView(view: UIView) {
+        
         activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0),
                                                         type: .ballGridPulse,
                                                         color: MeetupRedColor,
@@ -31,8 +30,7 @@ class ActivityIndicatorView
     }
     
     
-    func hideActivityIndicator() 
-    {
+    func hideActivityIndicator() {
         activityIndicatorView.stopAnimating()
         activityIndicatorView.removeFromSuperview()
     }

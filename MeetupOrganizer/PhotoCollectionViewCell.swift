@@ -11,8 +11,8 @@ import Photos
 import NVActivityIndicatorView
 
 
-class PhotoGalleryCollectionViewCell: UICollectionViewCell
-{
+class PhotoGalleryCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet var imageView: UIImageView!
 
     private let manager = PHImageManager.default()
