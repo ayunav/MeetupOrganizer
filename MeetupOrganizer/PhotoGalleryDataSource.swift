@@ -26,7 +26,13 @@ class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return assets.count
+        if assets.count > 0 {
+            return assets.count
+        } else {
+            return 21
+        }
+        
+//        return assets.count
     }
     
     
@@ -35,7 +41,7 @@ class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier, for: indexPath) as! PhotoGalleryCollectionViewCell
         
         if assets.isEmpty == true {
-            cell.galleryImageView.image = UIImage(named: "MeetupLogo")
+            cell.galleryImageView.image = UIImage(named: PlaceholderGray)
         } else {
             let asset = assets[indexPath.row]
             cell.asset = asset
