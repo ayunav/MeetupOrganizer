@@ -14,16 +14,16 @@ You will need to add `Constants.swift` file to the project with your API key and
   1. Create new file (cmd + N), name it `Constants`, and add to the project. 
   2. Copy-paste the code from [here](https://github.com/ayunav/MeetupOrganizer/blob/master/GitHubConstants.md), and insert your own API and OAuth keys. 
 
-* Build and run.  
+Build and run.  
 
-You should be able to build and run the project now, but you may encounter a few other possible errors. 
+- You should be able to build and run the project now, but you may encounter a few other possible errors. 
 
- - Missing module error: 
+  *Missing module error:* 
 
 ![Missing module error](https://github.com/ayunav/MeetupOrganizer/blob/master/Screenshots/Missing_module_error.png)
 
-  1. Try to build (cmd + B) the project. The error should go away. 
-  2. Or run `pod install` in your terminal, if building the project didn't help.  
+  1. Build (cmd + B) the project. The error should go away. 
+  2. If building the project didn't help, run `pod install` in your terminal.  
 
 It shouldn't be a problem, but just in case, if you're missing the image assets in the project, you can download and add them manually from [here](https://github.com/ayunav/MeetupOrganizer/tree/master/MeetupIcons).  
 
