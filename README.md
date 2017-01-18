@@ -42,7 +42,7 @@
 - refactor auth code, separate into a different manager class
 - create image upload manager class
 - handle errors, create user facing alerts 
-- add "Logging in..." progress indicator and "Successful login" UI/UX
+- add empty states: No upcoming events, no past events 
 - nit: request access to photos on add photos button tapped, not on vc navigation 
 
 - upload activity indicator per cell

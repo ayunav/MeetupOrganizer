@@ -12,7 +12,7 @@ import Photos
 import NVActivityIndicatorView
 
 
-class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
+class AddPhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Properties
     
@@ -21,12 +21,12 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
     
     let photoGalleryDataSource = PhotoGalleryDataSource()
     
-    let imageManager = PHImageManager.default()
+    let imageManager    = PHImageManager.default()
     let deliveryOptions = PHImageRequestOptionsDeliveryMode.opportunistic
-    let requestOptions = PHImageRequestOptions()
+    let requestOptions  = PHImageRequestOptions()
 
     var meetupRouter = MeetupRouter()
-    var meetupAPI = MeetupAPI()
+    var meetupAPI    = MeetupAPI()
 
     var event: Event?
     
@@ -39,17 +39,16 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
         photoGalleryCollectionView.dataSource = photoGalleryDataSource
         photoGalleryCollectionView.delegate = self
         
+        calculateCellWidth()
+        
         if let event = event {
             navigationItem.title = event.name
         }
     }
 
+
     
-    
-    
-    
-    
-    // TODO: - This method is a monstrosity. Need to rewrite it for clarity, separate into single methods.
+    // TODO: - This method is a monstrosity. Need to rewrite it for clarity, separate into single responsibility methods.
     
     // MARK: - Upload Photos
     
@@ -90,9 +89,9 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
                     
                             
                         self.meetupAPI.uploadImageData(
-                            image: _image,
-                            groupName: groupName,
-                            eventId: _eventId,
+                            image     : _image,
+                            groupName : groupName,
+                            eventId   : _eventId,
                             completion: { (photosResult) in
                                 
                                 DispatchQueue.main.async {
@@ -114,5 +113,29 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
     
     
     
+    // MARK: - UICollectionViewFlowLayout
+    
+    // https://digitalleaves.com/blog/2016/02/flawless-uicollectionviews-and-uitableviews/
+    
+    fileprivate var cellSize = CGSize.zero
+    
+    fileprivate let kScreenSize = UIScreen.main.bounds.width
+    fileprivate let kColumnsPerRow: CGFloat = 3.0
+    fileprivate let kSpan: CGFloat = 5.0
+    fileprivate let kAspectRatio: CGFloat = 1.0
+    
+    
+    func calculateCellWidth() {
+        
+        let width = (kScreenSize - (CGFloat(kColumnsPerRow + 1.0) * kSpan)) / CGFloat(kColumnsPerRow) - 1
+        let height = width * kAspectRatio
+        self.cellSize = CGSize(width: width, height: height)
+    }
+    
+ 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return cellSize
+    }
     
 }

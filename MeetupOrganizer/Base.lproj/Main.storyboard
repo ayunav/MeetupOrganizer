@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zex-Xh-0yu">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="X7m-qc-0lO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lZb-xW-avd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DU3-Rr-l5f">
-                                <rect key="frame" x="108" y="317" width="160" height="33"/>
+                                <rect key="frame" x="220" y="284" width="160" height="33"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Login with Meetup">
@@ -79,11 +75,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ior-Bk-dzX">
-                                <rect key="frame" x="265" y="28" width="94" height="34"/>
+                                <rect key="frame" x="486" y="28" width="94" height="34"/>
                                 <state key="normal" title="Add Photos">
                                     <color key="titleColor" red="0.8784313725490196" green="0.22352941176470587" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -92,7 +88,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3rn-32-SPW">
-                                <rect key="frame" x="16" y="70" width="343" height="597"/>
+                                <rect key="frame" x="0.0" y="70" width="600" height="530"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="4wO-d1-Btg">
                                     <size key="itemSize" width="100" height="100"/>
@@ -120,13 +116,13 @@
                                             <constraint firstItem="ffS-YR-FrQ" firstAttribute="leading" secondItem="l26-UU-Bvb" secondAttribute="leading" id="fPS-Bh-t4z"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="ffS-YR-FrQ" id="v5m-01-WUN"/>
+                                            <outlet property="galleryImageView" destination="ffS-YR-FrQ" id="uVG-OV-UFh"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqV-BN-2iU">
-                                <rect key="frame" x="16" y="28" width="60" height="34"/>
+                                <rect key="frame" x="20" y="28" width="60" height="34"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Gallery">
                                         <attributes>
@@ -140,15 +136,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="3rn-32-SPW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1U5-RW-YRm"/>
+                            <constraint firstItem="3rn-32-SPW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0D0-SE-Ygg"/>
                             <constraint firstItem="3rn-32-SPW" firstAttribute="top" secondItem="gqV-BN-2iU" secondAttribute="bottom" constant="8" id="6A9-65-vO3"/>
                             <constraint firstItem="gqV-BN-2iU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Rz-hH-ZUW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3rn-32-SPW" secondAttribute="bottom" id="Ndq-N0-Q6g"/>
                             <constraint firstItem="Ior-Bk-dzX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="PSK-TK-VMe"/>
                             <constraint firstItem="Ior-Bk-dzX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dWA-bx-P91"/>
                             <constraint firstItem="gqV-BN-2iU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="iqW-OC-N58"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3rn-32-SPW" secondAttribute="trailing" id="kUy-JH-iuD"/>
                             <constraint firstItem="Ior-Bk-dzX" firstAttribute="centerY" secondItem="gqV-BN-2iU" secondAttribute="centerY" id="lrI-Vi-aAq"/>
+                            <constraint firstAttribute="trailing" secondItem="3rn-32-SPW" secondAttribute="trailing" id="wg0-Zo-VtM"/>
                         </constraints>
                     </view>
                     <connections>
@@ -169,11 +165,11 @@
                         <viewControllerLayoutGuide type="bottom" id="BkW-af-WhY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KPI-Cp-pjY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MXf-Sf-bVH">
-                                <rect key="frame" x="16" y="72" width="343" height="29"/>
+                                <rect key="frame" x="20" y="72" width="560" height="29"/>
                                 <segments>
                                     <segment title="Upcoming"/>
                                     <segment title="Past"/>
@@ -184,14 +180,14 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6ry-gA-hee">
-                                <rect key="frame" x="16" y="108" width="359" height="539"/>
+                                <rect key="frame" x="20" y="108" width="580" height="472"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventsTableViewCellIdentifier" id="YYa-Cl-4k1" customClass="EventsTableViewCell" customModule="MeetupOrganizer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="580" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YYa-Cl-4k1" id="Wv5-vb-miI">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="580" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -209,7 +205,11 @@
                             <constraint firstItem="MXf-Sf-bVH" firstAttribute="leading" secondItem="KPI-Cp-pjY" secondAttribute="leadingMargin" id="xzv-3X-kds"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="q2M-dd-TJM"/>
+                    <navigationItem key="navigationItem" id="q2M-dd-TJM">
+                        <barButtonItem key="backBarButtonItem" title=" " id="e6u-PS-4Xq">
+                            <color key="tintColor" red="0.92941176470588238" green="0.10980392156862745" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventsTableView" destination="6ry-gA-hee" id="PbS-bi-6W1"/>
                         <outlet property="segmentedControl" destination="MXf-Sf-bVH" id="o9p-0y-5aM"/>
@@ -221,6 +221,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MeetupLogo" width="250" height="250"/>
+        <image name="MeetupLogo" width="160" height="160"/>
     </resources>
+    <color key="tintColor" red="0.92941176469999998" green="0.10980392160000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

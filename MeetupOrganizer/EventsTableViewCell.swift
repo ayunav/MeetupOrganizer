@@ -8,8 +8,8 @@
 
 import UIKit
 
-class EventsTableViewCell: UITableViewCell
-{
+class EventsTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var eventTimeLabel: UILabel!
     @IBOutlet weak var eventTitleLabel: UILabel!
@@ -17,8 +17,7 @@ class EventsTableViewCell: UITableViewCell
     @IBOutlet weak var venueLabel: UILabel!
     
     
-    override func awakeFromNib()
-    {
+    override func awakeFromNib() {
         super.awakeFromNib()
     }
 

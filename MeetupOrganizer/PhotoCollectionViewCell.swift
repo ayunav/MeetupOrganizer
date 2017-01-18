@@ -11,9 +11,9 @@ import Photos
 import NVActivityIndicatorView
 
 
-class PhotoGalleryCollectionViewCell: UICollectionViewCell
-{
-    @IBOutlet var imageView: UIImageView!
+class PhotoGalleryCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet var galleryImageView: UIImageView!
 
     private let manager = PHImageManager.default()
     private let deliveryOptions = PHImageRequestOptionsDeliveryMode.opportunistic
@@ -22,47 +22,43 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell
     private let thumbnailSize = CGSize(width: 100, height: 100)
     
    
-    var asset: PHAsset?
-    {
-        didSet
-        {
-            if let _asset = asset
-            {
-                manager.requestImage(for: _asset, targetSize: thumbnailSize, contentMode: PHImageContentMode.aspectFill, options: requestOptions, resultHandler: requestResultHandler)
+    var asset: PHAsset? {
+        didSet {
+            if let _asset = asset {
+                
+                manager.requestImage(for          : _asset,
+                                     targetSize   : thumbnailSize,
+                                     contentMode  : PHImageContentMode.aspectFill,
+                                     options      : requestOptions,
+                                     resultHandler: requestResultHandler)
             }
         }
     }
     
     
-    private func requestResultHandler(image: UIImage?, properties: [AnyHashable: Any]?) -> Void
-    {
+    private func requestResultHandler(image: UIImage?, properties: [AnyHashable: Any]?) -> Void {
         updateWithImage(image: image)
     }
 
     
-    private func updateWithImage(image: UIImage?)
-    {
-        if let imageToDisplay = image
-        {
-            ActivityIndicatorView.sharedInstance.hideActivityIndicator()
-            imageView.image = imageToDisplay
+    private func updateWithImage(image: UIImage?) {
+        
+        if let _image = image {
+            galleryImageView.image = _image
         } else {
-            ActivityIndicatorView.sharedInstance.showActivityIndicatorInView(view: self.imageView)
-            imageView.image = nil
+            galleryImageView.image = UIImage(named: PlaceholderGray)
         }
     }
     
     
-    override func awakeFromNib()
-    {
+    override func awakeFromNib() {
         super.awakeFromNib()
         
         updateWithImage(image: nil)
     }
     
     
-    override func prepareForReuse()
-    {
+    override func prepareForReuse() {
         super.prepareForReuse()
         
         updateWithImage(image: nil)
@@ -70,4 +66,3 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell
 
     
 }
-

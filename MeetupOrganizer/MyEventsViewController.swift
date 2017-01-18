@@ -20,8 +20,7 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var eventsTableView: UITableView!
     
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "My Events"
@@ -41,18 +40,13 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
     
-    @IBAction func fetchEvents(sender: UISegmentedControl)
-    {
+    @IBAction func fetchEvents(sender: UISegmentedControl) {
+        
         switch sender.selectedSegmentIndex {
         case 0:
             getUpcomingEvents()
@@ -64,10 +58,10 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    func getUpcomingEvents()
-    {
+    func getUpcomingEvents() {
+        
         meetupAPI.getUpcomingEvents() { (eventsResult) -> Void in
-            OperationQueue.main.addOperation {
+            DispatchQueue.main.async {
                 switch eventsResult {
                 case let .success(_events):
                     self.events = _events
@@ -80,10 +74,10 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    func getPastEvents()
-    {
+    func getPastEvents() {
+        
         meetupAPI.getPastEvents() { (eventsResult) -> Void in
-            OperationQueue.main.addOperation {
+            DispatchQueue.main.async {
                 switch eventsResult {
                 case let .success(_events):
                     self.events = _events
@@ -124,8 +118,8 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: - Navigation
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let eventDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "AddPhotosViewController")
             as? AddPhotosViewController
         
@@ -138,20 +132,4 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
         self.navigationController?.pushViewController(eventDetailVC!, animated: true)
     }
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if segue.identifier == "ShowEventDetailVCSegueIdentifier" {
-//        
-//            let eventDetailVC = segue.destination as! AddPhotosViewController
-//            
-//            if let selectedIndexPath = eventsTableView.indexPathForSelectedRow?.row {
-//            
-//                let event = self.events[selectedIndexPath]
-//                eventDetailVC.event = event
-//            }
-//        }
-//    }
-    
-    
-   
 }
