@@ -13,7 +13,7 @@ let OAuthSecret  = "INSERT-YOUR-OAUTH-SECRET-HERE"
 let RedirectUri  = "INSERT-YOUR-REDIRECT-URI-HERE"
 
 let AuthorizationEndpoint = "https://secure.meetup.com/oauth2/authorize"
-let AccessTokenEndpoint = "https://secure.meetup.com/oauth2/access"
+let AccessTokenEndpoint   = "https://secure.meetup.com/oauth2/access"
 
 let ResponseType = "code"
 let State = "meetup\(Int(Date().timeIntervalSince1970))"
