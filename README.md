@@ -74,7 +74,7 @@ It shouldn't be a problem, but just in case, if you're missing the image assets 
 - handle errors, create user facing alerts 
 - add empty states: no upcoming events, no past events
 - nit: request access to photos on add photos button tapped, not on vc navigation
-- add app icon 
+- add an app icon 
 
 - upload activity indicator per cell
     - the col view will display selected photos
