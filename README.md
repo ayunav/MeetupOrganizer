@@ -1,6 +1,17 @@
 # Meetup Organizer
 📲 An iOS app for meetup goers, hosts, and organizers that extends native Meetup app's functionality and lets you upload multiple photos to meetup events. 
 
+### Background 
+
+As the organizer of the largest iOS meetup in NYC, [iOSoho](https://www.meetup.com/iOSoho/), it was hard for me to upload photos to the events, as you can only upload one photo at a time. Meetup Organizer app doesn't do much, but it solves my personal pain point, and it makes me very happy. 😊
+
+If you want to upload photos to the Meetup events you attend, download the source code and run it on your iPhone. See [How to run](https://github.com/ayunav/MeetupOrganizer#how-to-run) instructions below. 
+
+- Login with your Meetup account to authenticate. 
+- The app will request you to authorize the Meetup Organizer app and grant access to your Meetup account in order to upload photos on your behalf. 
+- The app will display the list of upcoming and past events that you RSVP'ed "Yes" to. 
+- Select an event, and upload multiple photos with a click of one button!  
+
 ## Demo 
 
 ![App demo](https://github.com/ayunav/MeetupOrganizer/blob/master/MeetupOrganizerAppDemo.gif)
