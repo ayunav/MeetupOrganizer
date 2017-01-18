@@ -69,6 +69,7 @@ It shouldn't be a problem, but just in case, if you're missing the image assets 
 - when uploading new photos, add new photos to the col view (different section? )
 - improve response time on fetching upcoming and past events: cache response, add pull to refresh
 - add log out/switch account button
+- add tests 
 - refactor auth code
 - refactor image upload 
 - handle errors, create user facing alerts 
