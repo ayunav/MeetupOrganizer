@@ -22,8 +22,8 @@ You should be able to build and run the project now, but you may encounter a few
 
 ![Missing module error](https://github.com/ayunav/MeetupOrganizer/blob/master/Screenshots/Missing_module_error.png)
 
-  1. Build (cmd + B) the project. The compiler should stop complaining. 🙄 😂  
-  2. If building the project didn't help, run `pod install` in your terminal.  
+  1. Build (cmd + B) the project. The compiler should stop complaining. 🙄 😂  
+  2. If building the project didn't help, run `pod install` in your terminal.  
 
 It shouldn't be a problem, but just in case, if you're missing the image assets in the project, you can download and add them manually from [here](https://github.com/ayunav/MeetupOrganizer/tree/master/MeetupIcons).  
 
@@ -69,7 +69,7 @@ It shouldn't be a problem, but just in case, if you're missing the image assets 
 - refactor image upload 
 - handle errors, create user facing alerts 
 - add empty states: no upcoming events, no past events
-- nit: request access to photos on add photos button tapped, not on vc navigation 
+- nit: request access to photos on add photos button tapped, not on vc navigation
 
 - upload activity indicator per cell
     - the col view will display selected photos
