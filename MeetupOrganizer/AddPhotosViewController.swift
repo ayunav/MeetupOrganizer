@@ -12,7 +12,7 @@ import Photos
 import NVActivityIndicatorView
 
 
-class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
+class AddPhotosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Properties
     
@@ -21,12 +21,12 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
     
     let photoGalleryDataSource = PhotoGalleryDataSource()
     
-    let imageManager = PHImageManager.default()
+    let imageManager    = PHImageManager.default()
     let deliveryOptions = PHImageRequestOptionsDeliveryMode.opportunistic
-    let requestOptions = PHImageRequestOptions()
+    let requestOptions  = PHImageRequestOptions()
 
     var meetupRouter = MeetupRouter()
-    var meetupAPI = MeetupAPI()
+    var meetupAPI    = MeetupAPI()
 
     var event: Event?
     
@@ -87,9 +87,9 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
                     
                             
                         self.meetupAPI.uploadImageData(
-                            image: _image,
-                            groupName: groupName,
-                            eventId: _eventId,
+                            image     : _image,
+                            groupName : groupName,
+                            eventId   : _eventId,
                             completion: { (photosResult) in
                                 
                                 DispatchQueue.main.async {
@@ -110,6 +110,26 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate {
     }
     
     
+    // MARK: - UICollectioViewDelegate
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        
+
+    }
+    
+    // MARK: - UICollectionViewFlowLayout
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let picDimension = self.view.frame.size.width / 4.0
+        return CGSize(width: picDimension, height: picDimension)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        let leftRightInset = self.view.frame.size.width / 14.0
+        return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
+    }
     
 }
