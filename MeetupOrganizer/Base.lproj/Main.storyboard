@@ -209,7 +209,11 @@
                             <constraint firstItem="MXf-Sf-bVH" firstAttribute="leading" secondItem="KPI-Cp-pjY" secondAttribute="leadingMargin" id="xzv-3X-kds"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="q2M-dd-TJM"/>
+                    <navigationItem key="navigationItem" id="q2M-dd-TJM">
+                        <barButtonItem key="backBarButtonItem" title=" " id="e6u-PS-4Xq">
+                            <color key="tintColor" red="0.92941176470588238" green="0.10980392156862745" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventsTableView" destination="6ry-gA-hee" id="PbS-bi-6W1"/>
                         <outlet property="segmentedControl" destination="MXf-Sf-bVH" id="o9p-0y-5aM"/>
@@ -223,4 +227,5 @@
     <resources>
         <image name="MeetupLogo" width="160" height="160"/>
     </resources>
+    <color key="tintColor" red="0.92941176469999998" green="0.10980392160000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>
