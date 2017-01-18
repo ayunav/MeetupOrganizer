@@ -16,14 +16,14 @@ You will need to add `Constants.swift` file to the project with your API key and
 
 Build and run.  
 
-- You should be able to build and run the project now, but you may encounter a few other possible errors. 
+You should be able to build and run the project now, but you may encounter a few other possible errors. 
 
-  *Missing module error:* 
+*Missing module error:* 
 
 ![Missing module error](https://github.com/ayunav/MeetupOrganizer/blob/master/Screenshots/Missing_module_error.png)
 
-  1. Build (cmd + B) the project. The error should go away. 
-  2. If building the project didn't help, run `pod install` in your terminal.  
+  1. Build (cmd + B) the project. The compiler should stop complaining. 🙄 😂  
+  2. If building the project didn't help, run `pod install` in your terminal.  
 
 It shouldn't be a problem, but just in case, if you're missing the image assets in the project, you can download and add them manually from [here](https://github.com/ayunav/MeetupOrganizer/tree/master/MeetupIcons).  
 
@@ -77,6 +77,8 @@ It shouldn't be a problem, but just in case, if you're missing the image assets 
     - add spinning activity indicators indicating upload progress per photo/per cell
     - if there's a problem with upload, display a user facing error message
     - when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
+
+Not sure about these: 
 
 - ? add waitlist events
 - ? deep link to photos at the event, or to the event, or to the meetup group. Play with it.
