@@ -34,9 +34,12 @@ class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier, for: indexPath) as! PhotoGalleryCollectionViewCell
         
-        let asset = assets[indexPath.row]
-        
-        cell.asset = asset
+        if assets.isEmpty == true {
+            cell.galleryImageView.image = UIImage(named: "MeetupLogo")
+        } else {
+            let asset = assets[indexPath.row]
+            cell.asset = asset
+        }
         
         return cell
     }
