@@ -1,6 +1,10 @@
 # Meetup Organizer
 📲 An iOS app for meetup goers, hosts, and organizers that extends native Meetup app's functionality and lets you upload multiple photos to meetup events. 
 
+## Demo 
+
+![App demo](https://github.com/ayunav/MeetupOrganizer/blob/master/MeetupOrganizerAppDemo.gif)
+
 ## How to run 
 
 * Download the source file 
