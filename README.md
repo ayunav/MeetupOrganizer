@@ -65,23 +65,23 @@ It shouldn't be a problem, but just in case, if you're missing the image assets 
 - when uploading new photos, add new photos to the col view (different section? )
 - improve response time on fetching upcoming and past events: cache response, add pull to refresh
 - add log out/switch account button
-- refactor auth code, separate into a different manager class
-- create image upload manager class
+- refactor auth code
+- refactor image upload 
 - handle errors, create user facing alerts 
-- add empty states: No upcoming events, no past events 
+- add empty states: no upcoming events, no past events
 - nit: request access to photos on add photos button tapped, not on vc navigation 
 
 - upload activity indicator per cell
-    - 1. the col view will display selected photos
-    - 2. change cells' alpha to opaque
-    - 3. add spinning activity indicators indicating upload progress per photo/per cell
-    - 4. if there's a problem with upload, display a user facing error message
-    - 5. when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
+    - the col view will display selected photos
+    - change cells' alpha to opaque
+    - add spinning activity indicators indicating upload progress per photo/per cell
+    - if there's a problem with upload, display a user facing error message
+    - when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
 
 - ? add waitlist events
-- ? deep link to photos at the event, or to the event, or to the meetup group. Play with it. 
-- ? add caption to uploaded photos: Uploaded by <member name> via Meetup Organizer iOS app by Ayuna Vogel (include link?)
-- ? two sections for the images that are already on the server, and for the newly uploaded, with different section background images 
+- ? deep link to photos at the event, or to the event, or to the meetup group. Play with it.
+- ? add caption to uploaded photos: Uploaded by `member name` via Meetup Organizer iOS app by Ayuna Vogel (include link?)
+- ? two sections for the images that are already on the server, and for the newly uploaded, with different section background images
 
 #### Resources to explore:
 
