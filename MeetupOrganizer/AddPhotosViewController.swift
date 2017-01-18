@@ -39,6 +39,8 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate, UICol
         photoGalleryCollectionView.dataSource = photoGalleryDataSource
         photoGalleryCollectionView.delegate = self
         
+        calculateCellWidth()
+        
         if let event = event {
             navigationItem.title = event.name
         }
@@ -110,26 +112,30 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     
-    // MARK: - UICollectioViewDelegate
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-        
-
-    }
     
     // MARK: - UICollectionViewFlowLayout
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    // https://digitalleaves.com/blog/2016/02/flawless-uicollectionviews-and-uitableviews/
+    
+    fileprivate var cellSize = CGSize.zero
+    
+    fileprivate let kScreenSize = UIScreen.main.bounds.width
+    fileprivate let kColumnsPerRow: CGFloat = 3.0
+    fileprivate let kSpan: CGFloat = 5.0
+    fileprivate let kAspectRatio: CGFloat = 1.0
+    
+    
+    func calculateCellWidth() {
         
-        let picDimension = self.view.frame.size.width / 4.0
-        return CGSize(width: picDimension, height: picDimension)
+        let width = (kScreenSize - (CGFloat(kColumnsPerRow + 1.0) * kSpan)) / CGFloat(kColumnsPerRow) - 1
+        let height = width * kAspectRatio
+        self.cellSize = CGSize(width: width, height: height)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        let leftRightInset = self.view.frame.size.width / 14.0
-        return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
+ 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return cellSize
     }
     
 }
