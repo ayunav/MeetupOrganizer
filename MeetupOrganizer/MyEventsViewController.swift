@@ -61,7 +61,7 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
     func getUpcomingEvents() {
         
         meetupAPI.getUpcomingEvents() { (eventsResult) -> Void in
-            OperationQueue.main.addOperation {
+            DispatchQueue.main.async {
                 switch eventsResult {
                 case let .success(_events):
                     self.events = _events
@@ -77,7 +77,7 @@ class MyEventsViewController: UIViewController, UITableViewDelegate, UITableView
     func getPastEvents() {
         
         meetupAPI.getPastEvents() { (eventsResult) -> Void in
-            OperationQueue.main.addOperation {
+            DispatchQueue.main.async {
                 switch eventsResult {
                 case let .success(_events):
                     self.events = _events
