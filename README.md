@@ -31,21 +31,16 @@
 
 **TO-DO:** 
 
+- add build and run instructions with meetup account add 
 - beautify collection view photo gallery  
-
-- add and display placeholder image in the gallery collection view
 - on navigation to AddPhotosVC, display photos that are already on the server (fetch photos, display in the collection view)
-- when uploading new photos, add new photos to the col view 
-
+- when uploading new photos, add new photos to the col view (different section? )
 - improve response time on fetching upcoming and past events: cache response, add pull to refresh
 - add log out/switch account button
-
 - refactor auth code, separate into a different manager class
 - handle errors, create user facing alerts 
 - add "Logging in..." progress indicator and "Successful login" UI/UX
-
 - nit: request access to photos on add photos button tapped, not on vc navigation 
-- nit: change back nav button to red meetup color arrow, no string
 
 - upload activity indicator per cell
     - 1. the col view will display selected photos
@@ -57,10 +52,7 @@
 - ? add waitlist events
 - ? deep link to photos at the event, or to the event, or to the meetup group. Play with it. 
 - ? add caption to uploaded photos: Uploaded by <member name> via Meetup Organizer iOS app by Ayuna Vogel (include link?)
-
-- single collection view cell selection to bring up a detail view
-- 2 sections for the images that are already on the server, and for the newly uploaded, with different section background images 
-
+- ? two sections for the images that are already on the server, and for the newly uploaded, with different section background images 
 
 
 **Unused resources:**
