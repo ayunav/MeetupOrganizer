@@ -8,6 +8,7 @@
 - [BSImagePicker](https://github.com/mikaoj/BSImagePicker) - replacement for UIImagePickerController for multiple image selection 
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView) - collection of awesome loading animations
 - [OAuthSwift](https://github.com/OAuthSwift/OAuthSwift/) - Swift based OAuth library for iOS and OSX
+- [Meetup Logo image](https://a248.e.akamai.net/secure.meetupstatic.com/s/img/786824251364989575000/logo/swarm/m_swarm_630x630.png)
 
 **Resources**: 
 
@@ -60,6 +61,7 @@
 
 **Unused resources:**
 
+- http://swiftiostutorials.com/tutorial-creating-custom-layouts-uicollectionview/
 - https://www.raywenderlich.com/147162/iglistkit-tutorial-better-uicollectionviews
 - https://www.raywenderlich.com/136161/uicollectionview-tutorial-reusable-views-selection-reordering
 - http://strawberrycode.com/blog/how-to-create-a-section-background-in-a-uicollectionview-in-ios-swift/
