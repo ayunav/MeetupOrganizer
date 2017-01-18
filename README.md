@@ -3,29 +3,29 @@
 
 ## How to run 
 
-1. Download the source file 
-2. Open `MeetupOrganizer.xcworkspace` project 
-3. You will see an error message and the missing `Constants.swift` file in the Project Navigator in the Constants folder. 
+* Download the source file 
+* Open `MeetupOrganizer.xcworkspace` project 
+* You will see an error message and the missing `Constants.swift` file in the Project Navigator in the Constants folder. 
 
 ![Missing Constants.swift file error](https://github.com/ayunav/MeetupOrganizer/blob/master/Screenshots/Missing_Constants.swift_File.png)
 
 MeetupOrganizer app uses OAuth protocol to let their users login and authenticate with their Meetup account. 
 You will need to add `Constants.swift` file to the project with your API key and OAuth Consumer key and secret credentials.
-  - Create new file (cmd + N), name it `Constants`, and add to the project. 
-  - Copy-paste the code from [here](https://github.com/ayunav/MeetupOrganizer/blob/master/GitHubConstants.md), and insert your own API and OAuth keys. 
+  1. Create new file (cmd + N), name it `Constants`, and add to the project. 
+  2. Copy-paste the code from [here](https://github.com/ayunav/MeetupOrganizer/blob/master/GitHubConstants.md), and insert your own API and OAuth keys. 
 
-Build and run.  
+* Build and run.  
 
 You should be able to build and run the project now, but you may encounter a few other possible errors. 
 
-  - Missing module error: 
+ - Missing module error: 
 
 ![Missing module error](https://github.com/ayunav/MeetupOrganizer/blob/master/Screenshots/Missing_module_error.png)
 
-    - Try to build (cmd + B) the project. The error should go away. 
-    - Or run `pod install` in your terminal, if building the project didn't help.  
+  1. Try to build (cmd + B) the project. The error should go away. 
+  2. Or run `pod install` in your terminal, if building the project didn't help.  
 
-  - It shouldn't be a problem, but just in case, if you're missing the image assets in the project, you can download and add them manually from [here](https://github.com/ayunav/MeetupOrganizer/tree/master/MeetupIcons).  
+It shouldn't be a problem, but just in case, if you're missing the image assets in the project, you can download and add them manually from [here](https://github.com/ayunav/MeetupOrganizer/tree/master/MeetupIcons).  
 
 
 ## Acknowledgements
