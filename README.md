@@ -63,7 +63,7 @@ It shouldn't be a problem, but just in case, if you're missing the image assets 
 - [Flawless UICollectionViews](https://digitalleaves.com/blog/2016/02/flawless-uicollectionviews-and-uitableviews/)
   
 
-## TO-DO
+### TO-DO
 
 - on navigation to AddPhotosVC, display photos that are already on the server (fetch photos, display in the collection view)
 - when uploading new photos, add new photos to the col view (different section? )
@@ -74,6 +74,7 @@ It shouldn't be a problem, but just in case, if you're missing the image assets 
 - handle errors, create user facing alerts 
 - add empty states: no upcoming events, no past events
 - nit: request access to photos on add photos button tapped, not on vc navigation
+- add app icon 
 
 - upload activity indicator per cell
     - the col view will display selected photos
