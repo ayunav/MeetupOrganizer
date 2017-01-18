@@ -1,7 +1,34 @@
 # Meetup Organizer
 📲 An iOS app for meetup goers, hosts, and organizers that extends native Meetup app's functionality and lets you upload multiple photos to meetup events. 
 
-**Acknowledgements**: 
+## How to run 
+
+1. Download the source file 
+2. Open MeetupOrganizer.xcworkspace project 
+3. You will see an error message and the missing `Constants.swift` file in the Project Navigator in the Constants folder. 
+
+![Missing Constants.swift file error]()
+
+MeetupOrganizer app uses OAuth protocol to let their users login and authenticate with their Meetup account. 
+- You will need to add `Constants.swift` file to the project with your API key and OAuth Consumer key and secret credentials.
+- Create new file (cmd + N), name it `Constants`, and add to the project. 
+- Copy-paste the code from [here](), and add your own API and OAuth keys. 
+
+4. Build and run 
+
+You should be able to build and run the project at the step above, but you may encounter other possible errors:
+
+Missing module error: 
+
+![Missing module error]()
+
+- Try to build (cmd + B), the error should go away. 
+- Or run `pod install` in your terminal, if building the project didn't help.  
+
+It shouldn't be a problem, but just in case, if you're missing the image assets in the project, you can download and add them manually from [here]().  
+
+
+## Acknowledgements
 
 - [CocoaPods NYC Meetup](https://www.meetup.com/CocoaPods-NYC/) - peer lab
 - [Alamofire](https://github.com/Alamofire/Alamofire) - HTTP networking library 
@@ -10,7 +37,8 @@
 - [OAuthSwift](https://github.com/OAuthSwift/OAuthSwift/) - Swift based OAuth library for iOS and OSX
 - [Meetup Logo image](https://a248.e.akamai.net/secure.meetupstatic.com/s/img/786824251364989575000/logo/swarm/m_swarm_630x630.png)
 
-**Resources**: 
+
+## Resources 
 
 - [iOS Programming: The Big Nerd Ranch Guide by Keur & Hillegass](https://www.bignerdranch.com/we-write/)
 - [Building URLs with NSURLComponents and NSURLQueryItems](https://grokswift.com/building-urls/)
@@ -31,9 +59,7 @@
 - [Flawless UICollectionViews](https://digitalleaves.com/blog/2016/02/flawless-uicollectionviews-and-uitableviews/)
   
 
-**TO-DO:** 
-
-- add build and run instructions with meetup account add 
+## TO-DO
 
 - on navigation to AddPhotosVC, display photos that are already on the server (fetch photos, display in the collection view)
 - when uploading new photos, add new photos to the col view (different section? )
@@ -57,9 +83,7 @@
 - ? add caption to uploaded photos: Uploaded by <member name> via Meetup Organizer iOS app by Ayuna Vogel (include link?)
 - ? two sections for the images that are already on the server, and for the newly uploaded, with different section background images 
 
-
-
-**Unused resources:**
+#### Resources to explore:
 
 - http://swiftiostutorials.com/tutorial-creating-custom-layouts-uicollectionview/
 - https://www.raywenderlich.com/147162/iglistkit-tutorial-better-uicollectionviews
