@@ -120,7 +120,7 @@
                                             <constraint firstItem="ffS-YR-FrQ" firstAttribute="leading" secondItem="l26-UU-Bvb" secondAttribute="leading" id="fPS-Bh-t4z"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="ffS-YR-FrQ" id="v5m-01-WUN"/>
+                                            <outlet property="galleryImageView" destination="ffS-YR-FrQ" id="uVG-OV-UFh"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -221,6 +221,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MeetupLogo" width="250" height="250"/>
+        <image name="MeetupLogo" width="160" height="160"/>
     </resources>
 </document>
