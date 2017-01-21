@@ -15,10 +15,14 @@ let MeetupAccessToken = "meetupAccessToken"
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var loginButton: UIButton!
+    // MARK: - Properties
     
-    var oauthswift: OAuthSwift?
+    @IBOutlet weak fileprivate var loginButton: UIButton!
     
+    fileprivate var oauthswift: OAuthSwift?
+    
+
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

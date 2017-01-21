@@ -1,5 +1,5 @@
 //
-//  PhotoGalleryDataSource.swift
+//  GalleryDataSource.swift
 //  MeetupOrganizer
 //
 //  Created by Ayuna NYC on 12/6/16.
@@ -10,16 +10,15 @@ import UIKit
 import Photos
 
 
-class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource
+class GalleryDataSource: NSObject, UICollectionViewDataSource
 {
     // MARK: - Properties
     
-    private let CellIdentifier = "PhotoGalleryCollectionViewCellIdentifier"
+    fileprivate let CellIdentifier = "GalleryCollectionViewCellIdentifier"
 
-    let manager = PHImageManager.default()
+    fileprivate let manager = PHImageManager.default()
 
     var assets: [PHAsset] = []
-    
     
     
     // MARK: - Data Source Methods
@@ -31,14 +30,12 @@ class PhotoGalleryDataSource: NSObject, UICollectionViewDataSource
         } else {
             return 21
         }
-        
-//        return assets.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier, for: indexPath) as! PhotoGalleryCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier, for: indexPath) as! GalleryCollectionViewCell
         
         if assets.isEmpty == true {
             cell.galleryImageView.image = UIImage(named: PlaceholderGray)

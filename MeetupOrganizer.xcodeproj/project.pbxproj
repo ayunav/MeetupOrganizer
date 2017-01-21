@@ -22,8 +22,8 @@
 		D9C7DFF81DEE0FBA00E9B310 /* AddPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFF71DEE0FBA00E9B310 /* AddPhotosViewController.swift */; };
 		D9C7DFFC1DEE109A00E9B310 /* MeetupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFFB1DEE109A00E9B310 /* MeetupRouter.swift */; };
 		D9C7DFFE1DEE10A600E9B310 /* MeetupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C7DFFD1DEE10A600E9B310 /* MeetupAPI.swift */; };
-		D9F517201DF7476700098B8D /* PhotoGalleryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5171F1DF7476700098B8D /* PhotoGalleryDataSource.swift */; };
-		D9F517221DF7488900098B8D /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */; };
+		D9F517201DF7476700098B8D /* GalleryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5171F1DF7476700098B8D /* GalleryDataSource.swift */; };
+		D9F517221DF7488900098B8D /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F517211DF7488900098B8D /* GalleryCollectionViewCell.swift */; };
 		D9F517271DF9F3F100098B8D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F517261DF9F3F100098B8D /* Event.swift */; };
 		D9FEB8F11E02604A00385A0B /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEB8F01E02604A00385A0B /* ActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
@@ -48,8 +48,8 @@
 		D9C7DFF71DEE0FBA00E9B310 /* AddPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotosViewController.swift; sourceTree = "<group>"; };
 		D9C7DFFB1DEE109A00E9B310 /* MeetupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetupRouter.swift; sourceTree = "<group>"; };
 		D9C7DFFD1DEE10A600E9B310 /* MeetupAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetupAPI.swift; sourceTree = "<group>"; };
-		D9F5171F1DF7476700098B8D /* PhotoGalleryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGalleryDataSource.swift; sourceTree = "<group>"; };
-		D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		D9F5171F1DF7476700098B8D /* GalleryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryDataSource.swift; sourceTree = "<group>"; };
+		D9F517211DF7488900098B8D /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D9F517261DF9F3F100098B8D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		D9FEB8F01E02604A00385A0B /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +83,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D9284F201E33391D006C0D37 /* My Events */ = {
+			isa = PBXGroup;
+			children = (
+				D9C7DFF51DEE0FA700E9B310 /* MyEventsViewController.swift */,
+				D93AC8C61E20901600FA0BAF /* Events Table View Cell */,
+			);
+			name = "My Events";
+			sourceTree = "<group>";
+		};
+		D9284F211E33392E006C0D37 /* Add Photos */ = {
+			isa = PBXGroup;
+			children = (
+				D9C7DFF71DEE0FBA00E9B310 /* AddPhotosViewController.swift */,
+				D9F5172A1DFB61C600098B8D /* Gallery Collection View */,
+			);
+			name = "Add Photos";
+			sourceTree = "<group>";
+		};
+		D9284F221E333951006C0D37 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D98EFD6F1E08ECEA00602612 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		D93AC8C61E20901600FA0BAF /* Events Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,14 +118,14 @@
 			name = "Events Table View Cell";
 			sourceTree = "<group>";
 		};
-		D93EABCC1E1C5A7E003C5FC8 /* Controllers */ = {
+		D93EABCC1E1C5A7E003C5FC8 /* Contexts */ = {
 			isa = PBXGroup;
 			children = (
-				D98EFD6F1E08ECEA00602612 /* LoginViewController.swift */,
-				D9C7DFF51DEE0FA700E9B310 /* MyEventsViewController.swift */,
-				D9C7DFF71DEE0FBA00E9B310 /* AddPhotosViewController.swift */,
+				D9284F221E333951006C0D37 /* Login */,
+				D9284F201E33391D006C0D37 /* My Events */,
+				D9284F211E33392E006C0D37 /* Add Photos */,
 			);
-			name = Controllers;
+			name = Contexts;
 			sourceTree = "<group>";
 		};
 		D93EABD01E1C7980003C5FC8 /* Constants */ = {
@@ -123,8 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				D9FEB8F01E02604A00385A0B /* ActivityIndicatorView.swift */,
-				D93AC8C61E20901600FA0BAF /* Events Table View Cell */,
-				D9F5172A1DFB61C600098B8D /* Photo Gallery Collection View */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -160,7 +184,7 @@
 			children = (
 				D9764A3D1E200FD200362E48 /* Application */,
 				D93EABD01E1C7980003C5FC8 /* Constants */,
-				D93EABCC1E1C5A7E003C5FC8 /* Controllers */,
+				D93EABCC1E1C5A7E003C5FC8 /* Contexts */,
 				D95489F91E22011100C2AFFF /* Extensions */,
 				D9C7DFFF1DEE10AE00E9B310 /* Models */,
 				D9C7E0091DEFEE8600E9B310 /* Networking */,
@@ -206,13 +230,13 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		D9F5172A1DFB61C600098B8D /* Photo Gallery Collection View */ = {
+		D9F5172A1DFB61C600098B8D /* Gallery Collection View */ = {
 			isa = PBXGroup;
 			children = (
-				D9F5171F1DF7476700098B8D /* PhotoGalleryDataSource.swift */,
-				D9F517211DF7488900098B8D /* PhotoCollectionViewCell.swift */,
+				D9F5171F1DF7476700098B8D /* GalleryDataSource.swift */,
+				D9F517211DF7488900098B8D /* GalleryCollectionViewCell.swift */,
 			);
-			name = "Photo Gallery Collection View";
+			name = "Gallery Collection View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,7 +366,7 @@
 			files = (
 				D9FEB8F11E02604A00385A0B /* ActivityIndicatorView.swift in Sources */,
 				D9C7DFFC1DEE109A00E9B310 /* MeetupRouter.swift in Sources */,
-				D9F517221DF7488900098B8D /* PhotoCollectionViewCell.swift in Sources */,
+				D9F517221DF7488900098B8D /* GalleryCollectionViewCell.swift in Sources */,
 				D9C7DFFE1DEE10A600E9B310 /* MeetupAPI.swift in Sources */,
 				D95489F41E21C32100C2AFFF /* ColorConstants.swift in Sources */,
 				D97416371E04E99800586D59 /* EventsTableViewCell.swift in Sources */,
@@ -352,7 +376,7 @@
 				D98EFD721E09BE9800602612 /* Constants.swift in Sources */,
 				D95489F81E22010B00C2AFFF /* DateFormatter.swift in Sources */,
 				D9C7DFE21DEE0EAD00E9B310 /* AppDelegate.swift in Sources */,
-				D9F517201DF7476700098B8D /* PhotoGalleryDataSource.swift in Sources */,
+				D9F517201DF7476700098B8D /* GalleryDataSource.swift in Sources */,
 				D98EFD701E08ECEA00602612 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

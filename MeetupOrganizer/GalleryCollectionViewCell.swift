@@ -1,5 +1,5 @@
 //
-//  PhotoGalleryCollectionViewCell.swift
+//  GalleryCollectionViewCell.swift
 //  MeetupOrganizer
 //
 //  Created by Ayuna NYC on 12/6/16.
@@ -11,15 +11,15 @@ import Photos
 import NVActivityIndicatorView
 
 
-class PhotoGalleryCollectionViewCell: UICollectionViewCell {
+class GalleryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var galleryImageView: UIImageView!
 
-    private let manager = PHImageManager.default()
-    private let deliveryOptions = PHImageRequestOptionsDeliveryMode.opportunistic
-    private let requestOptions = PHImageRequestOptions()
+    fileprivate let manager = PHImageManager.default()
+    fileprivate let deliveryOptions = PHImageRequestOptionsDeliveryMode.opportunistic
+    fileprivate let requestOptions = PHImageRequestOptions()
     
-    private let thumbnailSize = CGSize(width: 100, height: 100)
+    fileprivate let thumbnailSize = CGSize(width: 100, height: 100)
     
    
     var asset: PHAsset? {

@@ -16,10 +16,10 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate, UICol
     
     // MARK: - Properties
     
-    @IBOutlet weak private var addPhotosButton: UIButton!
-    @IBOutlet weak private var photoGalleryCollectionView: UICollectionView!
+    @IBOutlet weak fileprivate var addPhotosButton: UIButton!
+    @IBOutlet weak fileprivate var photoGalleryCollectionView: UICollectionView!
     
-    let photoGalleryDataSource = PhotoGalleryDataSource()
+    let galleryDataSource = GalleryDataSource()
     
     let imageManager    = PHImageManager.default()
     let deliveryOptions = PHImageRequestOptionsDeliveryMode.opportunistic
@@ -36,7 +36,7 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        photoGalleryCollectionView.dataSource = photoGalleryDataSource
+        photoGalleryCollectionView.dataSource = galleryDataSource
         photoGalleryCollectionView.delegate = self
         
         calculateCellWidth()
@@ -65,7 +65,7 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate, UICol
             finish:   { (assets: [PHAsset]) -> Void in
             
                 DispatchQueue.main.async {
-                    ActivityIndicatorView.sharedInstance.showActivityIndicatorInView(view: self.view)
+                    ActivityIndicatorView.sharedInstance.showActivityIndicator(in: self.view)
                 }
                 
                 
@@ -98,7 +98,7 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate, UICol
                                     switch photosResult {
                                     case .success:
                                         ActivityIndicatorView.sharedInstance.hideActivityIndicator()
-                                        self.photoGalleryDataSource.assets = assets
+                                        self.galleryDataSource.assets = assets
                                         self.photoGalleryCollectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
                                     case let .failure(error):
                                         print("Error uploading photos to the meetup event: \(error)")
@@ -125,7 +125,7 @@ class AddPhotosViewController: UIViewController, UICollectionViewDelegate, UICol
     fileprivate let kAspectRatio: CGFloat = 1.0
     
     
-    func calculateCellWidth() {
+    fileprivate func calculateCellWidth() {
         
         let width = (kScreenSize - (CGFloat(kColumnsPerRow + 1.0) * kSpan)) / CGFloat(kColumnsPerRow) - 1
         let height = width * kAspectRatio

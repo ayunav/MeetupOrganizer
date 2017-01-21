@@ -16,8 +16,7 @@ enum EventsResult {
 }
 
 
-enum PhotosResult
-{
+enum PhotosResult {
     case success()
     case failure(Error)
 }

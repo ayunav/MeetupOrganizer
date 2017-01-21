@@ -17,7 +17,7 @@ class ActivityIndicatorView {
     private var activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
     
     
-    func showActivityIndicatorInView(view: UIView) {
+    func showActivityIndicator(in view: UIView) {
         
         activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0),
                                                         type: .ballGridPulse,
