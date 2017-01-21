@@ -111,5 +111,4 @@ Not sure about these:
 - http://swiftdeveloperblog.com/display-large-collection-of-images-in-uitableview-with-sdwebimage/
 - testing https://github.com/meetup/testing-on-board/blob/master/CLASS.md
 - https://www.raywenderlich.com/130197/magical-error-handling-swift
-- https://medium.com/@MedvedevTheDev/why-encoding-matters-a-primer-on-bits-bytes-and-history-4ec9dc441355#.6bxpln7wz
 - https://www.raywenderlich.com/92667/securing-ios-data-keychain-touch-id-1password
