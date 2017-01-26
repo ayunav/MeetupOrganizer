@@ -3,7 +3,7 @@
 
 ### Background 
 
-I organize the largest iOS meetup in NYC, [iOSoho](https://www.meetup.com/iOSoho/), and it was hard for me to upload photos to events with a Meetup app because you can only upload one photo at a time. Meetup Organizer app doesn't do much, but it solves my personal pain point, and it makes me very happy. 😊
+I organize the largest iOS meetup in NYC, [iOSoho](https://www.meetup.com/iOSoho/), and it was hard for me to upload photos to events with the Meetup app because you can only upload one photo at a time. Meetup Organizer app solves my personal pain point, and it makes me very happy. 😊
 
 If you want to upload photos to the Meetup events you attend, download the source code and run it on your iPhone. See [How to run](https://github.com/ayunav/MeetupOrganizer#how-to-run) instructions below. 
 
