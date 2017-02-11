@@ -18,9 +18,7 @@ class LoginViewController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet weak fileprivate var loginButton: UIButton!
-    
-    fileprivate var oauthswift: OAuthSwift?
-    
+        
 
     // MARK: - View Lifecycle
     
@@ -59,7 +57,6 @@ class LoginViewController: UIViewController {
             responseType  : ResponseType
         )
 
-        self.oauthswift = oauthswift
         
         /* opens SFSafariVC to request redirectUri */
         
