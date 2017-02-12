@@ -21,7 +21,7 @@ class ActivityIndicatorView {
         
         activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0),
                                                         type: .ballGridPulse,
-                                                        color: MeetupRedColor,
+                                                        color: UIColor.meetupRedColor,
                                                         padding: 0)
         
         activityIndicatorView.center = view.center
