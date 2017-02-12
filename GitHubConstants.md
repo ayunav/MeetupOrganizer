@@ -29,7 +29,6 @@ enum OAuth {
     static let meetupAccessToken = "meetupAccessToken"
 }
 
-
 enum PlaceholderImage {
     static let meetupLogoGray = "MeetupLogoGray"
     static let meetupLogoRed  = "MeetupLogo"
