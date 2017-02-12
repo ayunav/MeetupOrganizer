@@ -1,6 +1,8 @@
 ````swift
 // Copy-paste the code below to the Constants.swift file
 
+// Reference: https://cocoacasts.com/namespaces-in-swift/
+
 // If you already have a Meetup account, your API key is here: http://www.meetup.com/meetup_api/key/
 
 enum API {
