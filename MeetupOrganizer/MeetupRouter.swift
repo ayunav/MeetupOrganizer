@@ -39,7 +39,7 @@ struct MeetupRouter
     mutating func uploadPhotosURLWithComponents(groupName: String, eventId: String) -> URL {
         
         urlComponents.path = "/\(groupName)/events/\(eventId)/photos"
-        let apiKey = URLQueryItem(name: "key", value: MeetupApiKey)
+        let apiKey = URLQueryItem(name: "key", value: API.meetupApiKey)
         urlComponents.queryItems = [apiKey]
 
         return urlComponents.url!
