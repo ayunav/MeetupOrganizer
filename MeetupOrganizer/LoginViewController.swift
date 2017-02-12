@@ -50,11 +50,11 @@ class LoginViewController: UIViewController {
         /* auth config */
         
         let oauthswift = OAuth2Swift(
-            consumerKey   : OAuthKey,
-            consumerSecret: OAuthSecret,
-            authorizeUrl  : AuthorizationEndpoint,
-            accessTokenUrl: AccessTokenEndpoint,
-            responseType  : ResponseType
+            consumerKey   : OAuth.oAuthKey,
+            consumerSecret: OAuth.oAuthSecret,
+            authorizeUrl  : OAuth.authorizationEndpoint,
+            accessTokenUrl: OAuth.accessTokenEndpoint,
+            responseType  : OAuth.responseType
         )
 
         
@@ -67,9 +67,9 @@ class LoginViewController: UIViewController {
          passes the redirectUri to the callBackURL closure, which then gets access token from the redirectUri */
         
         let _ = oauthswift.authorize(
-            withCallbackURL: URL(string: RedirectUri)!,
-                      scope: Scope,
-                      state: State,
+            withCallbackURL: URL(string: OAuth.redirectUri)!,
+                      scope: OAuth.scope,
+                      state: OAuth.state,
                     success: { credential, response, parameters in
 
                         UserDefaults.standard.set(credential.oauthToken, forKey: MeetupAccessToken)
