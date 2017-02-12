@@ -13,11 +13,5 @@ import UIKit
 
 
 extension UIColor {
-    public static let meetupRedColor = UIColor(red:0.93, green:0.11, blue:0.25, alpha:1.0)
+    static let meetupRedColor = UIColor(red:0.93, green:0.11, blue:0.25, alpha:1.0)
 }
-
-
-//let PlaceholderGray = "MeetupLogoGray"
-//
-//let PlaceholderRed = "MeetupLogo"
-

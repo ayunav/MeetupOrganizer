@@ -38,7 +38,7 @@ class GalleryDataSource: NSObject, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier, for: indexPath) as! GalleryCollectionViewCell
         
         if assets.isEmpty == true {
-            cell.galleryImageView.image = UIImage(named: PlaceholderImage.MeetupLogoGray)
+            cell.galleryImageView.image = UIImage(named: PlaceholderImage.meetupLogoGray)
         } else {
             let asset = assets[indexPath.row]
             cell.asset = asset
