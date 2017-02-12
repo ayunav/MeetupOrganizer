@@ -3,12 +3,12 @@
 
 // Reference: https://cocoacasts.com/namespaces-in-swift/
 
+
 // If you already have a Meetup account, your API key is here: http://www.meetup.com/meetup_api/key/
 
 enum API {
     static let meetupApiKey = "INSERT-YOUR-API-KEY-HERE"
 }
-
 
 // Your OAuth Consumer keys are here: https://secure.meetup.com/meetup_api/oauth_consumers/ 
 // Otherwise, you can create one here: https://secure.meetup.com/meetup_api/oauth_consumers/create
