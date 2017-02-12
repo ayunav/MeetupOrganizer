@@ -54,7 +54,7 @@ struct MeetupRouter
        
         urlComponents.path = "/self/events"
         
-        let accessToken = UserDefaults.standard.object(forKey: MeetupAccessToken) as! String
+        let accessToken = UserDefaults.standard.object(forKey: OAuth.meetupAccessToken) as! String
         
         var queryItems = [URLQueryItem]()
         

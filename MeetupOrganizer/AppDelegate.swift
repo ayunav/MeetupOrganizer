@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
 
-        if UserDefaults.standard.object(forKey: MeetupAccessToken) != nil {
+        if UserDefaults.standard.object(forKey: OAuth.meetupAccessToken) != nil {
             
             let eventsTableVC = storyboard.instantiateViewController(withIdentifier: "EventsNavigationViewController")
             

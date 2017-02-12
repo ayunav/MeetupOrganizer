@@ -11,8 +11,6 @@ import SafariServices
 import UIKit
 
 
-let MeetupAccessToken = "meetupAccessToken"
-
 class LoginViewController: UIViewController {
     
     // MARK: - Properties
@@ -30,7 +28,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if UserDefaults.standard.object(forKey: MeetupAccessToken) != nil {
+        if UserDefaults.standard.object(forKey: OAuth.meetupAccessToken) != nil {
             self.performSegue(withIdentifier: "ShowEventsTableVCSegueIdentifier", sender: self)
         }
     }
@@ -72,7 +70,7 @@ class LoginViewController: UIViewController {
                       state: OAuth.state,
                     success: { credential, response, parameters in
 
-                        UserDefaults.standard.set(credential.oauthToken, forKey: MeetupAccessToken)
+                        UserDefaults.standard.set(credential.oauthToken, forKey: OAuth.meetupAccessToken)
                         UserDefaults.standard.synchronize()
         },
                     failure: { error in
