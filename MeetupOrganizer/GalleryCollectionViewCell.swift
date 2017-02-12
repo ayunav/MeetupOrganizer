@@ -46,7 +46,7 @@ class GalleryCollectionViewCell: UICollectionViewCell {
         if let _image = image {
             galleryImageView.image = _image
         } else {
-            galleryImageView.image = UIImage(named: PlaceholderGray)
+            galleryImageView.image = UIImage(named: PlaceholderImage.MeetupLogoGray)
         }
     }
     
