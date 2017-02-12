@@ -72,21 +72,22 @@ It shouldn't be a problem, but just in case, if you're missing the image assets 
   - [Anatomy of an http URL](http://www.webreference.com/html/tutorial2/2.html)
 - [DateFormatter all formats](http://nsdateformatter.com/)
 - [Flawless UICollectionViews](https://digitalleaves.com/blog/2016/02/flawless-uicollectionviews-and-uitableviews/)
+- [Namespaces in Swift](https://cocoacasts.com/namespaces-in-swift/)
   
 
 ### TO-DO
 
+- refactor image upload 
 - on navigation to AddPhotosVC, display photos that are already on the server (fetch photos, display in the collection view)
 - when uploading new photos, add new photos to the col view (different section? )
 - improve response time on fetching upcoming and past events: cache response, add pull to refresh
 - add log out/switch account button
 - add tests 
-- refactor auth code
-- refactor image upload 
 - handle errors, create user facing alerts 
 - add empty states: no upcoming events, no past events
 - nit: request access to photos on add photos button tapped, not on vc navigation
 - add an app icon 
+- ? add caption to uploaded photos: Uploaded by `member name` via Meetup Organizer iOS app by Ayuna Vogel (include link?)
 
 - upload activity indicator per cell
     - the col view will display selected photos
@@ -95,12 +96,7 @@ It shouldn't be a problem, but just in case, if you're missing the image assets 
     - if there's a problem with upload, display a user facing error message
     - when upload is complete & successful (json response came back), stop & hide activity indicators, change cells' aipha to clear
 
-Not sure about these: 
-
-- ? add waitlist events
-- ? deep link to photos at the event, or to the event, or to the meetup group. Play with it.
-- ? add caption to uploaded photos: Uploaded by `member name` via Meetup Organizer iOS app by Ayuna Vogel (include link?)
-- ? two sections for the images that are already on the server, and for the newly uploaded, with different section background images
+- ? search events
 
 #### Resources to explore:
 
